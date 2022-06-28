@@ -1,0 +1,9 @@
+rg-venv
+application/__pycache__
+.gitignore
+pandoc-2.18-1-amd64.deb
+report.docx
+report.html
+report.epub
+test.pdf
+AMPH PILOT DATASET_V5_25.June.2022.xlsx

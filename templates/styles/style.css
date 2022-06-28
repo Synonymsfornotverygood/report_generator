@@ -1,0 +1,45 @@
+@media print {
+
+    @page {
+        margin: 0.5cm
+    }
+}
+
+
+
+
+
+#header-div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sub-title-container {
+    height: 100vh;
+    padding-top: 100px;
+}
+
+article {
+    height: 100vh;
+    padding-top: 100px;
+}
+
+article img {
+    height: 100px;
+}
+
+.article-heading {
+    margin-bottom: 50px;
+}
+
+.contents {
+    margin: 5px;
+}
+
+.contents span{
+    width: 200px;
+    text-align: left;
+}

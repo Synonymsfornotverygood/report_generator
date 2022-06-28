@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/styles/materialize.min.css">
+    <link rel="stylesheet" href="templates/styles/style.css">
+    <title>{{report_name}}</title>
+</head>
+<body>
+    <header class="container" >
+        <div class="col s12" id="header-div">
+            <h1>{{report_name}}</h1>
+            <h2>{{report_author}}</h2>
+            <h4>{{university_name}}</h4>
+            <h4>{{university_school}}</h4>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <div class="container col s12" id="sub-title-container">
+                <h2>Amphibians</h2>
+                <h3>Contents:</h3>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet: <a href="#">lorem</a></li>
+                    <li>Lorem ipsum dolor sit amet: <a href="#">lorem</a></li>
+                    <li>Lorem ipsum dolor sit amet: <a href="#">lorem</a></li>
+                    <li>Lorem ipsum dolor sit amet: <a href="#">lorem</a></li>
+                    <li>Lorem ipsum dolor sit amet: <a href="#">lorem</a></li>
+                </ul>
+            </div>
+            {% for n in amp_list %}
+                <article class="container col s12" id="{{n.position}}">
+                    <div class="article-heading row">
+                        <div class="col s12">
+                            <h3>{{n.get_full_name()}}</h3>
+                        </div>
+                    </div>
+                    <div class="frog-image-container row">
+                        <div class="col s2"></div>
+                        <div class="col s5">
+                            <img src="templates/images/frog1.png" alt="frog" srcset="" height="200px">
+                            <p>Male Image</p>
+                        </div>
+                        <div class="col s5">
+                            <img src="templates/images/frog2.png" alt="frog" srcset="" height="200px">
+                            <p>Female Image</p>
+                        </div>
+                    </div>
+                    <div class="contents row"><span class="col s9"><strong>Order:            </strong></span> <span class="col s3">{{n.order}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Family:           </strong></span> <span class="col s3">{{n.family}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Genus:            </strong></span> <span class="col s3">{{n.genus}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Species:          </strong></span> <span class="col s3">{{n.species}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Body Size Male:   </strong></span> <span class="col s3">{{n.body_size_male}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Body Size Female: </strong></span> <span class="col s3">{{n.body_size_female}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Nesting Site:     </strong></span> <span class="col s3">{{n.nesting_site}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Fecundity:        </strong></span> <span class="col s3">{{n.fecundity}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Age Maturity:     </strong></span> <span class="col s3">{{n.age_maturity}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Egg Hatching:     </strong></span> <span class="col s3">{{n.egg_hatching}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Parity Mode:      </strong></span> <span class="col s3">{{n.parity_mode}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Egg Diameter:     </strong></span> <span class="col s3">{{n.egg_diameter}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Activity:         </strong></span> <span class="col s3">{{n.activity}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Micro Habitat:    </strong></span> <span class="col s3">{{n.micro_habitat}}</span></div>
+                    <div class="contents row"><span class="col s9"><strong>Geography:        </strong></span> <span class="col s3">{{n.geography}}</span></div>
+                </article>
+            {% endfor %}
+        </section>
+        <section id="index-section">
+            <h2 class="col s12">Index</h2>
+            <div class="index-contents container">
+                {% for n in amp_list %}
+                    <div class="col s1">
+                        <a href="#{{n.position}}">{{n.get_full_name()}} - {{n.position + 1}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <a hidden href="https://www.flaticon.com/free-icons/frog" title="frog icons">Frog icons created by Freepik - Flaticon</a>
+    <script src="templates/scripts/materialize.min.js"></script>
+</body>
+</html>
