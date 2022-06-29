@@ -29,6 +29,7 @@ def create_pdf(path_to_html: str, pdf_filename: str) -> None:
     page.loadFinished.connect(handle_load_finished)
     page.load(QUrl.fromLocalFile(path_to_html))
     app.exec()
+    return "Completed"
 
 def get_file_path(file_name):
     current_dir = os.path.dirname(os.getcwd())
@@ -36,12 +37,11 @@ def get_file_path(file_name):
     file_path = os.path.join(current_dir, file_str)
     return file_path
 
-file_path1 = get_file_path("report.html")
-file_path2 = get_file_path("test.html")
-
-create_pdf(file_path1, "brokenreport.pdf")
-# create_pdf(file_path2, "test.pdf")
-
+if __name__ == "__main__":
+    args = sys.argv
+    # print(args)
+    message = create_pdf(args[1], args[2])
+    print(f"{message}: {args[2]}")
 
 
 
