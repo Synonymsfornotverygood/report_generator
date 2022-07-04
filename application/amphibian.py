@@ -1,5 +1,11 @@
 
 class AmphibianData:
+    """
+
+    Class Representing the data scraped from the data source with additional helper methods
+
+
+    """
 
     def __init__(self, amp_info: list) -> None:
         self.position = amp_info[0]
