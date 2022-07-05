@@ -3,12 +3,11 @@
 Application to create report based on parameters passed into it
 
 @Params:
-        data_source
-        report_name
-        report_author
-        university_name
-        university_school
-        full_report
+        data_source         - Data source for report creation
+        report_name         - Title of the report and the file name
+        report_author       - Author of the report 
+        university_name     - Name of the university
+        university_school   - Name of the university school
 
 @Todo:
     - Implement passing params - statically implemented currently
@@ -16,12 +15,7 @@ Application to create report based on parameters passed into it
     - Abstract source reading into a different class - excel extraction for one 
 
 '''
-import os
-import subprocess
-from time import sleep
-from venv import create
-import write_report
-import pdf_creator
+import create_report
 
 if __name__ == "__main__":
 
@@ -31,22 +25,7 @@ if __name__ == "__main__":
     university_name = "Queen's University Belfast"
     university_school = "School Of Biological Sciences"
 
-    write_report.write_report(data_source, report_name, report_author, university_name, university_school)
-
-    folder_name = "_".join(report_name.split(" "))
-    files = os.listdir(folder_name)
-    for file in files:
-        html_file_name = f"{folder_name}/{file}"
-        html_file_path = pdf_creator.get_file_path(html_file_name)
-        pdf_file_path = f"{folder_name}/{file.split('.')[0]}.pdf"
-
-        print(html_file_path)
-        print(pdf_file_path)
-        sleep(2)
-        process_str = f"python3 application/pdf_creator.py '{html_file_path}' '{pdf_file_path}'"
-        # print(process_str)
-        subprocess.call(process_str, shell=True)
-        print("Finished")
+    create_report.create_report(data_source, report_name, report_author, university_name, university_school)
 
 
 
