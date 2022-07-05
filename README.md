@@ -8,7 +8,7 @@ Further project requirements for external Python libraries can be found in the r
 
 The rest of the process of the project's setup is outlined in the installation section below.
 
-**Note: Project has only been used on linux system - there are possible issues with hard-coded pathing. Will update to resolve**
+**Note: Project has only been used on Linux system - there are possible issues with hard-coded pathing. Will update to resolve**
 
 ## Installation
 
@@ -33,16 +33,20 @@ When this process has been completed it is now possible to use the program.
 
 The program can then be used through either of the following methods:
 
-        python3 application/main.py {report_name} {report_author} {report_university} {report_school}
+        python3 application/create_report.py {report_name} {report_author} {report_university} {report_school}
 
-Or by editing the default values in application/create_report.py and typing the following command into the terminal:
+Or by editing the default values in application/main.py and typing the following command into the terminal:
 
-        python3 application/create_report.py
+        python3 application/main.py
 
 
 ## Example
 
-Example report can be found in the Test_Report.pdf in examples directory 
+An example of program use can be found below.
+
+        python3 application/create_report.py "AMPH PILOT DATASET_V5_25.June.2022.xlsx" "Test Report" "Daniel Pincheira-Donoso" "Queen's University Belfast" "School Of Biological Sciences"
+
+The example report created can be found in the Test_Report.pdf in the examples directory 
 
 
 ## Versions

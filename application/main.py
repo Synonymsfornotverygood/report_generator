@@ -20,12 +20,14 @@ import create_report
 if __name__ == "__main__":
 
     data_source = "AMPH PILOT DATASET_V5_25.June.2022.xlsx"
-    report_name = "Test Report"
-    report_author = "Daniel Pincheira-Donoso"
-    university_name = "Queen's University Belfast"
-    university_school = "School Of Biological Sciences"
+    report_name = "Test Report".upper()
+    report_author = "Daniel Pincheira-Donoso".upper()
+    university_name = "Queen's University Belfast".upper()
+    university_school = "School Of Biological Sciences".upper()
 
+    print(f"Creating Report: {report_name}.pdf")
     create_report.create_report(data_source, report_name, report_author, university_name, university_school)
+    print(f"Report Complete: {report_name}.pdf")
 
 
 
