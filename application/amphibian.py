@@ -4,6 +4,8 @@ class AmphibianData:
 
     Class Representing the data scraped from the data source with additional helper methods
 
+    Args:
+        amp_info: list passed to init 
 
     """
 
@@ -29,13 +31,43 @@ class AmphibianData:
         self.image_url_female = ""
 
     def get_full_name(self) -> str:
+
+        """
+        Returns the string of the combination of the Amphibian Object's order family genus and species
+
+        Return:
+            full_name(str)
+        """
+
         return f"{self.order} {self.family} {self.genus} {self.species}"
 
     def get_short_name(self) -> str:
+        
+        """
+        Returns the string of the combination of the Amphibian Object's genus and species
+
+        Return:
+            short_name(str)
+        """
+
         return f"{self.genus} {self.species}"
 
     def get_image_url(self) -> str:
+
+        """
+        Returns the string of the image url
+
+        Currently unimplemented
+        """
+
         return ""
 
-    def has_image_url(self):
+    def has_image_url(self) -> bool:
+
+        """
+        Returns boolean value based on the contents of the image_url_male and image_url_female properties
+
+        Return:
+            bool
+        """
         return self.image_url_male != "" and self.image_url_female != ""
