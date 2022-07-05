@@ -8,7 +8,7 @@ Further project requirements for external Python libraries can be found in the r
 
 The rest of the process of the project's setup is outlined in the installation section below.
 
-**Note: Project has only been used on Linux system - there are possible issues with hard-coded pathing. Will update to resolve**
+**Note: Project has only been used on Linux system - there are possible issues with hard-coded paths. I will update to resolve**
 
 ## Installation
 
