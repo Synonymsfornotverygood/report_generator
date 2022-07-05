@@ -8,6 +8,8 @@ Further project requirements for external Python libraries can be found in the r
 
 The rest of the process of the project's setup is outlined in the installation section below.
 
+**Note: Project has only been used on linux system - there are possible issues with hard-coded pathing. Will update to resolve**
+
 ## Installation
 
 To install the project: first download the project code from the repository.  Extract or pull the code into the directory of your choice. Open a terminal in this directory. 
