@@ -16,8 +16,9 @@ repos:
   hooks:
     - id: isort
       args:
-        - --line-length=79
+        - --line-length=88
         - --src=report_generator
+        - --profile=black
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.3.0
   hooks:
