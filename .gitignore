@@ -22,9 +22,4 @@ structurenotes.md
 __pycache__
 dist
 report_generator.egg-info
-report_generator
-tests
 .tox
-data
-docs
-examples

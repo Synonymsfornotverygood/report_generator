@@ -1,0 +1,105 @@
+2022-07-18 16:45:05.675 | INFO     | __main__:main:37 - Started updating location
+2022-07-18 16:45:05.675 | INFO     | __main__:main:40 - Reading Excel Start
+2022-07-18 16:45:05.796 | INFO     | __main__:main:46 - Reading Excel end: 0.12065672874450684s
+2022-07-18 16:45:05.796 | INFO     | __main__:main:49 - Updating Dataframe Start
+2022-07-18 16:45:05.796 | INFO     | location_updater:load_locations_data:119 - Read location json Start
+2022-07-18 16:45:05.800 | INFO     | location_updater:load_locations_data:126 - Read location json end: 0.0039060115814208984s
+2022-07-18 16:45:05.801 | INFO     | location_updater:update_location:33 - Update Location entries Start
+2022-07-18 16:45:05.801 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.801 | INFO     | location_finder:find_unknown:172 - Location finder func end: 9.012222290039062e-05s
+2022-07-18 16:45:05.801 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.291534423828125e-06s
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:172 - Location finder func end: 3.814697265625e-06s
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.802 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.7220458984375e-06s
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.7220458984375e-06s
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.291534423828125e-06s
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.803 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.245208740234375e-06s
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.0067901611328125e-06s
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.0067901611328125e-06s
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.804 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.0067901611328125e-06s
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:172 - Location finder func end: 3.814697265625e-06s
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.0067901611328125e-06s
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.805 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.0067901611328125e-06s
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.4836273193359375e-06s
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.9604644775390625e-06s
+2022-07-18 16:45:05.806 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.245208740234375e-06s
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:172 - Location finder func end: 3.5762786865234375e-06s
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:172 - Location finder func end: 3.337860107421875e-06s
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:172 - Location finder func end: 3.5762786865234375e-06s
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:172 - Location finder func end: 6.198883056640625e-06s
+2022-07-18 16:45:05.807 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:172 - Location finder func end: 1.33514404296875e-05s
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.245208740234375e-06s
+2022-07-18 16:45:05.808 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:172 - Location finder func end: 6.67572021484375e-06s
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.291534423828125e-06s
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.76837158203125e-06s
+2022-07-18 16:45:05.809 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:172 - Location finder func end: 9.059906005859375e-06s
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.291534423828125e-06s
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:172 - Location finder func end: 4.0531158447265625e-06s
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.810 | INFO     | location_finder:find_unknown:172 - Location finder func end: 6.4373016357421875e-06s
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:172 - Location finder func end: 8.58306884765625e-06s
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:172 - Location finder func end: 9.5367431640625e-06s
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:135 - unknown finder func Start
+2022-07-18 16:45:05.811 | INFO     | location_finder:find_unknown:172 - Location finder func end: 5.7220458984375e-06s
+2022-07-18 16:45:05.811 | INFO     | location_updater:search_for_unknowns:191 - Search for unknowns Start
+2022-07-18 16:45:05.811 | INFO     | location_updater:unknown_sql_query:163 - Location unknown value sql query start
+2022-07-18 16:45:07.169 | INFO     | location_updater:unknown_sql_query:188 - Location unknown value sql query end: 1.3574676513671875s
+2022-07-18 16:45:07.169 | INFO     | location_updater:unknown_sql_query:163 - Location unknown value sql query start
+2022-07-18 16:45:08.529 | INFO     | location_updater:unknown_sql_query:188 - Location unknown value sql query end: 1.3598096370697021s
+2022-07-18 16:45:08.530 | INFO     | location_updater:unknown_sql_query:163 - Location unknown value sql query start
+2022-07-18 16:45:09.877 | INFO     | location_updater:unknown_sql_query:188 - Location unknown value sql query end: 1.3473455905914307s
+2022-07-18 16:45:09.877 | INFO     | location_updater:unknown_sql_query:163 - Location unknown value sql query start
+2022-07-18 16:45:11.225 | INFO     | location_updater:unknown_sql_query:188 - Location unknown value sql query end: 1.3472976684570312s
+2022-07-18 16:45:11.225 | INFO     | location_updater:search_for_unknowns:203 - Search for unknowns end: 5.413865566253662s

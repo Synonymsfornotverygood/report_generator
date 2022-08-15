@@ -1,0 +1,12 @@
+2022-07-18 12:41:06.014 | INFO     | __main__:main:37 - Started updating location
+2022-07-18 12:41:06.015 | INFO     | __main__:main:40 - Reading Excel Start
+2022-07-18 12:41:06.138 | INFO     | __main__:main:46 - Reading Excel end: 0.12330222129821777s
+2022-07-18 12:41:06.138 | INFO     | __main__:main:49 - Updating Dataframe Start
+2022-07-18 12:41:06.138 | INFO     | location_updater:load_locations_data:111 - Read location json Start
+2022-07-18 12:41:06.142 | INFO     | location_updater:load_locations_data:118 - Read location json end: 0.0036427974700927734s
+2022-07-18 12:41:06.142 | INFO     | location_updater:update_location:31 - Update Location entries Start
+2022-07-18 12:41:12.890 | INFO     | location_updater:update_location:37 - Update Location entries end: 6.747593402862549s
+2022-07-18 12:41:12.890 | INFO     | __main__:main:55 - Updating Dataframe end: 6.752127647399902s
+2022-07-18 12:41:12.890 | INFO     | __main__:main:59 - Output Dataframe to example/updated_1.xlsx Start
+2022-07-18 12:41:12.913 | INFO     | __main__:main:65 - Output to example/updated_1.xlsx end: 0.022647380828857422s
+2022-07-18 12:41:12.913 | INFO     | __main__:main:66 - Finished updating locations end: 6.90070366859436s

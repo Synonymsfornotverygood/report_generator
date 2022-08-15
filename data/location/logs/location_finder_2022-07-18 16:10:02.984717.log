@@ -1,0 +1,8 @@
+2022-07-18 16:10:02.986 | INFO     | __main__:main:37 - Started updating location
+2022-07-18 16:10:02.986 | INFO     | __main__:main:40 - Reading Excel Start
+2022-07-18 16:10:03.106 | INFO     | __main__:main:46 - Reading Excel end: 0.1201322078704834s
+2022-07-18 16:10:03.107 | INFO     | __main__:main:49 - Updating Dataframe Start
+2022-07-18 16:10:03.107 | INFO     | location_updater:load_locations_data:119 - Read location json Start
+2022-07-18 16:10:03.110 | INFO     | location_updater:load_locations_data:126 - Read location json end: 0.003646373748779297s
+2022-07-18 16:10:03.111 | INFO     | location_updater:update_location:33 - Update Location entries Start
+2022-07-18 16:10:03.111 | INFO     | location_finder:find_unknown:134 - unknown finder func Start

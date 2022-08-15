@@ -1,0 +1,110 @@
+2022-07-18 13:09:15.087 | INFO     | __main__:main:37 - Started updating location
+2022-07-18 13:09:15.087 | INFO     | __main__:main:40 - Reading Excel Start
+2022-07-18 13:09:15.212 | INFO     | __main__:main:46 - Reading Excel end: 0.12418818473815918s
+2022-07-18 13:09:15.212 | INFO     | __main__:main:49 - Updating Dataframe Start
+2022-07-18 13:09:15.212 | INFO     | location_updater:load_locations_data:111 - Read location json Start
+2022-07-18 13:09:15.216 | INFO     | location_updater:load_locations_data:118 - Read location json end: 0.003637552261352539s
+2022-07-18 13:09:15.216 | INFO     | location_updater:update_location:31 - Update Location entries Start
+2022-07-18 13:09:15.216 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.216 | INFO     | location_finder:find_location:153 - Read location json end: 0.0001575946807861328s
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:153 - Read location json end: 4.1961669921875e-05s
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:153 - Read location json end: 3.910064697265625e-05s
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:153 - Read location json end: 3.647804260253906e-05s
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:153 - Read location json end: 3.5762786865234375e-05s
+2022-07-18 13:09:15.217 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:153 - Read location json end: 3.5762786865234375e-05s
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:153 - Read location json end: 3.600120544433594e-05s
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:153 - Read location json end: 5.7220458984375e-05s
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:153 - Read location json end: 4.482269287109375e-05s
+2022-07-18 13:09:15.218 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:153 - Read location json end: 4.1484832763671875e-05s
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:153 - Read location json end: 4.291534423828125e-05s
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:153 - Read location json end: 4.9114227294921875e-05s
+2022-07-18 13:09:15.219 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:153 - Read location json end: 4.1961669921875e-05s
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:153 - Read location json end: 4.1961669921875e-05s
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:153 - Read location json end: 4.00543212890625e-05s
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.220 | INFO     | location_finder:find_location:153 - Read location json end: 4.076957702636719e-05s
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:153 - Read location json end: 5.3882598876953125e-05s
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:153 - Read location json end: 5.555152893066406e-05s
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.221 | INFO     | location_finder:find_location:153 - Read location json end: 5.340576171875e-05s
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:153 - Read location json end: 6.0558319091796875e-05s
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:153 - Read location json end: 6.532669067382812e-05s
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.222 | INFO     | location_finder:find_location:153 - Read location json end: 4.673004150390625e-05s
+2022-07-18 13:09:15.223 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.223 | INFO     | location_finder:find_location:153 - Read location json end: 5.078315734863281e-05s
+2022-07-18 13:09:15.223 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.223 | INFO     | location_finder:find_location:153 - Read location json end: 5.7697296142578125e-05s
+2022-07-18 13:09:15.223 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:153 - Read location json end: 5.53131103515625e-05s
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:153 - Read location json end: 6.866455078125e-05s
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:153 - Read location json end: 5.650520324707031e-05s
+2022-07-18 13:09:15.224 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.225 | INFO     | location_finder:find_location:153 - Read location json end: 5.626678466796875e-05s
+2022-07-18 13:09:15.225 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.225 | INFO     | location_finder:find_location:153 - Read location json end: 5.602836608886719e-05s
+2022-07-18 13:09:15.225 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:15.225 | INFO     | location_finder:find_location:118 - Location finder Start
+2022-07-18 13:09:16.578 | INFO     | location_finder:find_location:138 - Read location json end: 1.352968692779541s
+2022-07-18 13:09:16.579 | INFO     | location_finder:find_location:118 - Location finder Start
+2022-07-18 13:09:17.923 | INFO     | location_finder:find_location:138 - Read location json end: 1.3443186283111572s
+2022-07-18 13:09:17.923 | INFO     | location_finder:find_location:153 - Read location json end: 1.344529390335083s
+2022-07-18 13:09:17.923 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.924 | INFO     | location_finder:find_location:153 - Read location json end: 6.723403930664062e-05s
+2022-07-18 13:09:17.924 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.924 | INFO     | location_finder:find_location:153 - Read location json end: 6.151199340820312e-05s
+2022-07-18 13:09:17.924 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.924 | INFO     | location_finder:find_location:153 - Read location json end: 5.7220458984375e-05s
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:153 - Read location json end: 4.76837158203125e-05s
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:153 - Read location json end: 4.482269287109375e-05s
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.925 | INFO     | location_finder:find_location:153 - Read location json end: 4.291534423828125e-05s
+2022-07-18 13:09:17.926 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:17.926 | INFO     | location_finder:find_location:118 - Location finder Start
+2022-07-18 13:09:19.272 | INFO     | location_finder:find_location:138 - Read location json end: 1.3461170196533203s
+2022-07-18 13:09:19.272 | INFO     | location_finder:find_location:153 - Read location json end: 1.3463213443756104s
+2022-07-18 13:09:19.272 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:153 - Read location json end: 8.940696716308594e-05s
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:153 - Read location json end: 5.173683166503906e-05s
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:153 - Read location json end: 4.00543212890625e-05s
+2022-07-18 13:09:19.273 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:19.274 | INFO     | location_finder:find_location:118 - Location finder Start
+2022-07-18 13:09:20.627 | INFO     | location_finder:find_location:138 - Read location json end: 1.353527307510376s
+2022-07-18 13:09:20.627 | INFO     | location_finder:find_location:153 - Read location json end: 1.3537249565124512s
+2022-07-18 13:09:20.628 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:20.628 | INFO     | location_finder:find_location:153 - Read location json end: 0.00010824203491210938s
+2022-07-18 13:09:20.628 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:20.628 | INFO     | location_finder:find_location:118 - Location finder Start
+2022-07-18 13:09:21.992 | INFO     | location_finder:find_location:138 - Read location json end: 1.3634939193725586s
+2022-07-18 13:09:21.992 | INFO     | location_finder:find_location:153 - Read location json end: 1.363699197769165s
+2022-07-18 13:09:21.992 | INFO     | location_finder:find_location:28 - Location finder Start
+2022-07-18 13:09:21.992 | INFO     | location_finder:find_location:153 - Read location json end: 8.153915405273438e-05s
+2022-07-18 13:09:21.993 | INFO     | location_updater:update_location:37 - Update Location entries end: 6.776963233947754s
+2022-07-18 13:09:21.993 | INFO     | __main__:main:55 - Updating Dataframe end: 6.781387090682983s
+2022-07-18 13:09:21.993 | INFO     | __main__:main:59 - Output Dataframe to example/updated_1.xlsx Start
+2022-07-18 13:09:22.022 | INFO     | __main__:main:65 - Output to example/updated_1.xlsx end: 0.028221607208251953s
+2022-07-18 13:09:22.022 | INFO     | __main__:main:66 - Finished updating locations end: 6.936606407165527s

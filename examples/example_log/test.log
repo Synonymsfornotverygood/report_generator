@@ -1,0 +1,962 @@
+2022-07-12 12:01:12.866 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000
+2022-07-12 12:01:12.866 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 12:01:15.770 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 12:01:15.771 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 12:01:15.775 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 12:01:15.775 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 12:01:16.119 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 12:01:16.119 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 12:01:16.121 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 12:01:16.121 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 12:01:29.634 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 13.51s
+2022-07-12 12:01:29.634 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 - Time Taken: 16.77s, File Size: 11.98MB
+
+2022-07-12 12:01:29.639 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 50000
+2022-07-12 12:01:29.639 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 12:01:37.924 | DEBUG    | create_report:create_report:69 - Finished reading data source: 8.29s
+2022-07-12 12:01:37.924 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 12:01:37.938 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 12:01:37.938 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 12:01:38.275 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 12:01:38.275 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 12:01:38.280 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 12:01:38.280 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 12:02:57.895 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 79.61s
+2022-07-12 12:02:57.895 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 50000 - Time Taken: 88.26s, File Size: 67.69MB
+
+2022-07-12 12:02:57.917 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 100000
+2022-07-12 12:02:57.917 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 12:03:13.720 | DEBUG    | create_report:create_report:69 - Finished reading data source: 15.8s
+2022-07-12 12:03:13.720 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 12:03:13.745 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.02s
+2022-07-12 12:03:13.745 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 12:03:14.061 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.32s
+2022-07-12 12:03:14.061 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 12:03:14.070 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.01s
+2022-07-12 12:03:14.070 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 12:05:53.766 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 159.7s
+2022-07-12 12:05:53.766 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 100000 - Time Taken: 175.85s, File Size: 134.6MB
+
+2022-07-12 12:05:53.808 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 500000
+2022-07-12 12:05:53.808 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 12:07:14.065 | DEBUG    | create_report:create_report:69 - Finished reading data source: 80.26s
+2022-07-12 12:07:14.066 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 12:07:14.181 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.12s
+2022-07-12 12:07:14.181 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 12:07:14.481 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.3s
+2022-07-12 12:07:14.482 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 12:07:14.523 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.04s
+2022-07-12 12:07:14.523 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 12:20:43.113 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 808.59s
+2022-07-12 12:20:43.114 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 500000 - Time Taken: 889.31s, File Size: 671.8MB
+
+2022-07-12 13:21:58.042 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 13:21:58.042 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 13:22:00.941 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 13:22:00.941 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 13:22:00.946 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 13:22:00.946 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 13:22:01.279 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 13:22:01.279 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 13:22:01.281 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 13:22:01.282 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 13:22:15.968 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 14.69s
+2022-07-12 13:22:15.969 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 17.93s, File Size: 13.12MB
+
+2022-07-12 13:22:15.973 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 50000 (IMAGES)
+2022-07-12 13:22:15.973 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 13:22:24.264 | DEBUG    | create_report:create_report:69 - Finished reading data source: 8.29s
+2022-07-12 13:22:24.265 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 13:22:24.279 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 13:22:24.280 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 13:22:24.615 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 13:22:24.615 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 13:22:24.620 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 13:22:24.620 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 13:23:50.803 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 86.18s
+2022-07-12 13:23:50.803 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 50000 (IMAGES) - Time Taken: 94.83s, File Size: 72.77MB
+
+2022-07-12 13:23:50.825 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 100000 (IMAGES)
+2022-07-12 13:23:50.825 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 13:24:06.937 | DEBUG    | create_report:create_report:69 - Finished reading data source: 16.11s
+2022-07-12 13:24:06.937 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 13:24:06.963 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.03s
+2022-07-12 13:24:06.963 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 13:24:07.279 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.32s
+2022-07-12 13:24:07.279 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 13:24:07.289 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.01s
+2022-07-12 13:24:07.289 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 13:26:59.480 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 172.19s
+2022-07-12 13:26:59.480 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 100000 (IMAGES) - Time Taken: 188.65s, File Size: 144.39MB
+
+2022-07-12 13:26:59.531 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 500000 (IMAGES)
+2022-07-12 13:26:59.531 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 13:28:19.750 | DEBUG    | create_report:create_report:69 - Finished reading data source: 80.22s
+2022-07-12 13:28:19.750 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 13:28:19.870 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.12s
+2022-07-12 13:28:19.870 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 13:28:20.174 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.3s
+2022-07-12 13:28:20.174 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 13:28:20.215 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.04s
+2022-07-12 13:28:20.215 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 13:42:54.075 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 873.86s
+2022-07-12 13:42:54.076 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 500000 (IMAGES) - Time Taken: 954.54s, File Size: 719.34MB
+
+2022-07-12 17:46:12.700 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:46:12.700 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:46:15.643 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 17:46:15.644 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:46:15.648 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:46:15.648 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:46:15.995 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 17:46:15.995 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:46:15.997 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:46:15.997 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:46:28.518 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.52s
+2022-07-12 17:46:28.518 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.82s, File Size: 12.29MB
+2022-07-12 17:50:41.361 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:50:41.361 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:50:44.337 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.98s
+2022-07-12 17:50:44.338 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:50:44.342 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:50:44.342 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:50:44.700 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.36s
+2022-07-12 17:50:44.700 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:50:44.702 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:50:44.702 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:50:57.388 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.69s
+2022-07-12 17:50:57.389 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.03s, File Size: 12.35MB
+2022-07-12 17:52:03.423 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:52:03.423 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:52:06.328 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 17:52:06.328 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:52:06.332 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:52:06.332 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:52:06.672 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 17:52:06.672 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:52:06.674 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:52:06.674 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:52:19.523 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.85s
+2022-07-12 17:52:19.523 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.1s, File Size: 12.39MB
+2022-07-12 17:53:39.499 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:53:39.499 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:53:42.430 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 17:53:42.430 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:53:42.434 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:53:42.434 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:53:42.771 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 17:53:42.771 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:53:42.773 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:53:42.773 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:53:55.801 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 13.03s
+2022-07-12 17:53:55.801 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.3s, File Size: 12.39MB
+2022-07-12 17:54:34.380 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:54:34.380 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:54:37.284 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 17:54:37.285 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:54:37.289 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:54:37.289 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:54:37.625 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 17:54:37.625 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:54:37.627 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:54:37.627 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:54:50.303 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.68s
+2022-07-12 17:54:50.303 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.92s, File Size: 12.41MB
+2022-07-12 17:55:30.915 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:55:30.915 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:55:33.811 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 17:55:33.812 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:55:33.817 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 17:55:33.818 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:55:34.172 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 17:55:34.173 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:55:34.175 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:55:34.175 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:55:47.081 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.91s
+2022-07-12 17:55:47.081 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.17s, File Size: 12.4MB
+2022-07-12 17:59:14.974 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 17:59:14.974 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 17:59:17.968 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.99s
+2022-07-12 17:59:17.969 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 17:59:17.973 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 17:59:17.974 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 17:59:18.321 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 17:59:18.321 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 17:59:18.323 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 17:59:18.323 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 17:59:31.199 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.88s
+2022-07-12 17:59:31.200 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.23s, File Size: 12.53MB
+2022-07-12 18:02:20.511 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:02:20.511 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:02:23.414 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 18:02:23.414 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:02:23.419 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:02:23.419 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:02:23.765 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:02:23.766 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:02:23.767 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:02:23.768 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:02:36.617 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.85s
+2022-07-12 18:02:36.617 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.11s, File Size: 12.55MB
+2022-07-12 18:08:48.979 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:08:48.979 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:08:51.937 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 18:08:51.937 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:08:51.942 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:08:51.942 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:08:52.281 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:08:52.282 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:08:52.284 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:08:52.284 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:09:05.177 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.89s
+2022-07-12 18:09:05.177 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.2s, File Size: 12.54MB
+2022-07-12 18:30:40.906 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:30:40.906 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:30:43.828 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 18:30:43.829 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:30:43.833 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:30:43.833 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:30:44.168 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 18:30:44.168 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:30:44.170 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:30:44.170 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:30:56.976 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.81s
+2022-07-12 18:30:56.976 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.07s, File Size: 12.54MB
+2022-07-12 18:31:42.820 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:31:42.820 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:31:45.762 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 18:31:45.763 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:31:45.767 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:31:45.767 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:31:46.119 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:31:46.119 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:31:46.121 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:31:46.121 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:32:34.713 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:32:34.713 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:32:37.662 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 18:32:37.662 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:32:37.666 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:32:37.667 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:32:38.005 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:32:38.005 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:32:38.007 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:32:38.007 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:33:32.778 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:33:32.778 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:33:35.736 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 18:33:35.736 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:33:35.741 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:33:35.741 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:33:36.082 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:33:36.082 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:33:36.084 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:33:36.084 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:35:41.529 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:35:41.529 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:35:44.451 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 18:35:44.452 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:35:44.456 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:35:44.456 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:35:44.792 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:35:44.792 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:35:44.794 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:35:44.794 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:35:57.557 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.76s
+2022-07-12 18:35:57.558 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 16.03s, File Size: 12.54MB
+2022-07-12 18:37:12.544 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:37:12.544 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:37:15.476 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 18:37:15.477 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:37:15.481 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:37:15.481 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:37:15.837 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.36s
+2022-07-12 18:37:15.837 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:37:15.839 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:37:15.839 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:37:28.002 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.16s
+2022-07-12 18:37:28.002 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.46s, File Size: 12.44MB
+2022-07-12 18:37:49.045 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:37:49.045 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:37:51.989 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 18:37:51.989 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:37:51.993 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:37:51.993 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:37:52.327 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 18:37:52.328 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:37:52.330 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:37:52.330 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:38:04.756 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.43s
+2022-07-12 18:38:04.757 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.71s, File Size: 12.44MB
+2022-07-12 18:38:37.192 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:38:37.192 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:38:40.119 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 18:38:40.119 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:38:40.124 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:38:40.124 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:38:40.466 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:38:40.466 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:38:40.468 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:38:40.468 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:38:52.826 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.36s
+2022-07-12 18:38:52.827 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.63s, File Size: 12.5MB
+2022-07-12 18:39:48.377 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:39:48.377 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:39:51.347 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.97s
+2022-07-12 18:39:51.348 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:39:51.352 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:39:51.352 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:39:51.709 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.36s
+2022-07-12 18:39:51.709 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:39:51.711 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:39:51.711 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:40:04.179 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.47s
+2022-07-12 18:40:04.179 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.8s, File Size: 12.46MB
+2022-07-12 18:40:28.746 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:40:28.746 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:40:31.669 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 18:40:31.669 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:40:31.674 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:40:31.674 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:40:32.012 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:40:32.012 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:40:32.014 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:40:32.014 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:40:43.919 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.9s
+2022-07-12 18:40:43.919 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.17s, File Size: 12.4MB
+2022-07-12 18:41:10.896 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:41:10.896 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:41:13.799 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 18:41:13.799 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:41:13.803 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:41:13.803 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:41:14.149 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:41:14.149 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:41:14.151 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:41:14.151 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:41:26.237 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.09s
+2022-07-12 18:41:26.238 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.34s, File Size: 12.62MB
+2022-07-12 18:42:12.272 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:42:12.272 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:42:15.215 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 18:42:15.215 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:42:15.220 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 18:42:15.221 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:42:15.573 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:42:15.573 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:42:15.575 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:42:15.575 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:42:27.207 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.63s
+2022-07-12 18:42:27.207 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.94s, File Size: 12.46MB
+2022-07-12 18:43:05.893 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:43:05.893 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:43:08.864 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.97s
+2022-07-12 18:43:08.865 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:43:08.869 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:43:08.870 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:43:09.215 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:43:09.215 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:43:09.217 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:43:09.217 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:43:21.061 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.84s
+2022-07-12 18:43:21.061 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.17s, File Size: 12.53MB
+2022-07-12 18:43:52.165 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:43:52.165 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:43:55.104 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 18:43:55.105 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:43:55.109 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:43:55.109 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:43:55.447 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:43:55.447 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:43:55.449 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:43:55.449 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:44:07.153 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.7s
+2022-07-12 18:44:07.153 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.99s, File Size: 12.53MB
+2022-07-12 18:44:52.260 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:44:52.260 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:44:55.171 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.91s
+2022-07-12 18:44:55.171 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:44:55.176 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:44:55.176 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:44:55.508 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 18:44:55.508 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:44:55.510 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:44:55.510 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:45:06.893 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.38s
+2022-07-12 18:45:06.893 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.63s, File Size: 12.53MB
+2022-07-12 18:45:43.578 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:45:43.578 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:45:46.518 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 18:45:46.518 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:45:46.523 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:45:46.523 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:45:46.861 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:45:46.861 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:45:46.863 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:45:46.863 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:45:58.618 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.76s
+2022-07-12 18:45:58.618 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.04s, File Size: 12.53MB
+2022-07-12 18:47:58.653 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:47:58.653 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:48:01.577 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 18:48:01.577 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:48:01.581 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:48:01.582 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:48:01.955 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.37s
+2022-07-12 18:48:01.955 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:48:01.957 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:48:01.957 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:48:13.783 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.83s
+2022-07-12 18:48:13.783 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.13s, File Size: 12.49MB
+2022-07-12 18:53:26.534 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:53:26.534 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:53:29.492 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 18:53:29.493 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:53:29.497 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:53:29.497 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:53:29.844 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:53:29.844 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:53:29.846 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:53:29.846 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:53:56.865 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:53:56.865 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:53:59.912 | DEBUG    | create_report:create_report:69 - Finished reading data source: 3.05s
+2022-07-12 18:53:59.912 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:53:59.916 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:53:59.916 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:54:00.267 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 18:54:00.267 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:54:00.269 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:54:00.269 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 18:56:41.646 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 18:56:41.646 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 18:56:44.551 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.91s
+2022-07-12 18:56:44.552 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 18:56:44.556 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 18:56:44.556 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 18:56:44.893 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 18:56:44.893 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 18:56:44.895 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 18:56:44.895 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:35:03.616 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:35:03.616 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:35:06.550 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 21:35:06.550 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:35:06.555 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:35:06.555 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:35:06.900 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 21:35:06.900 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:35:06.902 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:35:06.902 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:35:18.763 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.86s
+2022-07-12 21:35:18.763 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.15s, File Size: 12.52MB
+2022-07-12 21:36:13.285 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:36:13.285 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:36:16.220 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 21:36:16.220 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:36:16.224 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:36:16.224 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:36:16.569 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 21:36:16.569 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:36:16.571 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:36:16.571 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:36:28.646 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 12.07s
+2022-07-12 21:36:28.646 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 15.36s, File Size: 12.52MB
+2022-07-12 21:36:47.585 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:36:47.585 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:36:50.516 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 21:36:50.516 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:36:50.521 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:36:50.521 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:36:50.858 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 21:36:50.858 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:36:50.860 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:36:50.860 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:37:02.467 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.61s
+2022-07-12 21:37:02.468 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.88s, File Size: 12.52MB
+2022-07-12 21:37:43.813 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:37:43.813 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:37:46.794 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.98s
+2022-07-12 21:37:46.794 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:37:46.798 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:37:46.799 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:37:47.141 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 21:37:47.141 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:37:47.143 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:37:47.143 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:37:58.752 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.61s
+2022-07-12 21:37:58.752 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.94s, File Size: 12.52MB
+2022-07-12 21:39:47.720 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:39:47.720 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:39:50.677 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 21:39:50.678 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:39:50.682 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:39:50.682 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:39:51.017 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 21:39:51.017 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:39:51.019 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:39:51.019 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:40:02.478 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.46s
+2022-07-12 21:40:02.479 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.76s, File Size: 12.51MB
+2022-07-12 21:43:02.042 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:43:02.042 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:43:05.036 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.99s
+2022-07-12 21:43:05.036 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:43:05.040 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:43:05.041 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:43:05.373 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 21:43:05.373 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:43:05.375 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:43:05.375 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:43:16.991 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.62s
+2022-07-12 21:43:16.991 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.95s, File Size: 12.54MB
+2022-07-12 21:43:45.075 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:43:45.075 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:43:48.029 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 21:43:48.030 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:43:48.035 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:43:48.035 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:43:48.373 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 21:43:48.373 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:43:48.375 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:43:48.375 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:44:00.012 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.64s
+2022-07-12 21:44:00.012 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.94s, File Size: 12.54MB
+2022-07-12 21:44:23.169 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:44:23.169 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:44:26.108 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 21:44:26.108 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:44:26.112 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:44:26.112 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:44:26.457 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 21:44:26.457 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:44:26.458 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:44:26.459 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:44:38.064 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.61s
+2022-07-12 21:44:38.065 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.9s, File Size: 12.54MB
+2022-07-12 21:45:01.152 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:45:01.152 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:45:04.068 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 21:45:04.068 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:45:04.072 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:45:04.073 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:45:04.405 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 21:45:04.406 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:45:04.407 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:45:04.408 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:45:16.026 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.62s
+2022-07-12 21:45:16.026 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.87s, File Size: 12.54MB
+2022-07-12 21:46:01.079 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:46:01.080 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:46:04.012 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 21:46:04.012 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:46:04.016 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:46:04.016 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:46:04.349 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 21:46:04.349 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:46:04.351 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:46:04.351 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:46:15.537 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.19s
+2022-07-12 21:46:15.537 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.46s, File Size: 12.46MB
+2022-07-12 21:46:48.855 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:46:48.855 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:46:51.805 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 21:46:51.806 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:46:51.810 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:46:51.810 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:46:52.157 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 21:46:52.157 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:46:52.159 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:46:52.159 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:47:03.285 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.13s
+2022-07-12 21:47:03.285 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.43s, File Size: 12.38MB
+2022-07-12 21:57:36.422 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:57:36.423 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:57:39.378 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 21:57:39.378 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:57:39.383 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:57:39.383 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:57:39.728 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 21:57:39.728 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:57:39.730 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:57:39.730 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:58:13.023 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:58:13.023 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:58:15.954 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 21:58:15.955 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:58:15.959 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:58:15.959 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:58:16.304 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 21:58:16.304 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:58:16.306 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:58:16.306 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:58:27.406 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.1s
+2022-07-12 21:58:27.406 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.38s, File Size: 13.52MB
+2022-07-12 21:59:29.759 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 21:59:29.759 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 21:59:32.638 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.88s
+2022-07-12 21:59:32.638 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 21:59:32.643 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 21:59:32.643 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 21:59:32.989 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 21:59:32.990 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 21:59:32.991 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 21:59:32.992 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 21:59:44.176 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.18s
+2022-07-12 21:59:44.176 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.42s, File Size: 13.52MB
+2022-07-12 22:00:07.366 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:00:07.366 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:00:10.287 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.92s
+2022-07-12 22:00:10.287 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:00:10.292 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:00:10.292 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:00:10.627 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:00:10.628 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:00:10.630 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:00:10.630 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:00:21.438 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.81s
+2022-07-12 22:00:21.439 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.07s, File Size: 9.51MB
+2022-07-12 22:01:16.558 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:01:16.559 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:01:19.499 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 22:01:19.500 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:01:19.504 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:01:19.504 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:01:19.844 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:01:19.844 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:01:19.846 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:01:19.846 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:01:30.768 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.92s
+2022-07-12 22:01:30.768 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.21s, File Size: 9.51MB
+2022-07-12 22:01:55.997 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:01:55.997 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:01:58.912 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.91s
+2022-07-12 22:01:58.912 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:01:58.917 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:01:58.917 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:01:59.266 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:01:59.266 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:01:59.268 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:01:59.268 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:02:10.508 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.24s
+2022-07-12 22:02:10.508 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.51s, File Size: 9.52MB
+2022-07-12 22:02:23.595 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:02:23.595 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:02:26.521 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 22:02:26.521 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:02:26.525 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:02:26.525 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:02:26.867 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:02:26.867 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:02:26.869 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:02:26.869 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:02:37.603 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.73s
+2022-07-12 22:02:37.603 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.01s, File Size: 9.52MB
+2022-07-12 22:03:37.311 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:03:37.311 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:03:40.211 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.9s
+2022-07-12 22:03:40.212 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:03:40.219 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 22:03:40.219 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:03:40.556 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:03:40.556 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:03:40.558 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:03:40.558 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:03:51.570 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.01s
+2022-07-12 22:03:51.571 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.26s, File Size: 9.58MB
+2022-07-12 22:05:18.401 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:05:18.401 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:05:21.363 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.96s
+2022-07-12 22:05:21.364 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:05:21.368 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:05:21.368 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:05:21.710 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:05:21.710 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:05:21.712 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:05:21.712 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:05:32.755 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.04s
+2022-07-12 22:05:32.756 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.35s, File Size: 9.57MB
+2022-07-12 22:07:00.998 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:07:00.999 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:07:03.970 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.97s
+2022-07-12 22:07:03.970 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:07:03.975 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:07:03.975 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:07:04.326 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:07:04.326 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:07:04.328 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:07:04.328 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:07:15.153 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.83s
+2022-07-12 22:07:15.153 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.15s, File Size: 9.57MB
+2022-07-12 22:07:58.453 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (IMAGES)
+2022-07-12 22:07:58.453 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:08:01.397 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 22:08:01.397 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:08:01.401 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:08:01.402 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:08:01.751 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:08:01.751 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:08:01.753 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:08:01.754 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:08:12.782 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.03s
+2022-07-12 22:08:12.782 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (IMAGES) - Time Taken: 14.33s, File Size: 9.57MB
+
+2022-07-12 22:09:46.821 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT)
+2022-07-12 22:09:46.822 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:09:49.755 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 22:09:49.756 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:09:49.760 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:09:49.760 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:09:50.091 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 22:09:50.091 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:09:50.093 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:09:50.093 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:10:01.097 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.0s
+2022-07-12 22:10:01.097 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT) - Time Taken: 14.28s, File Size: 9.56MB
+
+2022-07-12 22:10:01.100 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 50000 (COMPACT)
+2022-07-12 22:10:01.100 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:10:09.371 | DEBUG    | create_report:create_report:69 - Finished reading data source: 8.27s
+2022-07-12 22:10:09.371 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:10:09.385 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 22:10:09.385 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:10:09.712 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 22:10:09.712 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:10:09.717 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:10:09.717 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:11:13.337 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 63.62s
+2022-07-12 22:11:13.338 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 50000 (COMPACT) - Time Taken: 72.24s, File Size: 49.54MB
+
+2022-07-12 22:11:13.353 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 100000 (COMPACT)
+2022-07-12 22:11:13.354 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:11:29.377 | DEBUG    | create_report:create_report:69 - Finished reading data source: 16.02s
+2022-07-12 22:11:29.377 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:11:29.403 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.03s
+2022-07-12 22:11:29.403 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:11:29.715 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.31s
+2022-07-12 22:11:29.716 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:11:29.724 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.01s
+2022-07-12 22:11:29.725 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:13:39.622 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 129.9s
+2022-07-12 22:13:39.622 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 100000 (COMPACT) - Time Taken: 146.27s, File Size: 98.29MB
+
+2022-07-12 22:13:39.655 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 500000 (COMPACT)
+2022-07-12 22:13:39.655 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:15:00.326 | DEBUG    | create_report:create_report:69 - Finished reading data source: 80.67s
+2022-07-12 22:15:00.327 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:15:00.431 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.1s
+2022-07-12 22:15:00.432 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:15:00.746 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.31s
+2022-07-12 22:15:00.746 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:15:00.785 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.04s
+2022-07-12 22:15:00.785 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:25:43.905 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 643.12s
+2022-07-12 22:25:43.905 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 500000 (COMPACT) - Time Taken: 724.25s, File Size: 487.66MB
+
+2022-07-12 22:31:01.715 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:31:01.715 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:31:04.657 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 22:31:04.657 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:31:04.661 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:31:04.661 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:31:05.020 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.36s
+2022-07-12 22:31:05.021 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:31:05.023 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:31:05.023 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:31:16.030 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.01s
+2022-07-12 22:31:16.030 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.31s, File Size: 10.06MB
+
+2022-07-12 22:32:21.284 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:32:21.284 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:32:24.237 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:32:24.237 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:32:24.241 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:32:24.241 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:32:24.586 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:32:24.586 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:32:24.588 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:32:24.588 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:32:35.747 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.16s
+2022-07-12 22:32:35.747 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.46s, File Size: 8.62MB
+
+2022-07-12 22:33:04.422 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:33:04.422 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:33:07.373 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:33:07.373 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:33:07.381 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 22:33:07.381 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:33:07.723 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:33:07.723 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:33:07.725 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:33:07.725 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:33:18.650 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.92s
+2022-07-12 22:33:18.650 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.23s, File Size: 8.64MB
+
+2022-07-12 22:34:14.978 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:34:14.979 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:34:17.931 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:34:17.932 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:34:17.937 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:34:17.937 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:34:18.283 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:34:18.284 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:34:18.286 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:34:18.286 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:34:29.200 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.91s
+2022-07-12 22:34:29.200 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.22s, File Size: 8.8MB
+
+2022-07-12 22:34:50.457 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:34:50.457 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:34:53.457 | DEBUG    | create_report:create_report:69 - Finished reading data source: 3.0s
+2022-07-12 22:34:53.458 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:34:53.462 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:34:53.462 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:34:53.802 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:34:53.802 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:34:53.804 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:34:53.804 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:35:04.742 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.94s
+2022-07-12 22:35:04.742 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.29s, File Size: 8.58MB
+
+2022-07-12 22:35:22.831 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:35:22.832 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:35:25.784 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:35:25.784 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:35:25.788 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:35:25.789 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:35:26.132 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:35:26.132 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:35:26.134 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:35:26.134 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:35:37.246 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.11s
+2022-07-12 22:35:37.246 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.41s, File Size: 8.61MB
+
+2022-07-12 22:36:49.681 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:36:49.681 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:36:52.662 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.98s
+2022-07-12 22:36:52.662 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:36:52.666 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:36:52.667 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:36:53.014 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:36:53.014 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:36:53.016 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:36:53.016 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:37:04.048 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.03s
+2022-07-12 22:37:04.049 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.37s, File Size: 8.6MB
+
+2022-07-12 22:37:50.098 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:37:50.098 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:37:53.046 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:37:53.047 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:37:53.051 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:37:53.051 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:37:53.386 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 22:37:53.386 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:37:53.388 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:37:53.389 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:38:04.216 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.83s
+2022-07-12 22:38:04.217 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.12s, File Size: 8.62MB
+
+2022-07-12 22:38:31.028 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:38:31.028 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:38:33.976 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:38:33.976 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:38:33.981 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:38:33.981 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:38:34.320 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:38:34.320 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:38:34.322 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:38:34.322 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:38:45.213 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.89s
+2022-07-12 22:38:45.214 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.19s, File Size: 8.62MB
+
+2022-07-12 22:40:22.784 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:40:22.785 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:40:25.771 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.99s
+2022-07-12 22:40:25.772 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:40:25.776 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:40:25.776 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:40:26.118 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:40:26.118 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:40:26.120 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:40:26.121 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:40:37.049 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.93s
+2022-07-12 22:40:37.049 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.26s, File Size: 8.62MB
+
+2022-07-12 22:41:04.248 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:41:04.248 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:41:07.196 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.95s
+2022-07-12 22:41:07.196 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:41:07.201 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:41:07.201 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:41:07.544 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:41:07.544 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:41:07.546 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:41:07.546 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:41:18.366 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 10.82s
+2022-07-12 22:41:18.366 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.12s, File Size: 8.61MB
+
+2022-07-12 22:43:33.273 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:43:33.273 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:43:36.212 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.94s
+2022-07-12 22:43:36.212 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:43:36.216 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:43:36.216 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:43:36.552 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.34s
+2022-07-12 22:43:36.552 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:43:36.554 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:43:36.554 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:43:47.620 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.07s
+2022-07-12 22:43:47.620 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.35s, File Size: 8.61MB
+
+2022-07-12 22:44:24.704 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 10000 (COMPACT 2)
+2022-07-12 22:44:24.704 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:44:27.635 | DEBUG    | create_report:create_report:69 - Finished reading data source: 2.93s
+2022-07-12 22:44:27.635 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:44:27.640 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.0s
+2022-07-12 22:44:27.640 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:44:27.990 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.35s
+2022-07-12 22:44:27.990 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:44:27.992 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.0s
+2022-07-12 22:44:27.992 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:44:39.039 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 11.05s
+2022-07-12 22:44:39.039 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 10000 (COMPACT 2) - Time Taken: 14.33s, File Size: 8.61MB
+
+2022-07-12 22:44:39.042 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 50000 (COMPACT 2)
+2022-07-12 22:44:39.042 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:44:47.300 | DEBUG    | create_report:create_report:69 - Finished reading data source: 8.26s
+2022-07-12 22:44:47.300 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:44:47.315 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.01s
+2022-07-12 22:44:47.315 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:44:47.649 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.33s
+2022-07-12 22:44:47.649 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:44:47.655 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.01s
+2022-07-12 22:44:47.655 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:45:52.061 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 64.41s
+2022-07-12 22:45:52.061 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 50000 (COMPACT 2) - Time Taken: 73.02s, File Size: 42.92MB
+
+2022-07-12 22:45:52.077 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 100000 (COMPACT 2)
+2022-07-12 22:45:52.077 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:46:07.953 | DEBUG    | create_report:create_report:69 - Finished reading data source: 15.88s
+2022-07-12 22:46:07.953 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:46:07.978 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.02s
+2022-07-12 22:46:07.978 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:46:08.287 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.31s
+2022-07-12 22:46:08.288 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:46:08.296 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.01s
+2022-07-12 22:46:08.297 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 22:48:16.581 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 128.28s
+2022-07-12 22:48:16.582 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 100000 (COMPACT 2) - Time Taken: 144.51s, File Size: 84.93MB
+
+2022-07-12 22:48:16.609 | DEBUG    | create_report:create_report:64 - Create Report Started: EXAMPLE 500000 (COMPACT 2)
+2022-07-12 22:48:16.609 | DEBUG    | create_report:create_report:67 - Started reading data source
+2022-07-12 22:49:36.724 | DEBUG    | create_report:create_report:69 - Finished reading data source: 80.11s
+2022-07-12 22:49:36.725 | DEBUG    | create_report:create_report:73 - Started adding fonts
+2022-07-12 22:49:36.828 | DEBUG    | create_report:create_report:76 - Finished adding fonts: 0.1s
+2022-07-12 22:49:36.828 | DEBUG    | create_report:create_report:79 - Started creating title page
+2022-07-12 22:49:37.135 | DEBUG    | create_report:create_report:81 - Finished creating title page: 0.31s
+2022-07-12 22:49:37.135 | DEBUG    | create_report:create_report:84 - Started creating contents pages
+2022-07-12 22:49:37.175 | DEBUG    | create_report:create_report:86 - Finished creating contents pages: 0.04s
+2022-07-12 22:49:37.175 | DEBUG    | create_report:create_report:89 - Started creating report pages
+2022-07-12 23:00:14.058 | DEBUG    | create_report:create_report:92 - Finished creating report pages: 636.88s
+2022-07-12 23:00:14.058 | DEBUG    | create_report:create_report:94 - Create Report Finished: EXAMPLE 500000 (COMPACT 2) - Time Taken: 717.45s, File Size: 421.05MB
