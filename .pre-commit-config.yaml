@@ -29,4 +29,4 @@ repos:
       args:
         - --pattern=develop|main
     - id: requirements-txt-fixer
-    #- id: trailing-whitespace
+    - id: trailing-whitespace
