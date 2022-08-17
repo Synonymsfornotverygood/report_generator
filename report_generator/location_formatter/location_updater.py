@@ -13,10 +13,7 @@ import threading
 import time
 from sqlite3 import Error
 
-# Project Imports
 from location_finder import find_location, find_unknown
-
-# External Imports
 from loguru import logger
 
 

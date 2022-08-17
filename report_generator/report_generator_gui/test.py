@@ -3,13 +3,12 @@
 Test gui application will be reutilised somewhere else or file renamed
 
 """
+import os
 import sys
 
 from PyQt5 import QtCore, QtWidgets
 
-from report_generator.report_generator_cli.application.create_report import (
-    create_report,
-)
+from report_generator.report_generator_cli.create_report import create_report
 
 
 class Ui_MainWindow(object):
@@ -113,7 +112,7 @@ class Ui_MainWindow(object):
         school = self.universitySchoolLineEdit.text()
 
         args = [title, author, university, school]
-        source = "../report_generator/GABiP_DATABASE_V5_06.July.2022-1.xlsx"
+        source = os.path.join()
         # create_report(source, title, author,university, school)
 
         if all(args):

@@ -33,7 +33,11 @@ from loguru import logger
 from report_generator.report_generator_cli.amphibian import AmphibianData
 
 # Create report
-
+BASE_DIR_PATH = (Path(os.path.dirname(os.path.realpath(__file__)))).parent.parent
+DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+FONTS_PATH = os.path.join(DATA_DIR_PATH, "fonts")
+IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
+LOCATIONS_PATH = os.path.join(DATA_DIR_PATH, "location")
 DIR_PATH = (Path(os.path.dirname(os.path.realpath(__file__)))).parent
 
 
@@ -69,10 +73,12 @@ def create_report(
     curtime = time.time()
     logger.debug("Started adding fonts")
     pdf.add_font(
-        "OpenSans", fname=f"{DIR_PATH}/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+        "OpenSans",
+        fname=f"{os.path.join(FONTS_PATH, 'OpenSans-VariableFont_wdth,wght.ttf')}",
     )
     pdf.add_font(
-        "OpenSansBold", fname=f"{DIR_PATH}/fonts/static/OpenSans/OpenSans-Bold.ttf"
+        "OpenSansBold",
+        fname=f"{os.path.join(FONTS_PATH ,'static', 'OpenSans', 'OpenSans-Bold.ttf')}",
     )
     logger.debug(f"Finished adding fonts: {round(time.time() - curtime,2)}s")
 
@@ -98,14 +104,13 @@ def create_report(
     pdf.output(f"{'_'.join(report_name.split(' '))}.pdf")
 
     logger.debug(f"Finished creating report pages: {round(time.time() - curtime, 2)}s")
-
-    fp = os.getcwd() + "/" + "_".join(report_name.split(" ")) + ".pdf"
-    fs = round(os.path.getsize(fp / (1 << 20), 2))
+    fp = os.path.join(BASE_DIR_PATH, "_".join(report_name.split(" "))) + ".pdf"
+    fs = round(os.path.getsize(fp) / (1 << 20), 2)
 
     debug_mess = f"Create Report Finished: {report_name} - "
     debug_mess += f"Time Taken: {round((time.time() - startTime), 2)}s"
     debug_mess += ", File Size: "
-    debug_mess += f"{round(os.path.getsize(fs))}MB"
+    debug_mess += f"{fs}MB"
 
     logger.debug(debug_mess)
 
@@ -148,16 +153,22 @@ def create_title_page(
     pdf.add_page()
     pdf.start_section(name="Title Page", level=0)
     with pdf.local_context(fill_opacity=0.5, stroke_opacity=0.5):
-        pdf.image(f"{DIR_PATH}/images/back.png", x=0, y=0, h=300)
-    pdf.image(f"{DIR_PATH}/images/school_banner.png", x=30, y=250, h=50)
+        pdf.image(f"{ os.path.join(IMAGES_PATH ,'back.png')}", x=0, y=0, h=300)
+        pdf.image(
+            f"{ os.path.join(IMAGES_PATH ,'school_banner.png')}", x=30, y=250, h=50
+        )
     with pdf.local_context(
         text_mode=TextMode.FILL, text_color=(227, 6, 19), line_width=2
     ):
         pdf.add_font(
-            "OpenSans", fname=f"{DIR_PATH}/fonts/OpenSans-VariableFont_wdth,wght.ttf"
+            "OpenSans",
+            fname=f"{ os.path.join(FONTS_PATH ,'OpenSans-VariableFont_wdth,wght.ttf')}",
         )
         pdf.add_font(
-            "OpenSansBold", fname=f"{DIR_PATH}/fonts/static/OpenSans/OpenSans-Bold.ttf"
+            "OpenSansBold",
+            fname=f"""{
+                os.path.join(FONTS_PATH ,'static', 'OpenSans', 'OpenSans-Bold.ttf')
+                }""",
         )
         pdf.set_font("OpenSansBold", "", 56)
 
@@ -377,8 +388,8 @@ def create_report_section_pages(section, pdf):
     amp_list = sorted(amp_list, key=lambda a: a.species)
 
     # Hardcoded example image will have to replace this
-    amp_list[0].image_url_male = f"{DIR_PATH}/images/f1.jpg"
-    amp_list[0].image_url_female = f"{DIR_PATH}/images/f2.jpg"
+    amp_list[0].image_url_male = f"{ os.path.join(IMAGES_PATH ,'f1.jpg')}"
+    amp_list[0].image_url_female = f"{ os.path.join(IMAGES_PATH ,'f2.jpg')}"
 
     report_style = "compact"
 
@@ -612,7 +623,7 @@ def insert_species_images_compact(amp, pdf, image_offset):
             h=30,
         )
         pdf.image(
-            f"{os.getcwd()}/report_generator_cli/images/maletext.png",
+            f"{ os.path.join(IMAGES_PATH ,'maletext.png')}",
             x=120,
             y=(55 + image_offset),
             h=5,
@@ -625,34 +636,34 @@ def insert_species_images_compact(amp, pdf, image_offset):
             h=30,
         )
         pdf.image(
-            f"{os.getcwd()}/report_generator_cli/images/femaleimage.png",
+            f"{ os.path.join(IMAGES_PATH ,'femaleimage.png')}",
             x=120,
             y=(91 + image_offset),
             h=4,
         )
     else:
         pdf.image(
-            f"{DIR_PATH}/images/frogsil1.png",
+            f"{ os.path.join(IMAGES_PATH ,'frogsil1.png')}",
             x=120,
             y=(25 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
-            f"{os.getcwd()}/report_generator_cli/images/maletext.png",
+            f"{ os.path.join(IMAGES_PATH ,'maletext.png')}",
             x=120,
             y=(55 + image_offset),
             h=5,
         )
         pdf.image(
-            f"{DIR_PATH}/images/frogsil2.png",
+            f"{ os.path.join(IMAGES_PATH ,'frogsil2.png')}",
             x=120,
             y=(60 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
-            f"{os.getcwd()}/report_generator_cli/images/femaleimage.png",
+            f"{ os.path.join(IMAGES_PATH ,'femaleimage.png')}",
             x=120,
             y=(91 + image_offset),
             h=4,
@@ -760,7 +771,8 @@ def render_toc(pdf, outline):
 
 
 if __name__ == "__main__":
-
+    print(DIR_PATH)
+    print(os.getcwd())
     args = sys.argv
 
     startTime = time.time()

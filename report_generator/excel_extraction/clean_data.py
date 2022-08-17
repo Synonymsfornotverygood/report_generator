@@ -1,13 +1,17 @@
 """
 Script to clean data from dataset and create new excel sheet with data.
 
-Can be ran from command line:
+Can be ran from command line.
 
-    python3 clean_data.py {input_file} {output_file}
+        python3 clean_data.py {input_file} {output_file}
 
-Or import clean_data function:
 
-    from clean_data import clean_data
+Or import clean_data function.
+
+        from clean_data import clean_data
+
+This module contains the following functions:
+
 
 """
 
@@ -18,16 +22,17 @@ import sys
 import pandas
 
 
-def create_data_frame(path_to_dataset: str):
-    """Create data frame.
+def create_data_frame(path_to_dataset: str) -> object:
+    """## Create data frame.
 
     Loads excel file and returns Pandas DataFrame obj
 
     Args:
-        path_to_data_set(str): file path string
+        path_to_data_set (str): file path string
 
     Returns:
-        data_frame(object): Pandas DataFrame object
+        data_frame (object): Pandas DataFrame object
+
     """
     data_frame = None
     try:
@@ -41,7 +46,7 @@ def create_data_frame(path_to_dataset: str):
 
 
 def clean_data(data_frame: object) -> object:
-    """Clean data.
+    """## Clean data.
 
     Takes data_frame object and cleans data by using 'applymap' to apply a lamda
     function to all DataFrame values.
@@ -53,10 +58,10 @@ def clean_data(data_frame: object) -> object:
     values.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (object): Pandas DataFrame object
 
     Returns:
-        clean_data_frame(object) Pandas DataFrame object
+        clean_data_frame (object) Pandas DataFrame object
 
     """
     clean_data_frame = data_frame.applymap(
@@ -74,16 +79,16 @@ def clean_data(data_frame: object) -> object:
 
 
 def remove_duplicates(data_frame: object) -> object:
-    """Remove duplicates from data.
+    """## Remove duplicates from data.
 
     Takes a data_frame object and looks for duplicate name combination entries
     and removes the row from the dataset and puts it into a separate file.
 
     Args:
-        data_frame(object): Pandas Dataframe object
+        data_frame (object): Pandas Dataframe object
 
     Returns
-        clear_data_frame(object): Cleaned Dataframe for duplicates
+        clear_data_frame (object): Cleaned Dataframe for duplicates
     """
     print("****************************************")
     # d = data_frame["Order", "Genus", "Family", "Species"]
@@ -96,8 +101,8 @@ def remove_duplicates(data_frame: object) -> object:
     print("***************************************")
 
 
-def main(input_file_name, output_file_name) -> None:
-    """Clean data main.
+def main(input_file_name: str, output_file_name: str) -> None:
+    """## Clean data main.
 
     Takes input_file_name and output_file_name.
     Loads data from input_file
@@ -105,8 +110,8 @@ def main(input_file_name, output_file_name) -> None:
     Saves as output_file
 
     Args:
-        input_file_name:
-        output_file_name:
+        input_file_name (str): The input file name string
+        output_file_name (str): The output file name string
 
     """
     # Get filepaths
