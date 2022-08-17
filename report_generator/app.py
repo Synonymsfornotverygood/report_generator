@@ -5,7 +5,7 @@ Have not decided yet.
 """
 
 
-import report_generator.report_generator_gui.application.test
+import report_generator.report_generator_gui.test
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
     Main function for application. Takes no arguments currently.
     """
-    report_generator.report_generator_gui.application.test.main()
+    report_generator.report_generator_gui.test.main()
 
 
 if __name__ == "__main__":
