@@ -1,6 +1,4 @@
-"""
-Python setup file to organise package setup
-"""
+"""Python setup file to organise package setup."""
 
 
 import os
