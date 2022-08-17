@@ -75,7 +75,6 @@ PyYAML==6.0
 pyyaml-env-tag==0.1
 qt5-applications==5.15.2.2.2
 qt5-tools==5.15.2.1.2
--e git+git@gitlab2.eeecs.qub.ac.uk:13067079/report_generator.git@b8cb639bb429f75e4578b9fa2e8ed77312c9acc0#egg=report_generator
 six==1.16.0
 snowballstemmer==2.2.0
 toml==0.10.2
