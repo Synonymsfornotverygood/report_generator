@@ -1,0 +1,20 @@
+site_name: Report Generator
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings:
+      default_handler: python
+
+nav:
+  - Report Generator Docs: index.md
+    - tutorials.md
+    - How-To Guides: how-to-guides.md
+    - Reference:
+      - reference.md
+        - reference/location_formatter.md
+        - Excel Extraction: reference/excel_extraction.md
+        - reference/report_generator.md
+        - reference/report_generator_gui.md
+  - explanation.mds
