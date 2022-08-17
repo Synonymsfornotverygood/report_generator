@@ -4,6 +4,7 @@ Test gui application will be reutilised somewhere else or file renamed
 
 """
 import os
+import pathlib
 import sys
 
 from PyQt5 import QtCore, QtWidgets
@@ -112,7 +113,12 @@ class Ui_MainWindow(object):
         school = self.universitySchoolLineEdit.text()
 
         args = [title, author, university, school]
-        source = os.path.join()
+        source = os.path.join(
+            (pathlib.Path(os.path.dirname(os.path.realpath(__file__)))).parent.parent,
+            "examples",
+            "example_output_excel",
+            "output_1.xlsx",
+        )
         # create_report(source, title, author,university, school)
 
         if all(args):
