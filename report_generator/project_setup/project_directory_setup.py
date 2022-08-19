@@ -1,7 +1,7 @@
 """Module for project directory setup.
 
 Methods:
-    create_project_directories:     Creates the main project directory
+    create_dirs:     Creates the main project directory
                                     and the associated subdirectories for the
                                     project.
 
@@ -11,7 +11,7 @@ Methods:
 import os
 
 
-def create_project_directories(home_dir: str, directory_name: str) -> str:
+def create_dirs(home_dir: str, directory_name: str) -> str:
     """Create the project directories.
 
     Creates directories for project files to be inserted.

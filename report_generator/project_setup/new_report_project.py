@@ -8,11 +8,12 @@ import os
 import pathlib
 import time
 
-import locations_data_setup
-import locations_db_setup
-import locations_json_setup
-import project_directory_setup
 import yaml
+
+import report_generator.project_setup.locations_data_setup
+import report_generator.project_setup.locations_db_setup
+import report_generator.project_setup.locations_json_setup
+import report_generator.project_setup.project_directory_setup
 
 
 def create_new_project() -> None:
@@ -28,19 +29,21 @@ def create_new_project() -> None:
 
     try:
         settings = get_project_settings()
-        dir_path = project_directory_setup.create_project_directories(
+        dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
             HOME_DIR, settings["project_name"]
         )
         settings["dir_path"] = dir_path
         create_project_config_file(settings)
-        locations_data_setup.insert_default_data(dir_path)
+        report_generator.project_setup.locations_data_setup.insert_default_data(
+            dir_path
+        )
         # dir_path = os.path.join(HOME_DIR, "c",)
         time.sleep(5)
-        locations_db_setup.locations_database_setup(
+        report_generator.project_setup.locations_db_setup.locations_database_setup(
             os.path.join(dir_path, "data", "locations")
         )
         time.sleep(5)
-        locations_json_setup.locations_json_setup(
+        report_generator.project_setup.locations_json_setup.locations_json_setup(
             os.path.join(dir_path, "data", "locations")
         )
         print("\nReport Project set up complete!")
@@ -48,6 +51,9 @@ def create_new_project() -> None:
         print(e)
     except FileNotFoundError as e:
         print(e)
+    except KeyboardInterrupt as e:
+        print(e)
+        print("Quitting Application...")
 
 
 def get_project_settings(settings: dict = None) -> None:
