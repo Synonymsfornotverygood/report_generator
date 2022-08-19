@@ -1,7 +1,7 @@
 """Module for project directory setup.
 
 Methods:
-    create_dirs:     Creates the main project directory
+    create_dirs:                    Creates the main project directory
                                     and the associated subdirectories for the
                                     project.
 
