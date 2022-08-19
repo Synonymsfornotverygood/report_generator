@@ -7,31 +7,64 @@ into the database to allow for queries.
 
 import os
 import sqlite3
+import time
 from sqlite3 import Error
 
 import pandas
+import tqdm
 
 
-def create_connection():
+def locations_database_setup(location_path: str) -> None:
+    """Location database setup.
+
+    Sets up database for locations data. Creates database,
+    loads data from csv. Creates tables in database. Inserts
+    csv data into the database.
+
+    Args:
+        location_path (str): Path string to project location.
+
+    """
+    db_path = os.path.join(location_path, "location_database")
+    csv_path = os.path.join(location_path, "csv_files")
+    conn = create_connection(db_path)
+    print("Location Database Created")
+    create_tables(conn)
+    time.sleep(1)
+    print("Tables Created")
+    insert_country_data(conn, csv_path)
+    print("Country Data Populated")
+    time.sleep(1)
+    print("Populating Geocode data:")
+    insert_geocode_data(conn, csv_path)
+    print("Geocode Data Populated")
+    time.sleep(1)
+    print("Location database set up complete.")
+    conn.close()
+
+
+def create_connection(db_path: str) -> sqlite3.Connection:
     """Create connection.
 
     Create a SQLite3 connection object and return it.
+
+    Args:
+        db_path (str): Path string to db directory location.
 
     Returns:
         conn: SQLite3 connection object
 
     """
     conn = None
-
     try:
-        conn = sqlite3.connect("location_database/location.db")
+        conn = sqlite3.connect(os.path.join(db_path, "location.db"))
     except Error as e:
         print(e)
 
     return conn
 
 
-def create_tables(conn: object) -> None:
+def create_tables(conn: sqlite3.Connection) -> None:
     """Create SQL table strings.
 
     Create SQL table strings for the locations database.
@@ -84,24 +117,24 @@ def create_tables(conn: object) -> None:
     try:
         cursor = conn.cursor()
         cursor.execute(country_table)
+        print("Country Table Created")
         cursor.execute(geocode_table)
-        print("Tables Created")
+        print("Geocode Table Created")
     except Error as e:
         print(e)
 
 
-def insert_country_data(conn: object) -> None:
-    """Insert counry data.
+def insert_country_data(conn: sqlite3.Connection, csv_path: str) -> None:
+    """Insert country data.
 
-    Inserts counry data into the country_codes table
+    Inserts country data into the country_codes table
 
     Args:
         conn: SQLite3 connection object
 
     """
     # Open Country data in pandas
-    curr_dir = os.getcwd()
-    file_path = os.path.join(curr_dir, "csv_files", "country-and-continent-codes.csv")
+    file_path = os.path.join(csv_path, "country-and-continent-codes.csv")
     data_frame = pandas.read_csv(file_path)
 
     data_frame.to_sql("country_codes", conn, if_exists="replace", index=False)
@@ -137,7 +170,7 @@ def insert_country_data_row(conn: object, row_values: list) -> None:
         print(e)
 
 
-def insert_geocode_data(conn: object) -> None:
+def insert_geocode_data(conn: object, csv_path: str) -> None:
     """Insert geocode data.
 
     Inserts geocode data into locations database.
@@ -147,23 +180,20 @@ def insert_geocode_data(conn: object) -> None:
 
 
     Args:
-        conn: SQLite3 connection object
+        conn:       SQLite3 connection object
+
+        csv_path:   Path string to csv directory
 
     """
-    curr_dir = os.getcwd()
-    dir_path = os.path.join(curr_dir, "csv_files", "split_csv")
+    dir_path = os.path.join(csv_path, "split_csv")
 
     files = os.listdir(dir_path)
-    file_percentage_single = 100 / len(files)
-
+    progress_bar = tqdm.tqdm(total=len(files), desc="Inserting Data")
     for i in range(len(files)):
         file = files[i]
         file_path = os.path.join(dir_path, file)
         insert_geocode_data_section(conn, file_path)
-        print(f"Geocode section complete: {file}")
-        print(f"Percentage complete: {(i + 1)* file_percentage_single}%")
-
-    print(files)
+        progress_bar.update(1)
 
 
 def insert_geocode_data_section(conn: object, file_path: str) -> None:
@@ -180,19 +210,13 @@ def insert_geocode_data_section(conn: object, file_path: str) -> None:
     """
     data_frame = pandas.read_csv(file_path, sep="\t")
     # data_frame.reset_index(drop=True)
-
     data_frame.to_sql("geocode", conn, if_exists="append", index=False)
 
 
+def main():
+    """Locations db main method."""
+    locations_database_setup()
+
+
 if __name__ == "__main__":
-    conn = create_connection()
-    print("Database Created")
-    create_tables(conn)
-    print("Tables Created")
-    insert_country_data(conn)
-    print("Country Data Populated")
-    print("Populating Geocode data: This may take a long time.")
-    insert_geocode_data(conn)
-    print("Geocode Data Populated")
-    print("Set up process complete")
-    conn.close()
+    main()
