@@ -30,6 +30,7 @@ import pandas
 from fpdf import FPDF, TextMode
 from loguru import logger
 
+import report_generator.read_from_db.query_db
 from report_generator.report_generator_cli.amphibian import AmphibianData
 
 # Create report
@@ -43,6 +44,7 @@ DIR_PATH = (Path(os.path.dirname(os.path.realpath(__file__)))).parent
 
 def create_report(
     data_source: str,
+    options: dict,
     report_name: str,
     report_author: str,
     university_name: str,
@@ -55,6 +57,7 @@ def create_report(
 
     Args:
         data_source         - Data source for report creation
+        options  (dict)     - Dict with options passed from cli or gui
         report_name         - Title of the report and the file name
         report_author       - Author of the report
         university_name     - Name of the university
@@ -66,7 +69,7 @@ def create_report(
 
     curtime = time.time()
     logger.debug("Started reading data source")
-    ds = read_data_source(data_source)
+    ds = read_data_source(data_source, options)
     logger.debug(f"Finished reading data source: {round(time.time() - curtime, 2)}s")
 
     pdf = FPDF()
@@ -681,19 +684,23 @@ def create_report_index():
     """
 
 
-def read_data_source(file_name: str) -> object:
+def read_data_source(file_name: str, options: dict) -> object:
     """Read data source.
 
     Read the data_source file and transform it into a pandas dataframe
 
     Args:
-        file_name - String path to file
+        file_name (str):    String path to file
+        options (dict):     Dictionary with options
 
     Returns:
         df - Pandas dataframe object
 
     """
-    df = pandas.read_excel(file_name)
+    if options["--no-db"] is None:
+        df = pandas.read_excel(file_name)
+    else:
+        df = report_generator.read_from_db.query_db.read_from_db(options)
     df["comb_name"] = df["Order"] + " " + df["Family"]
 
     return df

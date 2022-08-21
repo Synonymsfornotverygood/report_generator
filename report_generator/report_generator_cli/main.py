@@ -22,7 +22,8 @@ import yaml
 import report_generator.report_generator_cli.create_report as create_report
 
 
-def main():
+def main(arguments: dict) -> None:
+
     startTime = time.time()
     config = None
     with open("config.yaml", "r") as file:
@@ -36,7 +37,12 @@ def main():
 
     print(f"Creating Report: {report_name}.pdf")
     create_report.create_report(
-        data_source, report_name, report_author, university_name, university_school
+        data_source,
+        arguments,
+        report_name,
+        report_author,
+        university_name,
+        university_school,
     )
     print(f"Report Complete: {report_name}.pdf")
 

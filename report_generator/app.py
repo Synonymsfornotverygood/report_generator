@@ -3,21 +3,43 @@
 A tool to create pdf reports from excel (.xlsx) spreadsheet.
 
 Usage:
+    report-generator
     report-generator --gui
     report-generator --new
-    report-generator --cli
-    report-generator --no-setup
-    report_generator
+    report-generator --no-db
+    report-generator --cli [--order_name=<ordname>]
+                    [--family_name=<famname>]
+                    [--genus_name=<genname>]
+                    [--species_name_latin=specname]
+                    [--size_max=<sm>]...
+                    [--size_max_male=<smm>]...
+                    [--size_max_female=<smf>]...
+                    [--clutch_min=<cmn>]...
+                    [--clutch_max=<cmx]...
+                    [--clutch_avg=<ca>]...
+                    [--parity_mode_desc=<pmd>]...
+                    [--egg_diameter=<ed>]...
+                    [--longevity_min=<lmn>]
+                    [--longevity_max=<lmx>]
+                    [--nesting_site_desc=<nsd>]
+                    [--micro_habitat_name=<mhn>]
+                    [--activity_kind=<ak>]
+                    [--continent_name=<contname>]
+                    [--country_name=<cname>]
+                    [--region_name=<rname>]
+                    [--iucn_status=<iucn>]
+                    [--pop_trend_status=<pt>]
+
 
 Options:
-    -h --help   Show this screen.
-    --version   Show version.
-    --gui       Use GUI
-    --cli       Use CLI
-    --new       Create new report project
-    --no-setup  Do not check for config settings
-                instead supply string values to create project
-                works directly from Excel(.xlsx) file.
+    -h --help               Show this screen.
+    --version               Show version.
+    --gui                   Use GUI
+    --cli                   Use CLI
+    --new                   Create new report project
+    --no-db                 Do not check for db settings
+                            instead supply string values to create project
+                            works directly from Excel(.xlsx) file.
 """
 
 
@@ -34,13 +56,13 @@ def main():
     """
 
     arguments = docopt(__doc__, version="Report Generator 1.0")
-
+    print(arguments)
     # check if gui option selected
     if arguments["--gui"] is True:
         report_generator.report_generator_gui.test.main()
     if arguments["--cli"] is True:
-        print("cli")
-        report_generator.report_generator_cli.main.main()
+        print("Report Generator CLI")
+        report_generator.report_generator_cli.main.main(arguments)
     else:
         print("Invalid option chosen! For help type: 'report-generator --help'")
 

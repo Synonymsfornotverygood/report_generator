@@ -6,6 +6,7 @@ Will have more info soon
 
 import os
 import pathlib
+import time
 
 import yaml
 
@@ -25,31 +26,32 @@ def create_new_project() -> None:
         Example of use.
 
     """
-    pathlib.Path.home()
+    HOME_DIR = pathlib.Path.home()
 
     try:
-        # settings = get_project_settings()
-        # dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
-        #    HOME_DIR, settings["project_name"]
-        # )
-        # settings["dir_path"] = dir_path
-        # report_generator.project_setup.locations_data_setup.insert_default_data(
-        #    dir_path
-        # )
-        ## dir_path = os.path.join(HOME_DIR, "c",)
-        # time.sleep(5)
-        # report_generator.project_setup.locations_db_setup.locations_database_setup(
-        #    os.path.join(dir_path, "data", "locations")
-        # )
-        # time.sleep(5)
-        # report_generator.project_setup.locations_json_setup.locations_json_setup(
-        #    os.path.join(dir_path, "data", "locations")
-        # )
-        dir_path = "/home/cush/a"
-        settings = {
-            "data_set": "/home/cush/a/data/excel_src/example_dataset_2_10000.xlsx"
-        }
-        database_path = os.path.join(dir_path, "data", "species.db")
+        settings = get_project_settings()
+        dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
+            HOME_DIR, settings["project_name"]
+        )
+        settings["dir_path"] = dir_path
+        report_generator.project_setup.locations_data_setup.insert_default_data(
+            dir_path
+        )
+        # dir_path = os.path.join(HOME_DIR, "c",)
+        time.sleep(5)
+        report_generator.project_setup.locations_db_setup.locations_database_setup(
+            os.path.join(dir_path, "data", "locations")
+        )
+        time.sleep(5)
+        report_generator.project_setup.locations_json_setup.locations_json_setup(
+            os.path.join(dir_path, "data", "locations")
+        )
+        # dir_path = "/home/cush/a"
+        # settings = {
+        #     "data_set": "/home/cush/a/data/excel_src/example_dataset_2_10000.xlsx"
+        # }
+        database_path = os.path.join(dir_path, "data", "database", "species.db")
+
         report_generator.excel_extraction.excel_to_sql.export_to_database(
             settings["data_set"], database_path
         )
