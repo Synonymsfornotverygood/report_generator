@@ -8,8 +8,9 @@ into continents, countries, regions and unknown locations.
 import re
 import time
 
-from location import Location
 from loguru import logger
+
+from report_generator.location_formatter.location import Location
 
 
 def find_location(location_str: str, locations_data: object) -> object:

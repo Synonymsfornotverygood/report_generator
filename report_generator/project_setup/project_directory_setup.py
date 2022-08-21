@@ -38,6 +38,7 @@ def create_dirs(home_dir: str, directory_name: str) -> str:
     os.makedirs(os.path.join(dir_path, "data"))
     os.makedirs(os.path.join(dir_path, "data", "database"))
     os.makedirs(os.path.join(dir_path, "data", "excel_src"))
+    os.makedirs(os.path.join(dir_path, "data", "duplicates"))
     # os.makedirs(os.path.join(dir_path, "data", "locations"))
     os.makedirs(os.path.join(dir_path, "report"))
 

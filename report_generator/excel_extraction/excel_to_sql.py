@@ -17,9 +17,11 @@ import sys
 from sqlite3 import Error
 
 import pandas
-import tables
-from clean_data import clean_data
-from data_structure import structure_data
+
+import report_generator.excel_extraction.tables as tables
+from report_generator.excel_extraction.clean_data import clean_data
+from report_generator.excel_extraction.data_structure import structure_data
+from report_generator.location_formatter.location_updater import update_location
 
 
 def export_to_database(
@@ -46,6 +48,9 @@ def export_to_database(
         data_frame = create_data_frame(path_to_excel)
         clean_data_frame = clean_data(data_frame)
 
+        # Update the locations
+        updated_data_frame = update_location(clean_data_frame)
+
         # with open("min.txt", "w") as file:
         #     file.write("\n".join(clean_data_frame["ElevationMin"].unique().tolist()))
 
@@ -56,7 +61,8 @@ def export_to_database(
         create_tables(conn)
 
         # Structures data from dataframe to match tables layout
-        structured_data = structure_data(clean_data_frame)
+        structured_data = structure_data(updated_data_frame)
+
         # Populate tables
         populate_tables(structured_data, conn)
 

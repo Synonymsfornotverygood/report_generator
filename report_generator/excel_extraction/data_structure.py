@@ -302,8 +302,14 @@ def structure_geo_location(data_frame: object, species: object) -> object:
     geo_sp["Ind"] = geo_sp["country"].map(
         lambda x: str(country_df.index[country_df["country_name"] == x].tolist()[0] + 1)
     )
-    geo_sp["countreglatlon"] = "+".join(
-        [geo_sp["region"], geo_sp["latitude"], geo_sp["longitude"], geo_sp["Ind"]]
+    geo_sp["countreglatlon"] = (
+        geo_sp["region"]
+        + "+"
+        + geo_sp["latitude"]
+        + "+"
+        + geo_sp["longitude"]
+        + "+"
+        + geo_sp["Ind"]
     )
     uni = [x.split("+") for x in geo_sp["countreglatlon"].dropna().unique()]
 
@@ -555,13 +561,10 @@ def structure_micro_habitat_species(
         lambda x: hab(x)
     )
 
-    print(micro_habitat_species["habitat_index"].value_counts())
-
-    micro_habitat_species["spec_ind_hab_ind"] = "+".join(
-        [
-            micro_habitat_species["species_index"],
-            micro_habitat_species["habitat_index"].dropna(),
-        ]
+    micro_habitat_species["spec_ind_hab_ind"] = (
+        micro_habitat_species["species_index"]
+        + "+"
+        + micro_habitat_species["habitat_index"].dropna()
     )
 
     uni = [
@@ -613,11 +616,10 @@ def structure_nesting_site_species(
         else x
     )
 
-    nesting_site_species["spec_ind_hab_ind"] = "+".join(
-        [
-            nesting_site_species["species_index"],
-            nesting_site_species["nesting_site_index"].dropna(),
-        ]
+    nesting_site_species["spec_ind_hab_ind"] = (
+        nesting_site_species["species_index"]
+        + "+"
+        + nesting_site_species["nesting_site_index"].dropna()
     )
 
     uni = [
@@ -666,8 +668,10 @@ def structure_activity_species(
         else x
     )
 
-    activity_species["spec_ind_hab_ind"] = "+".join(
-        [activity_species["species_index"], activity_species["activity_index"].dropna()]
+    activity_species["spec_ind_hab_ind"] = (
+        activity_species["species_index"]
+        + "+"
+        + activity_species["activity_index"].dropna()
     )
 
     uni = [x.split("+") for x in activity_species["spec_ind_hab_ind"].dropna().unique()]

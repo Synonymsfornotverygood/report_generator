@@ -13,8 +13,13 @@ import threading
 import time
 from sqlite3 import Error
 
-from location_finder import find_location, find_unknown
 from loguru import logger
+
+import report_generator.config
+from report_generator.location_formatter.location_finder import (
+    find_location,
+    find_unknown,
+)
 
 
 def update_location(data_frame: object) -> object:
@@ -61,10 +66,8 @@ def update_location_entries(data_frame: object, LOCATIONS_DATA: object) -> objec
         data_frame(object): Pandas DataFrame object
 
     """
-    locs = []
-    data_frame["GeographicRegion"].apply(lambda x: locs.append(x))
-
-    LOCATIONS_DATA = update_locations_unknowns(locs, LOCATIONS_DATA)
+    locations = data_frame["GeographicRegion"].values.tolist()
+    LOCATIONS_DATA = update_locations_unknowns(locations, LOCATIONS_DATA)
 
     data_frame["FormattedGeographicRegion"] = data_frame["GeographicRegion"].apply(
         lambda x: update_location_entry(x, LOCATIONS_DATA)
@@ -136,8 +139,10 @@ def load_locations_data() -> object:
     # load location object
     logger.info("Read location json Start")
     process_start_time = time.time()
-
-    file_path = os.path.join(os.getcwd(), "location.json")
+    config = report_generator.config.load_config()
+    file_path = os.path.join(
+        config["dir_path"], "data", "locations", "location_json", "location.json"
+    )
     locations_data = load_location_json(file_path)
 
     process_time_taken = time.time() - process_start_time
@@ -291,8 +296,11 @@ def save_locations_data(locations_data: object) -> None:
 
     """
     dumped = json.dumps(locations_data)
-
-    with open("location.json", "w") as file:
+    config = report_generator.config.load_config()
+    file_path = os.path.join(
+        config["dir_path"], "data", "locations", "location_json", "location.json"
+    )
+    with open(file_path, "w") as file:
         file.write(dumped)
 
 

@@ -21,6 +21,8 @@ import sys
 
 import pandas
 
+import report_generator.config
+
 
 def create_data_frame(path_to_dataset: str) -> object:
     """## Create data frame.
@@ -73,7 +75,7 @@ def clean_data(data_frame: object) -> object:
         else x
     )
     clean_data_frame = clean_data_frame.applymap(lambda x: None if x == "" else x)
-    remove_duplicates(data_frame)
+    clean_data_frame = remove_duplicates(clean_data_frame)
 
     return clean_data_frame
 
@@ -91,14 +93,31 @@ def remove_duplicates(data_frame: object) -> object:
         clear_data_frame (object): Cleaned Dataframe for duplicates
     """
     print("****************************************")
-    # d = data_frame["Order", "Genus", "Family", "Species"]
-    # print(d.head())
+    print(f"Searching Duplicates: Current Row Count={len(data_frame.index)}")
     dups = data_frame[
-        data_frame[["Order", "Family", "Genus", "Species"]].duplicated(keep="first")
-        is True
+        data_frame.duplicated(["Order", "Family", "Genus", "Species"], keep=False)
+    ]
+    print(len(data_frame.index))
+    print(dups)
+    settings = report_generator.config.load_config()
+    dir_path = settings["dir_path"]
+    duplicate_path = os.path.join(dir_path, "data", "duplicates", "duplicates.xlsx")
+    print(f"Saving duplicates to duplicates file: {duplicate_path}")
+    print()
+    dups.to_excel(duplicate_path)
+
+    print("Removing Duplicates")
+
+    dups = data_frame[
+        data_frame.duplicated(["Order", "Family", "Genus", "Species"], keep="first")
     ]
     print(dups)
+    data_frame = data_frame.drop_duplicates(
+        subset=["Order", "Family", "Genus", "Species"], keep="first"
+    )
+    print(f"Removed Duplicates: Current Row Count={len(data_frame.index)}")
     print("***************************************")
+    return data_frame
 
 
 def main(input_file_name: str, output_file_name: str) -> None:

@@ -15,20 +15,24 @@ Application to create report based on parameters passed into it.
     - Abstract source reading into a different class - excel extraction for one
 
 """
-import os
 import time
 
-import create_report
+import yaml
 
-if __name__ == "__main__":
+import report_generator.report_generator_cli.create_report as create_report
+
+
+def main():
     startTime = time.time()
-    data_source = os.getcwd() + "/" + "GABiP DATABASE_V5_06.July.2022-1.xlsx"
-    # data_source = os.getcwd() + "/" +  "test.xlsx"
-    report_name = "Updated Data-Set Test".upper()
-    # report_name = "Big Data"
-    report_author = "Daniel Pincheira-Donoso".upper()
-    university_name = "Queen's University Belfast".upper()
-    university_school = "School Of Biological Sciences".upper()
+    config = None
+    with open("config.yaml", "r") as file:
+        config = yaml.load(file, Loader=yaml.loader.SafeLoader)
+
+    data_source = config["data_set"]
+    report_name = config["report_name"].upper()
+    report_author = config["author_name"].upper()
+    university_name = config["uni_name"].upper()
+    university_school = config["school_name"].upper()
 
     print(f"Creating Report: {report_name}.pdf")
     create_report.create_report(
@@ -38,6 +42,10 @@ if __name__ == "__main__":
 
     executionTime = time.time() - startTime
     print("Report creation time in seconds: " + str(executionTime))
+
+
+if __name__ == "__main__":
+    main()
 
 
 # parse params

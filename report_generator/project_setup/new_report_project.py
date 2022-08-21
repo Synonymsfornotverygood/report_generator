@@ -6,10 +6,10 @@ Will have more info soon
 
 import os
 import pathlib
-import time
 
 import yaml
 
+import report_generator.excel_extraction.excel_to_sql
 import report_generator.project_setup.locations_data_setup
 import report_generator.project_setup.locations_db_setup
 import report_generator.project_setup.locations_json_setup
@@ -25,27 +25,36 @@ def create_new_project() -> None:
         Example of use.
 
     """
-    HOME_DIR = pathlib.Path.home()
+    pathlib.Path.home()
 
     try:
-        settings = get_project_settings()
-        dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
-            HOME_DIR, settings["project_name"]
+        # settings = get_project_settings()
+        # dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
+        #    HOME_DIR, settings["project_name"]
+        # )
+        # settings["dir_path"] = dir_path
+        # report_generator.project_setup.locations_data_setup.insert_default_data(
+        #    dir_path
+        # )
+        ## dir_path = os.path.join(HOME_DIR, "c",)
+        # time.sleep(5)
+        # report_generator.project_setup.locations_db_setup.locations_database_setup(
+        #    os.path.join(dir_path, "data", "locations")
+        # )
+        # time.sleep(5)
+        # report_generator.project_setup.locations_json_setup.locations_json_setup(
+        #    os.path.join(dir_path, "data", "locations")
+        # )
+        dir_path = "/home/cush/a"
+        settings = {
+            "data_set": "/home/cush/a/data/excel_src/example_dataset_2_10000.xlsx"
+        }
+        database_path = os.path.join(dir_path, "data", "species.db")
+        report_generator.excel_extraction.excel_to_sql.export_to_database(
+            settings["data_set"], database_path
         )
-        settings["dir_path"] = dir_path
-        create_project_config_file(settings)
-        report_generator.project_setup.locations_data_setup.insert_default_data(
-            dir_path
-        )
-        # dir_path = os.path.join(HOME_DIR, "c",)
-        time.sleep(5)
-        report_generator.project_setup.locations_db_setup.locations_database_setup(
-            os.path.join(dir_path, "data", "locations")
-        )
-        time.sleep(5)
-        report_generator.project_setup.locations_json_setup.locations_json_setup(
-            os.path.join(dir_path, "data", "locations")
-        )
+
+        # create_project_config_file(settings)
         print("\nReport Project set up complete!")
     except FileExistsError as e:
         print(e)
@@ -67,7 +76,7 @@ def get_project_settings(settings: dict = None) -> None:
 
     Args:
         Settings (dict): Settings dict that is provided if user doing set up
-                         from the GUI applicaiton rather than the CLI.
+                         from the GUI application rather than the CLI.
 
     """
     if settings is None:
