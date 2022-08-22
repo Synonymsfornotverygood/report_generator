@@ -6,86 +6,458 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>447</width>
-    <height>230</height>
+    <width>612</width>
+    <height>717</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Report Generator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="formLayoutWidget">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>421</width>
-      <height>141</height>
+      <x>20</x>
+      <y>0</y>
+      <width>551</width>
+      <height>661</height>
      </rect>
     </property>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="reportNameLabel">
-       <property name="text">
-        <string>Report Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="reportNameLineEdit"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="reportAuthorLabel">
-       <property name="text">
-        <string>Report Author</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="reportAuthorLineEdit"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="universityNameLabel">
-       <property name="text">
-        <string>University Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="universityNameLineEdit"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="universitySchoolLabel">
-       <property name="text">
-        <string>University School</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="universitySchoolLineEdit"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>267</x>
-      <y>150</y>
-      <width>161</width>
-      <height>23</height>
-     </rect>
+    <property name="currentIndex">
+     <number>1</number>
     </property>
-    <property name="text">
-     <string>Create Report</string>
-    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Report Title</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>190</y>
+        <width>541</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="reportNameLabel">
+         <property name="text">
+          <string>Report Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="reportNameLineEdit"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="reportAuthorLabel">
+         <property name="text">
+          <string>Report Author</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="reportAuthorLineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="universityNameLabel">
+         <property name="text">
+          <string>University Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="universityNameLineEdit"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="universitySchoolLineEdit"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="universitySchoolLabel">
+         <property name="text">
+          <string>University School</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>340</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Create Report</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Filter Report</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>541</width>
+        <height>133</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="orderLineEdit"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="familyLabel">
+         <property name="text">
+          <string>Family</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="familyLineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="genusLabel">
+         <property name="text">
+          <string>Genus</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="genusLineEdit"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="speciesLabel">
+         <property name="text">
+          <string>Species</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="speciesLineEdit"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="orderLabel">
+         <property name="text">
+          <string>Order                     </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>140</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="clutchRangeMaxLabel">
+         <property name="text">
+          <string>Clutch                    </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchRangeMaxLineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>216</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchRangeMinLineEdit">
+         <property name="maxLength">
+          <number>12767</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel">
+         <property name="text">
+          <string>Clutch Min             </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchMinMaxLineEdit"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchMinMinLineEdit"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>600</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Create Report</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_2">
+         <property name="text">
+          <string>Clutch Max            </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchMaxMinLineEdit"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="clutchMaxMaxLineEdit_2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>230</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_3">
+         <property name="text">
+          <string>SVLMx                   </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLMxMinLineEdit"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLMxMaxLineEdit_2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>260</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_4">
+         <property name="text">
+          <string>SVLMMx                </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLMMxMinLineEdit"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLMMxMaxLineEdit"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>290</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_5">
+         <property name="text">
+          <string>SVLFMx                 </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLFMxMin"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="SVLFMxMax"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>320</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_6">
+         <property name="text">
+          <string>Egg Diameter        </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="EggDiameterMin"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="EggDiameterMax"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>350</y>
+        <width>541</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QLabel" name="clutchMinMaxLabel_7">
+         <property name="text">
+          <string>Longevity              </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="LongevityMin"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="LongevityMax"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>380</y>
+        <width>541</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="NestingSite"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="familyLabel_2">
+         <property name="text">
+          <string>Micro Habitat</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="MicroHabitat"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="genusLabel_2">
+         <property name="text">
+          <string>Activity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="Activity"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="speciesLabel_2">
+         <property name="text">
+          <string>Geographic Region</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="GeographicRegion"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="orderLabel_2">
+         <property name="text">
+          <string>Nesting Site</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="iUCNLabel">
+         <property name="text">
+          <string>IUCN</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="IUCN"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="popTrendLabel">
+         <property name="text">
+          <string>Pop Trend</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="PopTrend"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>447</width>
+     <width>612</width>
      <height>20</height>
     </rect>
    </property>
@@ -96,7 +468,6 @@
    </widget>
    <addaction name="menuReport_Generator"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

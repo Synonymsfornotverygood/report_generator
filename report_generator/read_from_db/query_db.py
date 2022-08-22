@@ -25,6 +25,10 @@ def get_query_options(options: dict) -> dict:
     query_options = {}
     for key, value in options.items():
         key = key.strip("--")
+        if value == "":
+            value = None
+        if value == ["", ""]:
+            value = []
         if (
             (key not in ["new", "cli", "gui", "no-setup", "help", "version", "no-db"])
             and (value is not None)
@@ -107,13 +111,15 @@ def build_query(params: dict):
     if len(where_sql) > 0:
         sql += "WHERE "
     sql += where_sql
-    sql += f"""
+    sql += """
     GROUP BY
-    species_comp_id
-    {having_str}
+    species_comp_id"""
+    sql += "\n" + having_str
+    sql += """
     ORDER BY
     species_comp_id ASC
     """
+    print(sql)
     return sql
 
 

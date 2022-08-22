@@ -7,26 +7,25 @@ Usage:
     report-generator --gui
     report-generator --new
     report-generator --no-db
-    report-generator --cli [--order_name=<ordname>]
-                    [--family_name=<famname>]
-                    [--genus_name=<genname>]
-                    [--species_name_latin=specname]
-                    [--size_max=<sm>]...
-                    [--size_max_male=<smm>]...
-                    [--size_max_female=<smf>]...
-                    [--clutch_min=<cmn>]...
-                    [--clutch_max=<cmx]...
-                    [--clutch_avg=<ca>]...
-                    [--parity_mode_desc=<pmd>]...
-                    [--egg_diameter=<ed>]...
-                    [--longevity_min=<lmn>]
-                    [--longevity_max=<lmx>]
-                    [--nesting_site_desc=<nsd>]
-                    [--micro_habitat_name=<mhn>]
-                    [--activity_kind=<ak>]
+    report-generator --cli [--order_taxon_name=<ordname>]
+                    [--Family=<famname>]
+                    [--Genus=<genname>]
+                    [--Species=specname]
+                    [--SVLMx=<sm>]...
+                    [--SVLMMx=<smm>]...
+                    [--SVLFMx=<smf>]...
+                    [--ClutchMin=<cmn>]...
+                    [--ClutchMax=<cmx]...
+                    [--Clutch=<ca>]...
+                    [--ParityMode=<pmd>]...
+                    [--EggDiameter=<ed>]...
+                    [--Longevity=<lmn>]...
+                    [--NestingSite=<nsd>]
+                    [--MicroHabitat=<mhn>]
+                    [--Activity=<ak>]
                     [--GeographicRegion=<gr>]
-                    [--iucn_status=<iucn>]
-                    [--pop_trend_status=<pt>]
+                    [--IUCN=<iucn>]
+                    [--PopTrend=<pt>]
 
 
 Options:
@@ -44,7 +43,7 @@ Options:
 from docopt import docopt
 
 import report_generator.report_generator_cli.main
-import report_generator.report_generator_gui.test
+import report_generator.report_generator_gui.main
 
 
 def main():
@@ -54,10 +53,9 @@ def main():
     """
 
     arguments = docopt(__doc__, version="Report Generator 1.0")
-    print(arguments)
     # check if gui option selected
     if arguments["--gui"] is True:
-        report_generator.report_generator_gui.test.main()
+        report_generator.report_generator_gui.main.main()
     if arguments["--cli"] is True:
         print("Report Generator CLI")
         report_generator.report_generator_cli.main.main(arguments)

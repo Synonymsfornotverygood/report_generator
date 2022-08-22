@@ -31,6 +31,7 @@ from fpdf import FPDF, TextMode
 from loguru import logger
 
 import report_generator.read_from_db.query_db
+from report_generator.config import load_config
 from report_generator.report_generator_cli.amphibian import AmphibianData
 
 # Create report
@@ -64,6 +65,7 @@ def create_report(
         university_school   - Name of the university school
 
     """
+    config = load_config()
     startTime = time.time()
     logger.debug(f"Create Report Started: {report_name}")
 
@@ -104,10 +106,12 @@ def create_report(
     logger.debug("Started creating report pages")
 
     pdf = create_report_order_sections(ds, pdf)
-    pdf.output(f"{'_'.join(report_name.split(' '))}.pdf")
+    pdf_title = f"{'_'.join(report_name.split(' '))}.pdf"
+    pdf_ouput_path = os.path.join(config["dir_path"], "report", pdf_title)
+    pdf.output(pdf_ouput_path)
 
     logger.debug(f"Finished creating report pages: {round(time.time() - curtime, 2)}s")
-    fp = os.path.join(BASE_DIR_PATH, "_".join(report_name.split(" "))) + ".pdf"
+    fp = pdf_ouput_path
     fs = round(os.path.getsize(fp) / (1 << 20), 2)
 
     debug_mess = f"Create Report Finished: {report_name} - "
@@ -697,7 +701,9 @@ def read_data_source(file_name: str, options: dict) -> object:
         df - Pandas dataframe object
 
     """
-    if options["--no-db"] is None:
+    if len(options.keys()) == 0:
+        df = report_generator.read_from_db.query_db.read_from_db(options)
+    elif options["--no-db"] is None:
         df = pandas.read_excel(file_name)
     else:
         df = report_generator.read_from_db.query_db.read_from_db(options)
