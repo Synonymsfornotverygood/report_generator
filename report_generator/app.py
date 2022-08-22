@@ -24,9 +24,7 @@ Usage:
                     [--nesting_site_desc=<nsd>]
                     [--micro_habitat_name=<mhn>]
                     [--activity_kind=<ak>]
-                    [--continent_name=<contname>]
-                    [--country_name=<cname>]
-                    [--region_name=<rname>]
+                    [--GeographicRegion=<gr>]
                     [--iucn_status=<iucn>]
                     [--pop_trend_status=<pt>]
 

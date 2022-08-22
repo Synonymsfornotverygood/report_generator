@@ -37,11 +37,12 @@ def get_query_options(options: dict) -> dict:
 def build_query(params: dict):
 
     where_list = []
-    print(params)
+    having_str = ""
     for key, value in params.items():
-        print(key)
-        print(value)
-        where_list.append(build_where_statements(key, value))
+        if key == "GeographicRegion":
+            having_str = f"HAVING {key} LIKE '%{value}%'"
+        else:
+            where_list.append(build_where_statements(key, value))
 
     sql = f"""
     WITH species_comp as (
@@ -100,31 +101,38 @@ def build_query(params: dict):
     LEFT JOIN nesting_site ON nesting_site_species.nesting_site_id = nesting_site.nesting_site_id
     LEFT JOIN parity_mode ON species_comp.parity_mode_id = parity_mode.parity_mode_id
     LEFT JOIN pop_trend ON species_comp.pop_trend_id = pop_trend.pop_trend_id
+    """
+    print(where_list)
+    where_sql = "AND ".join(where_list)
+    if len(where_sql) > 0:
+        sql += "WHERE "
+    sql += where_sql
+    sql += f"""
     GROUP BY
     species_comp_id
+    {having_str}
     ORDER BY
     species_comp_id ASC
-
     """
-
-    where_sql = "AND ".join(where_list)
-
-    sql += where_sql
-
     return sql
 
 
 def build_where_statements(key: str, values):
     where = ""
-    if len(values) == 2 and all(x.isdigit() for x in values):
-        where = f"{key} BETWEEN {values[0]} AND {values[1]}"
-    elif len(values) > 1:
-        for val in values:
+    if isinstance(values, list):
+        if len(values) == 2 and all(x.isdigit() for x in values):
+            where = f"{key} BETWEEN {values[0]} AND {values[1]}"
+        elif len(values) > 1:
             ors = []
-            ors.append(f"{key} == {val}")
-        where = "OR ".join(ors)
+            for val in values:
+                ors.append(f"{key} = {val}")
+            where = "OR ".join(ors)
+        else:
+            where = f"{key} like '{values[0]}'"
+    elif values.isdigit():
+        where = f"{key} = {values}"
     else:
-        where = f"{key} == {values[0]}"
+        where = f"{key} like '%{values}%'"
     return where
 
 
