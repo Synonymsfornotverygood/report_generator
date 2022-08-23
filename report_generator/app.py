@@ -60,7 +60,7 @@ def main():
         print("Report Generator CLI")
         report_generator.report_generator_cli.main.main(arguments)
     else:
-        print("Invalid option chosen! For help type: 'report-generator --help'")
+        report_generator.report_generator_gui.main.main()
 
 
 if __name__ == "__main__":

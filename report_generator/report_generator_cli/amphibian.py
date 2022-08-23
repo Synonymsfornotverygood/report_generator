@@ -39,7 +39,7 @@ class AmphibianData:
         self.egg_diameter = amp_info[14]
         self.activity = amp_info[15]
         self.micro_habitat = amp_info[16]
-        self.geographic_region = amp_info[17]
+        self.geographic_region = self.get_geographic_regions(amp_info)
         self.IUCN = amp_info[18]
         self.pop_trend = amp_info[19]
         self.range_size = amp_info[20]
@@ -48,6 +48,18 @@ class AmphibianData:
         self.image_url_female = ""
 
         # fecundity, egg hatching, age maturity, metamorphosis are missing
+
+    def get_geographic_regions(self, amp_info: list) -> str:
+        geo = amp_info[17]
+        geo = geo.split(",")
+        geo_n = []
+        for g in geo:
+            a = g.replace(" Nocountry", "")
+            a = a.replace("Noregion", "")
+            geo_n.append(a)
+        geo_set = {x for x in geo_n}
+        geo_l = [*geo_set]
+        return "/".join(geo_l)
 
     def get_SVLMx(self, amp_info: list) -> str:
         """Get SVLMx."""

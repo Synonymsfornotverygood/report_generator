@@ -127,8 +127,10 @@ def build_where_statements(key: str, values):
     where = ""
     if isinstance(values, list):
         if len(values) == 2 and all(x.isdigit() for x in values):
+            print(values)
+            # values = [int(x) for x in values].sort()
             where = f"{key} BETWEEN {values[0]} AND {values[1]}"
-        elif len(values) > 1:
+        elif len(values) > 2:
             ors = []
             for val in values:
                 ors.append(f"{key} = {val}")

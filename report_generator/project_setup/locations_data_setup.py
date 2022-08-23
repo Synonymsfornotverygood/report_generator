@@ -54,6 +54,8 @@ def location_data_setup(new_locations_path: str) -> None:
     download_location_data_file(new_locations_path)
 
     locations_data_file_path = os.path.join(new_locations_path, "all_countries.zip")
+    # locations_data_file_path = os.path.join("/", "home", "cush","a","data", "locations", "csv_files", "all_countries.zip")
+
     extract_location_data_file(new_locations_path, locations_data_file_path)
     split_location_data_file(new_locations_path)
     location_data_cleanup(new_locations_path, locations_data_file_path)
