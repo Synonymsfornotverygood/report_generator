@@ -28,7 +28,7 @@ setup(
     entry_points={
         "console_scripts": [
             "report-generator = report_generator.app:main",
-            "create-report-generator = report_generator.new_report:main",
+            "create-report-generator = report_generator.project_setup.new_report_project:main",
         ]
     },
 )

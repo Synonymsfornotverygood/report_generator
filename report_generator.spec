@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['report_generator/app.py'],
+    ['report_generator'],
     pathex=[],
     binaries=[],
     datas=[],
