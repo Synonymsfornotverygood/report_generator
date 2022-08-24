@@ -29,11 +29,8 @@ def get_query_options(options: dict) -> dict:
             value = None
         if value == ["", ""]:
             value = []
-        if (
-            (key not in ["new", "cli", "gui", "no-setup", "help", "version", "no-db"])
-            and (value is not None)
-            and (len(value) != 0)
-        ):
+        s_args = ["new", "cli", "gui", "no-setup", "help", "version", "no-db"]
+        if (key not in s_args) and (value is not None) and (len(value) != 0):
             query_options[key] = value
     return query_options
 

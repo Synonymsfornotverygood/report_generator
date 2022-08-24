@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>612</width>
+    <width>566</width>
     <height>717</height>
    </rect>
   </property>
@@ -17,26 +17,26 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>0</y>
       <width>551</width>
       <height>661</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Report Title</string>
+      <string>Create Report</string>
      </attribute>
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>190</y>
-        <width>541</width>
-        <height>121</height>
+        <x>10</x>
+        <y>110</y>
+        <width>531</width>
+        <height>141</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -70,9 +70,6 @@
        <item row="2" column="1">
         <widget class="QLineEdit" name="universityNameLineEdit"/>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="universitySchoolLineEdit"/>
-       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="universitySchoolLabel">
          <property name="text">
@@ -80,13 +77,16 @@
          </property>
         </widget>
        </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="universitySchoolLineEdit"/>
+       </item>
       </layout>
      </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>340</y>
+        <x>380</x>
+        <y>600</y>
         <width>161</width>
         <height>23</height>
        </rect>
@@ -95,10 +95,72 @@
        <string>Create Report</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Report Title Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>291</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Insert Report Chapters&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>310</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Chapters</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>310</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>310</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Browse Files</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Filter Report</string>
+      <string>Filter Report Criteria</string>
      </attribute>
      <widget class="QWidget" name="formLayoutWidget_2">
       <property name="geometry">
@@ -314,7 +376,7 @@
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_5">
          <property name="text">
-          <string>SVLFMx                 </string>
+          <string>SVLFMx                  </string>
          </property>
         </widget>
        </item>
@@ -449,6 +511,228 @@
       </layout>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Styling Settings</string>
+     </attribute>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>350</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Title Page Font Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>431</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Report Amphibian Layout&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Page Font Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>600</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Create Report</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>560</y>
+        <width>161</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save Settings</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>521</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="selectLayoutLabel">
+         <property name="text">
+          <string>Select Layout</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="selectLayoutComboBox">
+         <item>
+          <property name="text">
+           <string>One Per Page</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Two Per Page</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Three Per Page</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>521</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="headingFontLabel">
+         <property name="text">
+          <string>Heading Font</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="headingFontComboBox"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="headingFontSizeLabel">
+         <property name="text">
+          <string>Heading Font Size</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="headingFontSizeSpinBox"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="headingFontColourLabel">
+         <property name="text">
+          <string>Heading Font Colour</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="headingFontColourComboBox"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="paragraphFontLabel">
+         <property name="text">
+          <string>Paragraph Font</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="paragraphFontComboBox"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="paragraphFontSizeLabel">
+         <property name="text">
+          <string>Paragraph Font Size</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="paragraphFontSizeSpinBox"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="paragraphFontColourLabel">
+         <property name="text">
+          <string>Paragraph Font Colour</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="paragraphFontColourComboBox"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>400</y>
+        <width>521</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_6">
+       <item row="0" column="0">
+        <widget class="QLabel" name="titleFontLabel">
+         <property name="text">
+          <string>Title Font</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="titleFontComboBox"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="titleFontSizeLabel">
+         <property name="text">
+          <string>Title Font Size</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="titleFontSizeSpinBox"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="titleFontColourLabel">
+         <property name="text">
+          <string>Title Font Colour</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="titleFontColourComboBox"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -457,7 +741,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>612</width>
+     <width>566</width>
      <height>20</height>
     </rect>
    </property>

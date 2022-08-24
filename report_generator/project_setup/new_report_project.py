@@ -17,7 +17,7 @@ import report_generator.project_setup.locations_json_setup
 import report_generator.project_setup.project_directory_setup
 
 
-def create_new_project() -> None:
+def create_new_project(settings_dict: dict = None) -> None:
     """Create new report project.
 
     Creates a new report project.
@@ -29,7 +29,7 @@ def create_new_project() -> None:
     HOME_DIR = pathlib.Path.home()
 
     try:
-        settings = get_project_settings()
+        settings = get_project_settings(settings_dict)
         dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
             HOME_DIR, settings["project_name"]
         )
@@ -56,7 +56,7 @@ def create_new_project() -> None:
             settings["data_set"], database_path
         )
 
-        # create_project_config_file(settings)
+        create_project_config_file(settings)
         print("\nReport Project set up complete!")
     except FileExistsError as e:
         print(e)

@@ -8,6 +8,9 @@ import yaml
 
 def load_config() -> dict:
     config = None
-    with open("config.yaml", "r") as file:
-        config = yaml.load(file, Loader=yaml.loader.SafeLoader)
-    return config
+    try:
+        with open("config.yaml", "r") as file:
+            config = yaml.load(file, Loader=yaml.loader.SafeLoader)
+        return config
+    except FileNotFoundError:
+        return config

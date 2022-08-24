@@ -14,6 +14,7 @@ from PyQt5 import QtCore, QtWidgets
 
 from report_generator.config import load_config
 from report_generator.report_generator_cli.create_report import create_report
+from report_generator.report_generator_gui.ui.report_setup import Ui_Dialog
 
 
 class Ui_MainWindow(object):
@@ -385,10 +386,16 @@ class Ui_MainWindow(object):
 
     def set_config_values(self):
         config = load_config()
-        self.reportNameLineEdit.setText(config["report_name"])
-        self.reportAuthorLineEdit.setText(config["author_name"])
-        self.universityNameLineEdit.setText(config["uni_name"])
-        self.universitySchoolLineEdit.setText(config["school_name"])
+        if config is not None:
+            self.reportNameLineEdit.setText(config["report_name"])
+            self.reportAuthorLineEdit.setText(config["author_name"])
+            self.universityNameLineEdit.setText(config["uni_name"])
+            self.universitySchoolLineEdit.setText(config["school_name"])
+        else:
+            self.reportNameLineEdit.setText("")
+            self.reportAuthorLineEdit.setText("")
+            self.universityNameLineEdit.setText("")
+            self.universitySchoolLineEdit.setText("")
 
     def create_report_button(self, MainWindow):
         """Create report button."""
@@ -444,13 +451,31 @@ class Ui_MainWindow(object):
             print("All fields must be filled")
 
 
+def get_set_up():
+    pass
+
+
+def get_main_window():
+    pass
+
+
 def main():
     """Application ui main."""
+
+    config = None
     app = QtWidgets.QApplication(sys.argv)
+
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
+    if config is None:
+        Widget = QtWidgets.QDialog()
+        setup_ui = Ui_Dialog()
+        setup_ui.setupUi(Widget)
+        Widget.show()
+
     sys.exit(app.exec_())
 
 
