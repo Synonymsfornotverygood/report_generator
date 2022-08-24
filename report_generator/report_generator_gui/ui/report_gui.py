@@ -20,17 +20,17 @@ from report_generator.report_generator_gui.ui.report_setup import Ui_Dialog
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(612, 717)
         self.mainwin = MainWindow
+        MainWindow.resize(566, 717)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(20, 0, 551, 661))
+        self.tabWidget.setGeometry(QtCore.QRect(10, 0, 551, 661))
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.formLayoutWidget = QtWidgets.QWidget(self.tab)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(0, 190, 541, 121))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(10, 110, 531, 141))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -65,28 +65,46 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(
             2, QtWidgets.QFormLayout.FieldRole, self.universityNameLineEdit
         )
-        self.universitySchoolLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget)
-        self.universitySchoolLineEdit.setObjectName("universitySchoolLineEdit")
-        self.formLayout.setWidget(
-            3, QtWidgets.QFormLayout.FieldRole, self.universitySchoolLineEdit
-        )
         self.universitySchoolLabel = QtWidgets.QLabel(self.formLayoutWidget)
         self.universitySchoolLabel.setObjectName("universitySchoolLabel")
         self.formLayout.setWidget(
             3, QtWidgets.QFormLayout.LabelRole, self.universitySchoolLabel
         )
+        self.universitySchoolLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget)
+        self.universitySchoolLineEdit.setObjectName("universitySchoolLineEdit")
+        self.formLayout.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.universitySchoolLineEdit
+        )
         self.pushButton = QtWidgets.QPushButton(self.tab)
-        self.pushButton.setGeometry(QtCore.QRect(370, 340, 161, 23))
+        self.pushButton.setGeometry(QtCore.QRect(380, 600, 161, 23))
         self.pushButton.setObjectName("pushButton")
+        self.label = QtWidgets.QLabel(self.tab)
+        self.label.setGeometry(QtCore.QRect(10, 60, 221, 41))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.tab)
+        self.label_2.setGeometry(QtCore.QRect(10, 260, 291, 41))
+        self.label_2.setObjectName("label_2")
+        self.label_4 = QtWidgets.QLabel(self.tab)
+        self.label_4.setGeometry(QtCore.QRect(16, 310, 121, 20))
+        self.label_4.setObjectName("label_4")
+        self.lineEdit = QtWidgets.QLineEdit(self.tab)
+        self.lineEdit.setGeometry(QtCore.QRect(120, 310, 251, 23))
+        self.lineEdit.setObjectName("lineEdit")
+        self.pushButton_3 = QtWidgets.QPushButton(self.tab)
+        self.pushButton_3.setGeometry(QtCore.QRect(380, 310, 161, 23))
+        self.pushButton_3.setObjectName("pushButton_3")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
         self.formLayoutWidget_2 = QtWidgets.QWidget(self.tab_2)
-        self.formLayoutWidget_2.setGeometry(QtCore.QRect(0, 10, 541, 133))
+        self.formLayoutWidget_2.setGeometry(QtCore.QRect(0, 10, 541, 121))
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
         self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
         self.formLayout_2.setContentsMargins(0, 0, 0, 0)
         self.formLayout_2.setObjectName("formLayout_2")
+        self.orderLabel = QtWidgets.QLabel(self.formLayoutWidget_2)
+        self.orderLabel.setObjectName("orderLabel")
+        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.orderLabel)
         self.orderLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.orderLineEdit.setObjectName("orderLineEdit")
         self.formLayout_2.setWidget(
@@ -120,9 +138,6 @@ class Ui_MainWindow(object):
         self.formLayout_2.setWidget(
             3, QtWidgets.QFormLayout.FieldRole, self.speciesLineEdit
         )
-        self.orderLabel = QtWidgets.QLabel(self.formLayoutWidget_2)
-        self.orderLabel.setObjectName("orderLabel")
-        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.orderLabel)
         self.formLayoutWidget_3 = QtWidgets.QWidget(self.tab_2)
         self.formLayoutWidget_3.setGeometry(QtCore.QRect(0, 140, 541, 25))
         self.formLayoutWidget_3.setObjectName("formLayoutWidget_3")
@@ -130,13 +145,40 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.clutchRangeMaxLabel = QtWidgets.QLabel(self.formLayoutWidget_3)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchRangeMaxLabel.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchRangeMaxLabel.setSizePolicy(sizePolicy)
         self.clutchRangeMaxLabel.setObjectName("clutchRangeMaxLabel")
         self.horizontalLayout.addWidget(self.clutchRangeMaxLabel)
         self.clutchRangeMaxLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_3)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchRangeMaxLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchRangeMaxLineEdit.setSizePolicy(sizePolicy)
         self.clutchRangeMaxLineEdit.setMinimumSize(QtCore.QSize(216, 0))
         self.clutchRangeMaxLineEdit.setObjectName("clutchRangeMaxLineEdit")
         self.horizontalLayout.addWidget(self.clutchRangeMaxLineEdit)
         self.clutchRangeMinLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_3)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchRangeMinLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchRangeMinLineEdit.setSizePolicy(sizePolicy)
         self.clutchRangeMinLineEdit.setMaxLength(12767)
         self.clutchRangeMinLineEdit.setObjectName("clutchRangeMinLineEdit")
         self.horizontalLayout.addWidget(self.clutchRangeMinLineEdit)
@@ -144,15 +186,46 @@ class Ui_MainWindow(object):
         self.formLayoutWidget_4.setGeometry(QtCore.QRect(0, 170, 541, 25))
         self.formLayoutWidget_4.setObjectName("formLayoutWidget_4")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.formLayoutWidget_4)
+        self.horizontalLayout_2.setSizeConstraint(
+            QtWidgets.QLayout.SetDefaultConstraint
+        )
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(6)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.clutchMinMaxLabel = QtWidgets.QLabel(self.formLayoutWidget_4)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel.setObjectName("clutchMinMaxLabel")
         self.horizontalLayout_2.addWidget(self.clutchMinMaxLabel)
         self.clutchMinMaxLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_4)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLineEdit.setSizePolicy(sizePolicy)
         self.clutchMinMaxLineEdit.setObjectName("clutchMinMaxLineEdit")
         self.horizontalLayout_2.addWidget(self.clutchMinMaxLineEdit)
         self.clutchMinMinLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_4)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMinLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMinLineEdit.setSizePolicy(sizePolicy)
         self.clutchMinMinLineEdit.setObjectName("clutchMinMinLineEdit")
         self.horizontalLayout_2.addWidget(self.clutchMinMinLineEdit)
         self.pushButton_2 = QtWidgets.QPushButton(self.tab_2)
@@ -165,12 +238,39 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.clutchMinMaxLabel_2 = QtWidgets.QLabel(self.formLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_2.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_2.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_2.setObjectName("clutchMinMaxLabel_2")
         self.horizontalLayout_3.addWidget(self.clutchMinMaxLabel_2)
         self.clutchMaxMinLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMaxMinLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMaxMinLineEdit.setSizePolicy(sizePolicy)
         self.clutchMaxMinLineEdit.setObjectName("clutchMaxMinLineEdit")
         self.horizontalLayout_3.addWidget(self.clutchMaxMinLineEdit)
         self.clutchMaxMaxLineEdit_2 = QtWidgets.QLineEdit(self.formLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMaxMaxLineEdit_2.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMaxMaxLineEdit_2.setSizePolicy(sizePolicy)
         self.clutchMaxMaxLineEdit_2.setObjectName("clutchMaxMaxLineEdit_2")
         self.horizontalLayout_3.addWidget(self.clutchMaxMaxLineEdit_2)
         self.formLayoutWidget_6 = QtWidgets.QWidget(self.tab_2)
@@ -180,12 +280,39 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.clutchMinMaxLabel_3 = QtWidgets.QLabel(self.formLayoutWidget_6)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_3.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_3.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_3.setObjectName("clutchMinMaxLabel_3")
         self.horizontalLayout_4.addWidget(self.clutchMinMaxLabel_3)
         self.SVLMxMinLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_6)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.SVLMxMinLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.SVLMxMinLineEdit.setSizePolicy(sizePolicy)
         self.SVLMxMinLineEdit.setObjectName("SVLMxMinLineEdit")
         self.horizontalLayout_4.addWidget(self.SVLMxMinLineEdit)
         self.SVLMxMaxLineEdit_2 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.SVLMxMaxLineEdit_2.sizePolicy().hasHeightForWidth()
+        )
+        self.SVLMxMaxLineEdit_2.setSizePolicy(sizePolicy)
         self.SVLMxMaxLineEdit_2.setObjectName("SVLMxMaxLineEdit_2")
         self.horizontalLayout_4.addWidget(self.SVLMxMaxLineEdit_2)
         self.formLayoutWidget_7 = QtWidgets.QWidget(self.tab_2)
@@ -193,14 +320,42 @@ class Ui_MainWindow(object):
         self.formLayoutWidget_7.setObjectName("formLayoutWidget_7")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.formLayoutWidget_7)
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setSpacing(6)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.clutchMinMaxLabel_4 = QtWidgets.QLabel(self.formLayoutWidget_7)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_4.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_4.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_4.setObjectName("clutchMinMaxLabel_4")
         self.horizontalLayout_5.addWidget(self.clutchMinMaxLabel_4)
         self.SVLMMxMinLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_7)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.SVLMMxMinLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.SVLMMxMinLineEdit.setSizePolicy(sizePolicy)
         self.SVLMMxMinLineEdit.setObjectName("SVLMMxMinLineEdit")
         self.horizontalLayout_5.addWidget(self.SVLMMxMinLineEdit)
         self.SVLMMxMaxLineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_7)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.SVLMMxMaxLineEdit.sizePolicy().hasHeightForWidth()
+        )
+        self.SVLMMxMaxLineEdit.setSizePolicy(sizePolicy)
         self.SVLMMxMaxLineEdit.setObjectName("SVLMMxMaxLineEdit")
         self.horizontalLayout_5.addWidget(self.SVLMMxMaxLineEdit)
         self.formLayoutWidget_8 = QtWidgets.QWidget(self.tab_2)
@@ -210,12 +365,35 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.clutchMinMaxLabel_5 = QtWidgets.QLabel(self.formLayoutWidget_8)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_5.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_5.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_5.setObjectName("clutchMinMaxLabel_5")
         self.horizontalLayout_6.addWidget(self.clutchMinMaxLabel_5)
         self.SVLFMxMin = QtWidgets.QLineEdit(self.formLayoutWidget_8)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.SVLFMxMin.sizePolicy().hasHeightForWidth())
+        self.SVLFMxMin.setSizePolicy(sizePolicy)
         self.SVLFMxMin.setObjectName("SVLFMxMin")
         self.horizontalLayout_6.addWidget(self.SVLFMxMin)
         self.SVLFMxMax = QtWidgets.QLineEdit(self.formLayoutWidget_8)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.SVLFMxMax.sizePolicy().hasHeightForWidth())
+        self.SVLFMxMax.setSizePolicy(sizePolicy)
         self.SVLFMxMax.setObjectName("SVLFMxMax")
         self.horizontalLayout_6.addWidget(self.SVLFMxMax)
         self.formLayoutWidget_9 = QtWidgets.QWidget(self.tab_2)
@@ -225,12 +403,39 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.clutchMinMaxLabel_6 = QtWidgets.QLabel(self.formLayoutWidget_9)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_6.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_6.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_6.setObjectName("clutchMinMaxLabel_6")
         self.horizontalLayout_7.addWidget(self.clutchMinMaxLabel_6)
         self.EggDiameterMin = QtWidgets.QLineEdit(self.formLayoutWidget_9)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.EggDiameterMin.sizePolicy().hasHeightForWidth()
+        )
+        self.EggDiameterMin.setSizePolicy(sizePolicy)
         self.EggDiameterMin.setObjectName("EggDiameterMin")
         self.horizontalLayout_7.addWidget(self.EggDiameterMin)
         self.EggDiameterMax = QtWidgets.QLineEdit(self.formLayoutWidget_9)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.EggDiameterMax.sizePolicy().hasHeightForWidth()
+        )
+        self.EggDiameterMax.setSizePolicy(sizePolicy)
         self.EggDiameterMax.setObjectName("EggDiameterMax")
         self.horizontalLayout_7.addWidget(self.EggDiameterMax)
         self.formLayoutWidget_10 = QtWidgets.QWidget(self.tab_2)
@@ -240,12 +445,35 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.clutchMinMaxLabel_7 = QtWidgets.QLabel(self.formLayoutWidget_10)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.clutchMinMaxLabel_7.sizePolicy().hasHeightForWidth()
+        )
+        self.clutchMinMaxLabel_7.setSizePolicy(sizePolicy)
         self.clutchMinMaxLabel_7.setObjectName("clutchMinMaxLabel_7")
         self.horizontalLayout_8.addWidget(self.clutchMinMaxLabel_7)
         self.LongevityMin = QtWidgets.QLineEdit(self.formLayoutWidget_10)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.LongevityMin.sizePolicy().hasHeightForWidth())
+        self.LongevityMin.setSizePolicy(sizePolicy)
         self.LongevityMin.setObjectName("LongevityMin")
         self.horizontalLayout_8.addWidget(self.LongevityMin)
         self.LongevityMax = QtWidgets.QLineEdit(self.formLayoutWidget_10)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed
+        )
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.LongevityMax.sizePolicy().hasHeightForWidth())
+        self.LongevityMax.setSizePolicy(sizePolicy)
         self.LongevityMax.setObjectName("LongevityMax")
         self.horizontalLayout_8.addWidget(self.LongevityMax)
         self.formLayoutWidget_11 = QtWidgets.QWidget(self.tab_2)
@@ -307,12 +535,151 @@ class Ui_MainWindow(object):
         self.PopTrend.setObjectName("PopTrend")
         self.formLayout_3.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.PopTrend)
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QtWidgets.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.label_5 = QtWidgets.QLabel(self.tab_3)
+        self.label_5.setGeometry(QtCore.QRect(10, 350, 321, 41))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(self.tab_3)
+        self.label_6.setGeometry(QtCore.QRect(10, 20, 431, 41))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(self.tab_3)
+        self.label_7.setGeometry(QtCore.QRect(10, 110, 331, 41))
+        self.label_7.setObjectName("label_7")
+        self.pushButton_6 = QtWidgets.QPushButton(self.tab_3)
+        self.pushButton_6.setGeometry(QtCore.QRect(380, 600, 161, 23))
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(self.tab_3)
+        self.pushButton_7.setGeometry(QtCore.QRect(380, 560, 161, 23))
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.formLayoutWidget_12 = QtWidgets.QWidget(self.tab_3)
+        self.formLayoutWidget_12.setGeometry(QtCore.QRect(10, 60, 521, 41))
+        self.formLayoutWidget_12.setObjectName("formLayoutWidget_12")
+        self.formLayout_4 = QtWidgets.QFormLayout(self.formLayoutWidget_12)
+        self.formLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_4.setObjectName("formLayout_4")
+        self.selectLayoutLabel = QtWidgets.QLabel(self.formLayoutWidget_12)
+        self.selectLayoutLabel.setObjectName("selectLayoutLabel")
+        self.formLayout_4.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.selectLayoutLabel
+        )
+        self.selectLayoutComboBox = QtWidgets.QComboBox(self.formLayoutWidget_12)
+        self.selectLayoutComboBox.setObjectName("selectLayoutComboBox")
+        self.selectLayoutComboBox.addItem("")
+        self.selectLayoutComboBox.addItem("")
+        self.selectLayoutComboBox.addItem("")
+        self.formLayout_4.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.selectLayoutComboBox
+        )
+        self.formLayoutWidget_13 = QtWidgets.QWidget(self.tab_3)
+        self.formLayoutWidget_13.setGeometry(QtCore.QRect(10, 150, 521, 191))
+        self.formLayoutWidget_13.setObjectName("formLayoutWidget_13")
+        self.formLayout_5 = QtWidgets.QFormLayout(self.formLayoutWidget_13)
+        self.formLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_5.setObjectName("formLayout_5")
+        self.headingFontLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.headingFontLabel.setObjectName("headingFontLabel")
+        self.formLayout_5.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.headingFontLabel
+        )
+        self.headingFontComboBox = QtWidgets.QComboBox(self.formLayoutWidget_13)
+        self.headingFontComboBox.setObjectName("headingFontComboBox")
+        self.formLayout_5.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.headingFontComboBox
+        )
+        self.headingFontSizeLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.headingFontSizeLabel.setObjectName("headingFontSizeLabel")
+        self.formLayout_5.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.headingFontSizeLabel
+        )
+        self.headingFontSizeSpinBox = QtWidgets.QSpinBox(self.formLayoutWidget_13)
+        self.headingFontSizeSpinBox.setObjectName("headingFontSizeSpinBox")
+        self.formLayout_5.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.headingFontSizeSpinBox
+        )
+        self.headingFontColourLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.headingFontColourLabel.setObjectName("headingFontColourLabel")
+        self.formLayout_5.setWidget(
+            2, QtWidgets.QFormLayout.LabelRole, self.headingFontColourLabel
+        )
+        self.headingFontColourComboBox = QtWidgets.QComboBox(self.formLayoutWidget_13)
+        self.headingFontColourComboBox.setObjectName("headingFontColourComboBox")
+        self.formLayout_5.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.headingFontColourComboBox
+        )
+        self.paragraphFontLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.paragraphFontLabel.setObjectName("paragraphFontLabel")
+        self.formLayout_5.setWidget(
+            3, QtWidgets.QFormLayout.LabelRole, self.paragraphFontLabel
+        )
+        self.paragraphFontComboBox = QtWidgets.QComboBox(self.formLayoutWidget_13)
+        self.paragraphFontComboBox.setObjectName("paragraphFontComboBox")
+        self.formLayout_5.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.paragraphFontComboBox
+        )
+        self.paragraphFontSizeLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.paragraphFontSizeLabel.setObjectName("paragraphFontSizeLabel")
+        self.formLayout_5.setWidget(
+            4, QtWidgets.QFormLayout.LabelRole, self.paragraphFontSizeLabel
+        )
+        self.paragraphFontSizeSpinBox = QtWidgets.QSpinBox(self.formLayoutWidget_13)
+        self.paragraphFontSizeSpinBox.setObjectName("paragraphFontSizeSpinBox")
+        self.formLayout_5.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.paragraphFontSizeSpinBox
+        )
+        self.paragraphFontColourLabel = QtWidgets.QLabel(self.formLayoutWidget_13)
+        self.paragraphFontColourLabel.setObjectName("paragraphFontColourLabel")
+        self.formLayout_5.setWidget(
+            5, QtWidgets.QFormLayout.LabelRole, self.paragraphFontColourLabel
+        )
+        self.paragraphFontColourComboBox = QtWidgets.QComboBox(self.formLayoutWidget_13)
+        self.paragraphFontColourComboBox.setObjectName("paragraphFontColourComboBox")
+        self.formLayout_5.setWidget(
+            5, QtWidgets.QFormLayout.FieldRole, self.paragraphFontColourComboBox
+        )
+        self.formLayoutWidget_14 = QtWidgets.QWidget(self.tab_3)
+        self.formLayoutWidget_14.setGeometry(QtCore.QRect(10, 400, 521, 91))
+        self.formLayoutWidget_14.setObjectName("formLayoutWidget_14")
+        self.formLayout_6 = QtWidgets.QFormLayout(self.formLayoutWidget_14)
+        self.formLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_6.setObjectName("formLayout_6")
+        self.titleFontLabel = QtWidgets.QLabel(self.formLayoutWidget_14)
+        self.titleFontLabel.setObjectName("titleFontLabel")
+        self.formLayout_6.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.titleFontLabel
+        )
+        self.titleFontComboBox = QtWidgets.QComboBox(self.formLayoutWidget_14)
+        self.titleFontComboBox.setObjectName("titleFontComboBox")
+        self.formLayout_6.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.titleFontComboBox
+        )
+        self.titleFontSizeLabel = QtWidgets.QLabel(self.formLayoutWidget_14)
+        self.titleFontSizeLabel.setObjectName("titleFontSizeLabel")
+        self.formLayout_6.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.titleFontSizeLabel
+        )
+        self.titleFontSizeSpinBox = QtWidgets.QSpinBox(self.formLayoutWidget_14)
+        self.titleFontSizeSpinBox.setObjectName("titleFontSizeSpinBox")
+        self.formLayout_6.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.titleFontSizeSpinBox
+        )
+        self.titleFontColourLabel = QtWidgets.QLabel(self.formLayoutWidget_14)
+        self.titleFontColourLabel.setObjectName("titleFontColourLabel")
+        self.formLayout_6.setWidget(
+            2, QtWidgets.QFormLayout.LabelRole, self.titleFontColourLabel
+        )
+        self.titleFontColourComboBox = QtWidgets.QComboBox(self.formLayoutWidget_14)
+        self.titleFontColourComboBox.setObjectName("titleFontColourComboBox")
+        self.formLayout_6.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.titleFontColourComboBox
+        )
+        self.tabWidget.addTab(self.tab_3, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 612, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 566, 20))
         self.menubar.setObjectName("menubar")
         self.menuReport_Generator = QtWidgets.QMenu(self.menubar)
         self.menuReport_Generator.setObjectName("menuReport_Generator")
@@ -324,6 +691,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.pushButton.clicked.connect(self.create_report_button)
         self.pushButton_2.clicked.connect(self.create_report_button)
+        self.pushButton_3.clicked.connect(self.browse_button)
         self.set_config_values()
 
     def retranslateUi(self, MainWindow):
@@ -336,38 +704,36 @@ class Ui_MainWindow(object):
             _translate("MainWindow", "University School")
         )
         self.pushButton.setText(_translate("MainWindow", "Create Report"))
-        self.tabWidget.setTabText(
-            self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Report Title")
+        self.label.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt; font-weight:600;">Report Title Page</span></p></body></html>',
+            )
         )
+        self.label_2.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt; font-weight:600;">Insert Report Chapters</span></p></body></html>',
+            )
+        )
+        self.label_4.setText(_translate("MainWindow", "Select Chapters"))
+        self.pushButton_3.setText(_translate("MainWindow", "Browse Files"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Create Report")
+        )
+        self.orderLabel.setText(_translate("MainWindow", "Order                     "))
         self.familyLabel.setText(_translate("MainWindow", "Family"))
         self.genusLabel.setText(_translate("MainWindow", "Genus"))
         self.speciesLabel.setText(_translate("MainWindow", "Species"))
-        self.orderLabel.setText(_translate("MainWindow", "Order                     "))
-        self.clutchRangeMaxLabel.setText(
-            _translate("MainWindow", "Clutch                    ")
-        )
-        self.clutchMinMaxLabel.setText(
-            _translate("MainWindow", "Clutch Min             ")
-        )
+        self.clutchRangeMaxLabel.setText(_translate("MainWindow", "Clutch"))
+        self.clutchMinMaxLabel.setText(_translate("MainWindow", "Clutch Min"))
         self.pushButton_2.setText(_translate("MainWindow", "Create Report"))
-        self.clutchMinMaxLabel_2.setText(
-            _translate("MainWindow", "Clutch Max            ")
-        )
-        self.clutchMinMaxLabel_3.setText(
-            _translate("MainWindow", "SVLMx                   ")
-        )
-        self.clutchMinMaxLabel_4.setText(
-            _translate("MainWindow", "SVLMMx                ")
-        )
-        self.clutchMinMaxLabel_5.setText(
-            _translate("MainWindow", "SVLFMx                 ")
-        )
-        self.clutchMinMaxLabel_6.setText(
-            _translate("MainWindow", "Egg Diameter        ")
-        )
-        self.clutchMinMaxLabel_7.setText(
-            _translate("MainWindow", "Longevity              ")
-        )
+        self.clutchMinMaxLabel_2.setText(_translate("MainWindow", "Clutch Max"))
+        self.clutchMinMaxLabel_3.setText(_translate("MainWindow", "Body Size Max"))
+        self.clutchMinMaxLabel_4.setText(_translate("MainWindow", "Body Size Max M"))
+        self.clutchMinMaxLabel_5.setText(_translate("MainWindow", "Body Size Max F"))
+        self.clutchMinMaxLabel_6.setText(_translate("MainWindow", "Egg Diameter"))
+        self.clutchMinMaxLabel_7.setText(_translate("MainWindow", "Longevity"))
         self.familyLabel_2.setText(_translate("MainWindow", "Micro Habitat"))
         self.genusLabel_2.setText(_translate("MainWindow", "Activity"))
         self.speciesLabel_2.setText(_translate("MainWindow", "Geographic Region"))
@@ -376,7 +742,56 @@ class Ui_MainWindow(object):
         self.popTrendLabel.setText(_translate("MainWindow", "Pop Trend"))
         self.tabWidget.setTabText(
             self.tabWidget.indexOf(self.tab_2),
-            _translate("MainWindow", "Filter Report"),
+            _translate("MainWindow", "Filter Report Criteria"),
+        )
+        self.label_5.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt; font-weight:600;">Title Page Font Settings</span></p></body></html>',
+            )
+        )
+        self.label_6.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt; font-weight:600;">Report Amphibian Layout</span></p></body></html>',
+            )
+        )
+        self.label_7.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt; font-weight:600;">Page Font Settings</span></p></body></html>',
+            )
+        )
+        self.pushButton_6.setText(_translate("MainWindow", "Create Report"))
+        self.pushButton_7.setText(_translate("MainWindow", "Save Settings"))
+        self.selectLayoutLabel.setText(_translate("MainWindow", "Select Layout"))
+        self.selectLayoutComboBox.setItemText(
+            0, _translate("MainWindow", "One Per Page")
+        )
+        self.selectLayoutComboBox.setItemText(
+            1, _translate("MainWindow", "Two Per Page")
+        )
+        self.selectLayoutComboBox.setItemText(
+            2, _translate("MainWindow", "Three Per Page")
+        )
+        self.headingFontLabel.setText(_translate("MainWindow", "Heading Font"))
+        self.headingFontSizeLabel.setText(_translate("MainWindow", "Heading Font Size"))
+        self.headingFontColourLabel.setText(
+            _translate("MainWindow", "Heading Font Colour")
+        )
+        self.paragraphFontLabel.setText(_translate("MainWindow", "Paragraph Font"))
+        self.paragraphFontSizeLabel.setText(
+            _translate("MainWindow", "Paragraph Font Size")
+        )
+        self.paragraphFontColourLabel.setText(
+            _translate("MainWindow", "Paragraph Font Colour")
+        )
+        self.titleFontLabel.setText(_translate("MainWindow", "Title Font"))
+        self.titleFontSizeLabel.setText(_translate("MainWindow", "Title Font Size"))
+        self.titleFontColourLabel.setText(_translate("MainWindow", "Title Font Colour"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_3),
+            _translate("MainWindow", "Styling Settings"),
         )
         self.menuReport_Generator.setTitle(_translate("MainWindow", "Report Generator"))
 
@@ -396,6 +811,11 @@ class Ui_MainWindow(object):
             self.reportAuthorLineEdit.setText("")
             self.universityNameLineEdit.setText("")
             self.universitySchoolLineEdit.setText("")
+
+    def browse_button(self):
+        fname = QtWidgets.QFileDialog.getOpenFileName()
+        print(fname)
+        self.lineEdit.setText(fname[0])
 
     def create_report_button(self, MainWindow):
         """Create report button."""
@@ -446,9 +866,16 @@ class Ui_MainWindow(object):
         if all(args):
             print(f"Args: {title}, {author}, {university}, {school}")
             create_report(source, options, title, author, university, school)
+            self.show_popup()
             self.mainwin.close()
         else:
             print("All fields must be filled")
+
+    def show_popup(self):
+        msg = QtWidgets.QMessageBox()
+        msg.setWindowTitle("Report Complete")
+        msg.setText("The report has been completed.")
+        msg.exec_()
 
 
 def get_set_up():
@@ -462,7 +889,7 @@ def get_main_window():
 def main():
     """Application ui main."""
 
-    config = None
+    config = load_config()
     app = QtWidgets.QApplication(sys.argv)
 
     MainWindow = QtWidgets.QMainWindow()

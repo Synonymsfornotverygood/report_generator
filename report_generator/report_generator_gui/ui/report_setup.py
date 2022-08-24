@@ -90,6 +90,7 @@ class Ui_Dialog(object):
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(340, 190, 80, 23))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.browse_button)
         self.label_6 = QtWidgets.QLabel(Dialog)
         self.label_6.setGeometry(QtCore.QRect(10, 0, 431, 41))
         self.label_6.setObjectName("label_6")
@@ -120,6 +121,11 @@ class Ui_Dialog(object):
             )
         )
 
+    def browse_button(self):
+        fname = QtWidgets.QFileDialog.getOpenFileName()
+        print(fname)
+        self.lineEdit.setText(fname[0])
+
     def report_setup_ok_button(self):
         project_name = self.reportNameLineEdit.text()
         author_name = self.reportAuthorLineEdit.text()
@@ -138,8 +144,12 @@ class Ui_Dialog(object):
             "data_set": data_set,
         }
 
-        print(settings)
-
         create_new_project(settings)
-
+        self.show_popup()
         self.dialogwin.close()
+
+    def show_popup(self):
+        msg = QtWidgets.QMessageBox()
+        msg.setWindowTitle("Setup Complete")
+        msg.setText("Report-Generator setup complete.")
+        msg.exec_()

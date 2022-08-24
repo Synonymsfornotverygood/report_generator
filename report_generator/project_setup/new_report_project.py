@@ -34,6 +34,8 @@ def create_new_project(settings_dict: dict = None) -> None:
             HOME_DIR, settings["project_name"]
         )
         settings["dir_path"] = dir_path
+        create_project_config_file(settings)
+
         report_generator.project_setup.locations_data_setup.insert_default_data(
             dir_path
         )
@@ -46,17 +48,13 @@ def create_new_project(settings_dict: dict = None) -> None:
         report_generator.project_setup.locations_json_setup.locations_json_setup(
             os.path.join(dir_path, "data", "locations")
         )
-        # dir_path = "/home/cush/a"
-        # settings = {
-        #     "data_set": "/home/cush/a/data/excel_src/example_dataset_2_10000.xlsx"
-        # }
+
         database_path = os.path.join(dir_path, "data", "database", "species.db")
 
         report_generator.excel_extraction.excel_to_sql.export_to_database(
             settings["data_set"], database_path
         )
 
-        create_project_config_file(settings)
         print("\nReport Project set up complete!")
     except FileExistsError as e:
         print(e)

@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -168,10 +168,17 @@
         <x>0</x>
         <y>10</y>
         <width>541</width>
-        <height>133</height>
+        <height>121</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="orderLabel">
+         <property name="text">
+          <string>Order                     </string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="orderLineEdit"/>
        </item>
@@ -205,13 +212,6 @@
        <item row="3" column="1">
         <widget class="QLineEdit" name="speciesLineEdit"/>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="orderLabel">
-         <property name="text">
-          <string>Order                     </string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="formLayoutWidget_3">
@@ -226,13 +226,25 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="clutchRangeMaxLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>Clutch                    </string>
+          <string>Clutch</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLineEdit" name="clutchRangeMaxLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>216</width>
@@ -243,6 +255,12 @@
        </item>
        <item>
         <widget class="QLineEdit" name="clutchRangeMinLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maxLength">
           <number>12767</number>
          </property>
@@ -260,18 +278,44 @@
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>Clutch Min             </string>
+          <string>Clutch Min</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="clutchMinMaxLineEdit"/>
+        <widget class="QLineEdit" name="clutchMinMaxLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="clutchMinMinLineEdit"/>
+        <widget class="QLineEdit" name="clutchMinMinLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -300,16 +344,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>Clutch Max            </string>
+          <string>Clutch Max</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="clutchMaxMinLineEdit"/>
+        <widget class="QLineEdit" name="clutchMaxMinLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="clutchMaxMaxLineEdit_2"/>
+        <widget class="QLineEdit" name="clutchMaxMaxLineEdit_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -325,16 +389,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>SVLMx                   </string>
+          <string>Body Size Max</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLMxMinLineEdit"/>
+        <widget class="QLineEdit" name="SVLMxMinLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLMxMaxLineEdit_2"/>
+        <widget class="QLineEdit" name="SVLMxMaxLineEdit_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -348,18 +432,41 @@
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <property name="spacing">
+        <number>6</number>
+       </property>
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>SVLMMx                </string>
+          <string>Body Size Max M</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLMMxMinLineEdit"/>
+        <widget class="QLineEdit" name="SVLMMxMinLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLMMxMaxLineEdit"/>
+        <widget class="QLineEdit" name="SVLMMxMaxLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -375,16 +482,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>SVLFMx                  </string>
+          <string>Body Size Max F</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLFMxMin"/>
+        <widget class="QLineEdit" name="SVLFMxMin">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="SVLFMxMax"/>
+        <widget class="QLineEdit" name="SVLFMxMax">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -400,16 +527,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout_7">
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>Egg Diameter        </string>
+          <string>Egg Diameter</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="EggDiameterMin"/>
+        <widget class="QLineEdit" name="EggDiameterMin">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="EggDiameterMax"/>
+        <widget class="QLineEdit" name="EggDiameterMax">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -425,16 +572,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
         <widget class="QLabel" name="clutchMinMaxLabel_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>Longevity              </string>
+          <string>Longevity</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="LongevityMin"/>
+        <widget class="QLineEdit" name="LongevityMin">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="LongevityMax"/>
+        <widget class="QLineEdit" name="LongevityMax">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>2</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

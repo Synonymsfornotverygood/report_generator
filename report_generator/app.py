@@ -37,6 +37,25 @@ Options:
     --no-db                 Do not check for db settings
                             instead supply string values to create project
                             works directly from Excel(.xlsx) file.
+    [--order_taxon_name]    The order name of species.
+    [--Family]              The Family name of species.
+    [--Genus]               The genus name of species.
+    [--Species]             The latin species name of species
+    [--SVLMx]...            Body Size max. For range call twice.
+    [--SVLMMx]...           Body size max for male. For range call twice.
+    [--SVLFMx]...           Body size max for female.For range call twice.
+    [--ClutchMin]...        Minimum clutch size. For range call twice.
+    [--ClutchMax]...        Maximum clutch size. For range call twice.
+    [--Clutch]...           Average clutch size. For range call twice.
+    [--ParityMode]...       Parity Mode of species. Can be called multiple times.
+    [--EggDiameter]...      Diameter of species egg. For range call twice.
+    [--Longevity]...        Longevity of species. For range call twice.
+    [--NestingSite]...      Nesting sites of species. Can be called multiple times.
+    [--MicroHabitat]...     Microhabitat of species. Can be called multiple times.
+    [--Activity]...         Activity of species. Can be called multiple times.
+    [--GeographicRegion]    Geographic region species can be found in.
+    [--IUCN]                IUCN type. For more detailed information check documentation.
+    [--PopTrend]            Population Trend.
 """
 
 
@@ -54,8 +73,7 @@ def main():
 
     arguments = docopt(__doc__, version="Report Generator 1.0")
     # check if gui option selected
-    if arguments["--gui"] is True:
-        report_generator.report_generator_gui.main.main()
+
     if arguments["--cli"] is True:
         print("Report Generator CLI")
         report_generator.report_generator_cli.main.main(arguments)
