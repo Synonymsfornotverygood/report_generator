@@ -12,7 +12,8 @@ import sys
 
 from PyQt5 import QtCore, QtWidgets
 
-from report_generator.config import load_config
+from report_generator.config import dump_config, load_config
+from report_generator.fonts import font_dict_loader
 from report_generator.report_generator_cli.create_report import create_report
 from report_generator.report_generator_gui.ui.report_setup import Ui_Dialog
 
@@ -692,7 +693,10 @@ class Ui_MainWindow(object):
         self.pushButton.clicked.connect(self.create_report_button)
         self.pushButton_2.clicked.connect(self.create_report_button)
         self.pushButton_3.clicked.connect(self.browse_button)
+        self.pushButton_7.clicked.connect(self.save_font_options)
+        self.pushButton_6.clicked.connect(self.create_report_button)
         self.set_config_values()
+        self.load_font_selection_combo()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -813,9 +817,54 @@ class Ui_MainWindow(object):
             self.universitySchoolLineEdit.setText("")
 
     def browse_button(self):
+        """Browse button.
+
+        Opens default os browse files window.
+        """
         fname = QtWidgets.QFileDialog.getOpenFileName()
         print(fname)
         self.lineEdit.setText(fname[0])
+
+    def load_font_selection_combo(self):
+        """Update font choices.
+
+        Load font yaml and place key names into the combobox.
+        """
+        config = load_config()
+        default_paragraph = config["fonts"]["default_paragraph_font"]
+        default_paragraph_size = config["fonts"]["default_paragraph_size"]
+        default_paragraph_colour = config["fonts"]["default_paragraph_colour"]
+
+        default_header = config["fonts"]["default_header_font"]
+        default_header_size = config["fonts"]["default_header_size"]
+        default_header_colour = config["fonts"]["default_header_colour"]
+
+        default_title = config["fonts"]["default_title_font"]
+        default_title_size = config["fonts"]["default_title_size"]
+        default_title_colour = config["fonts"]["default_title_colour"]
+
+        self.paragraphFontComboBox.addItem(default_paragraph)
+        self.headingFontComboBox.addItem(default_header)
+        self.titleFontComboBox.addItem(default_title)
+
+        self.paragraphFontColourComboBox.addItem(default_paragraph_colour)
+        self.headingFontColourComboBox.addItem(default_header_colour)
+        self.titleFontColourComboBox.addItem(default_title_colour)
+
+        self.titleFontSizeSpinBox.setValue(default_title_size)
+        self.headingFontSizeSpinBox.setValue(default_header_size)
+        self.paragraphFontSizeSpinBox.setValue(default_paragraph_size)
+
+        fonts = font_dict_loader()
+        for font in fonts["font_types"].keys():
+            self.titleFontComboBox.addItem(font)
+            self.headingFontComboBox.addItem(font)
+            self.paragraphFontComboBox.addItem(font)
+
+        for font_colour in fonts["font_colours"].keys():
+            self.titleFontColourComboBox.addItem(font_colour)
+            self.headingFontColourComboBox.addItem(font_colour)
+            self.paragraphFontColourComboBox.addItem(font_colour)
 
     def create_report_button(self, MainWindow):
         """Create report button."""
@@ -863,13 +912,63 @@ class Ui_MainWindow(object):
             "--order_taxon_name": self.orderLineEdit.text(),
         }
 
+        font_options = {
+            "title_font": self.titleFontComboBox.currentText(),
+            "title_size": self.titleFontSizeSpinBox.value(),
+            "title_colour": self.titleFontColourComboBox.currentText(),
+            "header_font": self.headingFontComboBox.currentText(),
+            "header_size": self.headingFontSizeSpinBox.value(),
+            "header_colour": self.headingFontColourComboBox.currentText(),
+            "paragraph_font": self.headingFontComboBox.currentText(),
+            "paragraph_size": self.paragraphFontSizeSpinBox.value(),
+            "paragraph_colour": self.paragraphFontColourComboBox.currentText(),
+        }
+
         if all(args):
             print(f"Args: {title}, {author}, {university}, {school}")
-            create_report(source, options, title, author, university, school)
+            create_report(
+                source, options, title, author, university, school, font_options
+            )
             self.show_popup()
             self.mainwin.close()
         else:
             print("All fields must be filled")
+
+    def save_font_options(self):
+        config = load_config()
+        a = self.titleFontComboBox.currentText()
+        print(type(a))
+        config["fonts"]["default_title_font"] = self.titleFontComboBox.currentText()
+        config["fonts"][
+            "default_title_colour"
+        ] = self.titleFontColourComboBox.currentText()
+        config["fonts"]["default_title_size"] = self.titleFontSizeSpinBox.value()
+
+        config["fonts"]["default_header_font"] = self.headingFontComboBox.currentText()
+        config["fonts"][
+            "default_header_colour"
+        ] = self.headingFontColourComboBox.currentText()
+        config["fonts"]["default_header_size"] = self.headingFontSizeSpinBox.value()
+
+        config["fonts"][
+            "default_paragraph_font"
+        ] = self.paragraphFontComboBox.currentText()
+        config["fonts"][
+            "default_paragraph_colour"
+        ] = self.paragraphFontColourComboBox.currentText()
+        config["fonts"][
+            "default_paragraph_size"
+        ] = self.paragraphFontSizeSpinBox.value()
+
+        print(config)
+        dump_config(config)
+        self.save_font_pop_up()
+
+    def save_font_pop_up(self):
+        msg = QtWidgets.QMessageBox()
+        msg.setWindowTitle("Fonts Updated")
+        msg.setText("Updating default font choices complete.")
+        msg.exec_()
 
     def show_popup(self):
         msg = QtWidgets.QMessageBox()
@@ -896,6 +995,7 @@ def main():
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    ui.load_font_selection_combo()
 
     if config is None:
         Widget = QtWidgets.QDialog()

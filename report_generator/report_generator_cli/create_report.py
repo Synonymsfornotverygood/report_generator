@@ -30,6 +30,7 @@ import pandas
 from fpdf import FPDF, TextMode
 from loguru import logger
 
+import report_generator.fonts as fonts
 import report_generator.read_from_db.query_db
 from report_generator.config import load_config
 from report_generator.report_generator_cli.amphibian import AmphibianData
@@ -50,6 +51,7 @@ def create_report(
     report_author: str,
     university_name: str,
     university_school: str,
+    font_options: dict = None,
 ) -> None:
     """Create Report.
 
@@ -59,15 +61,18 @@ def create_report(
     Args:
         data_source         - Data source for report creation
         options  (dict)     - Dict with options passed from cli or gui
+        font_options (dict) - Dict with options passed from font selection
         report_name         - Title of the report and the file name
         report_author       - Author of the report
         university_name     - Name of the university
         university_school   - Name of the university school
 
     """
-    config = load_config()
     startTime = time.time()
     logger.debug(f"Create Report Started: {report_name}")
+
+    # load config
+    config = load_config()
 
     curtime = time.time()
     logger.debug("Started reading data source")
@@ -77,14 +82,7 @@ def create_report(
     pdf = FPDF()
     curtime = time.time()
     logger.debug("Started adding fonts")
-    pdf.add_font(
-        "OpenSans",
-        fname=f"{os.path.join(FONTS_PATH, 'OpenSans-VariableFont_wdth,wght.ttf')}",
-    )
-    pdf.add_font(
-        "OpenSansBold",
-        fname=f"{os.path.join(FONTS_PATH ,'static', 'OpenSans', 'OpenSans-Bold.ttf')}",
-    )
+    fonts.add_font_choices_to_pdf(pdf, font_options)
     logger.debug(f"Finished adding fonts: {round(time.time() - curtime,2)}s")
 
     curtime = time.time()
@@ -167,17 +165,12 @@ def create_title_page(
     with pdf.local_context(
         text_mode=TextMode.FILL, text_color=(227, 6, 19), line_width=2
     ):
-        pdf.add_font(
-            "OpenSans",
-            fname=f"{ os.path.join(FONTS_PATH ,'OpenSans-VariableFont_wdth,wght.ttf')}",
-        )
-        pdf.add_font(
-            "OpenSansBold",
-            fname=f"""{
-                os.path.join(FONTS_PATH ,'static', 'OpenSans', 'OpenSans-Bold.ttf')
-                }""",
-        )
-        pdf.set_font("OpenSansBold", "", 56)
+        config = load_config()
+        pdf = fonts.add_font_choices_to_pdf(pdf, None)
+        title_font = config["fonts"]["default_title_font"]
+        title_sub_font = config["fonts"]["default_title_sub"]
+        title_font_size = config["fonts"]["default_title_size"]
+        pdf.set_font(title_font, "", title_font_size)
 
         pdf.set_draw_color(255, 255, 255)
         pdf.ln(30)
@@ -185,11 +178,11 @@ def create_title_page(
         pdf.cell(w=20)
         pdf.multi_cell(w=150, txt=report_name, align="L", border=0)
         pdf.ln(85)
-        pdf.set_font("OpenSansBold", "", 28)
+        pdf.set_font(title_font, "", title_font_size / 2)
         # pdf.write(10, report_author)
         pdf.cell(w=20)
         pdf.cell(w=150, txt=report_author, align="L", border=0)
-        pdf.set_font("OpenSans", "", 22)
+        pdf.set_font(title_sub_font, "", (title_font_size / 2) - 6)
 
         pdf.ln(20)
         # pdf.write(10, university_name)
@@ -286,14 +279,17 @@ def create_report_order_sections(ds: object, pdf: object) -> object:
         pdf - pdf object
 
     """
+    config = load_config()
     order = ds["Order"]
     order_names = order.value_counts().index.tolist()
     order_names.sort()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
     for name in order_names:
         sect = ds[ds["Order"] == name]
         pdf.add_page()
         pdf.start_section(name=name, level=0)
-        pdf.set_font("OpenSansBold", "", 48)
+        pdf.set_font(header_font, "", header_font_size)
         pdf.ln(20)
         pdf.write(30, f"Order: {name}", "C")
         pdf.ln(20)
@@ -326,10 +322,13 @@ def create_report_family_sections(section_list: object, pdf: object) -> object:
     family = section_list["Family"]
     family_names = family.value_counts().index.tolist()
     family_names.sort()
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
     for name in family_names:
         sect = section_list[section_list["Family"] == name]
         pdf.start_section(name=name, level=1)
-        pdf.set_font("OpenSansBold", "", 36)
+        pdf.set_font(header_font, "", (header_font_size / 4) * 3)
         pdf.ln(20)
         pdf.write(10, f"Family: {name}", "C")
         pdf.add_page()
@@ -363,9 +362,12 @@ def create_report_genus_sections(section_list: object, pdf: object) -> object:
     genus = section_list["Genus"]
     genus_names = genus.value_counts().index.tolist()
     genus_names.sort()
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
     for name in genus_names:
         sect = section_list[section_list["Genus"] == name]
-        pdf.set_font("OpenSansBold", "", 36)
+        pdf.set_font(header_font, "", (header_font_size / 4) * 3)
         pdf.write(10, f"Genus: {name}")
         pdf.start_section(name=name, level=2)
         pdf.ln(10)
@@ -443,7 +445,10 @@ def create_report_section_page(amp, pdf):
 
     """
     pdf.start_section(name=amp.get_short_name(), level=3)
-    pdf.set_font("OpenSansBold", "", 24)
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
+    pdf.set_font(header_font, "", (header_font_size / 4) * 2)
     pdf.ln(20)
     pdf.write(10, amp.get_short_name())
     pdf = insert_species_images(amp, pdf)
@@ -472,9 +477,14 @@ def insert_species_images(amp, pdf):
         pdf - pdf object
 
     """
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
+    paragraph_font = config["fonts"]["default_paragraph_font"]
+    paragraph_font_size = config["fonts"]["default_paragraph_size"]
     WIDTH = 210
     pdf.ln(20)
-    pdf.set_font("OpenSansBold", "", 16)
+    pdf.set_font(header_font, "", (header_font_size / 4) + 4)
     pdf.write(5, "Species Images:")
     pdf.ln(75)
     if amp.has_image_url():
@@ -484,7 +494,7 @@ def insert_species_images(amp, pdf):
         )
         tcell_width = 60
         tcell_height = 5
-        pdf.set_font("OpenSansBold", "", 10)
+        pdf.set_font(paragraph_font, "b", paragraph_font_size)
         pdf.cell(tcell_width, tcell_height, "Male Image", align="C", border=0)
         pdf.cell(tcell_width - 20, tcell_height)
         pdf.cell(tcell_width, tcell_height, "Female Image", align="C", border=0)
@@ -501,7 +511,7 @@ def insert_species_images(amp, pdf):
         )
         tcell_width = 60
         tcell_height = 5
-        pdf.set_font("OpenSansBold", "", 10)
+        pdf.set_font(paragraph_font, "b", paragraph_font_size)
         pdf.cell(tcell_width, tcell_height, "Missing Male Image", align="C", border=0)
         pdf.cell(tcell_width - 20, tcell_height)
         pdf.cell(tcell_width, tcell_height, "Missing Female Image", align="C", border=0)
@@ -524,21 +534,26 @@ def create_report_page_table(amphibian_data, pdf):
         pdf - pdf object
 
     """
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
+    paragraph_font = config["fonts"]["default_paragraph_font"]
+    paragraph_font_size = config["fonts"]["default_paragraph_size"]
     pdf.ln(20)
-    pdf.set_font("OpenSansBold", "", 16)
+    pdf.set_font(header_font, "", (header_font_size / 4) + 4)
     pdf.write(5, "Species Data:")
     pdf.ln(10)
     tcell_width = 88
     tcell_height = 5
 
-    pdf.set_font("OpenSansBold", "", 8)
+    pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
 
     for key, value in amphibian_data.__dict__.items():
         if key not in ["position", "image_url_male", "image_url_female"]:
             key = " ".join(key.split("_")).upper()
-            pdf.set_font("OpenSansBold", "", 8)
+            pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
             pdf.cell(tcell_width, tcell_height, str(key), align="L", border=1)
-            pdf.set_font("OpenSans", "", 8)
+            pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
             pdf.cell(tcell_width, tcell_height, str(value), align="L", border=1)
             pdf.ln(tcell_height)
 
@@ -560,8 +575,13 @@ def create_report_page_compact(amp: object, pdf, image_offset) -> object:
         pdf: Fpdf2 pdf object
 
     """
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
+    config["fonts"]["default_paragraph_font"]
+    config["fonts"]["default_paragraph_size"]
     pdf.start_section(name=amp.get_short_name(), level=3)
-    pdf.set_font("OpenSansBold", "", 16)
+    pdf.set_font(header_font, "", (header_font_size / 4) + 4)
     pdf.ln(5)
     pdf.write(10, amp.get_short_name())
     pdf = insert_species_images_compact(amp, pdf, image_offset)
@@ -584,19 +604,25 @@ def create_report_page_table_compact(amphibian_data, pdf):
         pdf - pdf object
 
     """
+    config = load_config()
+    config["fonts"]["default_header_font"]
+    config["fonts"]["default_header_size"]
+    paragraph_font = config["fonts"]["default_paragraph_font"]
+    paragraph_font_size = config["fonts"]["default_paragraph_size"]
+
     pdf.ln(10)
     lcell_width = 35
     rcell_width = 65
     tcell_height = 4
 
-    pdf.set_font("OpenSansBold", "", 8)
+    pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
 
     for key, value in amphibian_data.__dict__.items():
         if key not in ["position", "image_url_male", "image_url_female"]:
             key = " ".join(key.split("_")).upper()
-            pdf.set_font("OpenSansBold", "", 8)
+            pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
             pdf.cell(lcell_width, tcell_height, str(key), align="L", border=1)
-            pdf.set_font("OpenSans", "", 7)
+            pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
             pdf.cell(rcell_width, tcell_height, str(value), align="L", border=1)
             pdf.ln(tcell_height)
 
@@ -620,7 +646,12 @@ def insert_species_images_compact(amp, pdf, image_offset):
 
     """
     WIDTH = 210
-    pdf.set_font("OpenSansBold", "", 16)
+    config = load_config()
+    header_font = config["fonts"]["default_header_font"]
+    header_font_size = config["fonts"]["default_header_size"]
+    config["fonts"]["default_paragraph_font"]
+    config["fonts"]["default_paragraph_size"]
+    pdf.set_font(header_font, "", (header_font_size / 4) + 4)
     if amp.has_image_url():
         pdf.image(
             f"{amp.image_url_male}",

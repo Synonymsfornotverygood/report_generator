@@ -2,11 +2,19 @@
 
 A tool to create pdf reports from excel (.xlsx) spreadsheet.
 
+Example:
+
+    report-generator
+    report-generator --gui
+    report-generator --cli [--order_taxon_name='Anura'] [--GeoGraphicRegion='China'] --output 'Report Aura China'
+    report-generator --cli --Clutch=5 --Clutch=10
+
 Usage:
     report-generator
     report-generator --gui
     report-generator --new
     report-generator --no-db
+    report-generator --output <filename>
     report-generator --cli [--order_taxon_name=<ordname>]
                     [--Family=<famname>]
                     [--Genus=<genname>]
@@ -37,6 +45,7 @@ Options:
     --no-db                 Do not check for db settings
                             instead supply string values to create project
                             works directly from Excel(.xlsx) file.
+    -o --output             The output filename/location of the report
     [--order_taxon_name]    The order name of species.
     [--Family]              The Family name of species.
     [--Genus]               The genus name of species.
@@ -73,7 +82,7 @@ def main():
 
     arguments = docopt(__doc__, version="Report Generator 1.0")
     # check if gui option selected
-
+    # print(arguments)
     if arguments["--cli"] is True:
         print("Report Generator CLI")
         report_generator.report_generator_cli.main.main(arguments)

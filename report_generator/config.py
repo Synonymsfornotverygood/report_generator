@@ -36,3 +36,5 @@ def dump_config(settings: dict) -> None:
                             value pairs.
 
     """
+    with open("config.yaml", "w") as file:
+        yaml.dump(settings, file)

@@ -23,13 +23,14 @@ def read_from_db(options: dict):
 
 def get_query_options(options: dict) -> dict:
     query_options = {}
+    print(options)
     for key, value in options.items():
         key = key.strip("--")
         if value == "":
             value = None
         if value == ["", ""]:
             value = []
-        s_args = ["new", "cli", "gui", "no-setup", "help", "version", "no-db"]
+        s_args = ["new", "cli", "gui", "no-setup", "help", "version", "no-db", "output"]
         if (key not in s_args) and (value is not None) and (len(value) != 0):
             query_options[key] = value
     return query_options
@@ -116,7 +117,6 @@ def build_query(params: dict):
     ORDER BY
     species_comp_id ASC
     """
-    print(sql)
     return sql
 
 
