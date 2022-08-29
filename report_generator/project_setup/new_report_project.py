@@ -96,6 +96,18 @@ def get_project_settings(settings: dict = None) -> None:
             "school_name": school_name,
             "uni_name": uni_name,
             "data_set": data_set,
+            "fonts": {
+                "default_header_colour": "Black",
+                "default_header_font": "OpenSans-Bold",
+                "default_header_size": 48,
+                "default_paragraph_colour": "Black",
+                "default_paragraph_font": "OpenSans-Bold",
+                "default_paragraph_size": 10,
+                "default_title_colour": "Red",
+                "default_title_font": "OpenSans-Bold",
+                "default_title_size": 56,
+                "default_title_sub": "OpenSans",
+            },
         }
 
     return settings
