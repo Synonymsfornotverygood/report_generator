@@ -133,7 +133,7 @@ def create_chapter_space(pdf, chapter_file_loc) -> object:
         config = load_config()
         header_font = config["fonts"]["default_header_font"]
         header_font_size = config["fonts"]["default_header_size"]
-        pdf.start_section(name="Chapters", level=0)
+        pdf.start_section(name="Introduction", level=0)
         pdf.set_font(header_font, "", header_font_size)
         pdf.ln(20)
         pdf.write(30, f"Report Section: ", "C")
