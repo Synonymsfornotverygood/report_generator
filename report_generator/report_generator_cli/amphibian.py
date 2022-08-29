@@ -31,7 +31,7 @@ class AmphibianData:
         self.family = amp_info[2]
         self.genus = amp_info[3]
         self.species = amp_info[4]
-        self.SVLMx = self.get_SVLMx(amp_info)
+        self.body_size_max = self.get_SVLMx(amp_info)
         self.longevity = amp_info[8]
         self.nesting_site = amp_info[9]
         self.clutch = self.get_clutch(amp_info)
@@ -39,13 +39,13 @@ class AmphibianData:
         self.egg_diameter = amp_info[14]
         self.activity = amp_info[15]
         self.micro_habitat = amp_info[16]
-        self.geographic_region = self.get_geographic_regions(amp_info)
         self.IUCN = amp_info[18]
         self.pop_trend = amp_info[19]
         self.range_size = amp_info[20]
         self.elevation = self.get_elevation(amp_info)
         self.image_url_male = ""
         self.image_url_female = ""
+        self.geographic_region = self.get_geographic_regions(amp_info)
 
         # fecundity, egg hatching, age maturity, metamorphosis are missing
 

@@ -924,10 +924,19 @@ class Ui_MainWindow(object):
             "paragraph_colour": self.paragraphFontColourComboBox.currentText(),
         }
 
+        pdf_chapters = self.lineEdit.text()
+
         if all(args):
             print(f"Args: {title}, {author}, {university}, {school}")
             create_report(
-                source, options, title, author, university, school, font_options
+                source,
+                options,
+                title,
+                author,
+                university,
+                school,
+                font_options,
+                pdf_chapters,
             )
             self.show_popup()
             self.mainwin.close()

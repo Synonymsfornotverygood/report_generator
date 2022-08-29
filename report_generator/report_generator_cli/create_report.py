@@ -26,6 +26,7 @@ import sys
 import time
 from pathlib import Path
 
+import fitz
 import pandas
 from fpdf import FPDF, TextMode
 from loguru import logger
@@ -52,6 +53,7 @@ def create_report(
     university_name: str,
     university_school: str,
     font_options: dict = None,
+    pdf_chapters: str = None,
 ) -> None:
     """Create Report.
 
@@ -101,6 +103,10 @@ def create_report(
 
     curtime = time.time()
 
+    logger.debug("Started inserting chapters")
+    create_chapter_space(pdf, pdf_chapters)
+    logger.debug("Finished inserting chapters")
+
     logger.debug("Started creating report pages")
 
     pdf = create_report_order_sections(ds, pdf)
@@ -112,12 +118,36 @@ def create_report(
     fp = pdf_ouput_path
     fs = round(os.path.getsize(fp) / (1 << 20), 2)
 
+    insert_chapter_pdf(fp, pdf_chapters)
+
     debug_mess = f"Create Report Finished: {report_name} - "
     debug_mess += f"Time Taken: {round((time.time() - startTime), 2)}s"
     debug_mess += ", File Size: "
     debug_mess += f"{fs}MB"
-
     logger.debug(debug_mess)
+
+
+def create_chapter_space(pdf, chapter_file_loc) -> object:
+    """Create Space for chapters"""
+    if chapter_file_loc is not None:
+        config = load_config()
+        header_font = config["fonts"]["default_header_font"]
+        header_font_size = config["fonts"]["default_header_size"]
+        pdf.start_section(name="Chapters", level=0)
+        pdf.set_font(header_font, "", header_font_size)
+        pdf.ln(20)
+        pdf.write(30, f"Report Section: ", "C")
+    return pdf
+
+
+def insert_chapter_pdf(pdf_file_loc, chapter_file_loc) -> object:
+    """Insert Chapter into pdf report."""
+    if chapter_file_loc is not None:
+        file1 = fitz.open(pdf_file_loc)
+        file2 = fitz.open(chapter_file_loc)
+
+        file1.insert_pdf(file2, start_at=13)
+        file1.save("test2.pdf")
 
 
 # create title page
@@ -612,19 +642,64 @@ def create_report_page_table_compact(amphibian_data, pdf):
 
     pdf.ln(10)
     lcell_width = 35
-    rcell_width = 65
+    rcell_width = 70
     tcell_height = 4
 
     pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
 
     for key, value in amphibian_data.__dict__.items():
-        if key not in ["position", "image_url_male", "image_url_female"]:
+        if key not in [
+            "position",
+            "image_url_male",
+            "image_url_female",
+            "order",
+            "family",
+            "genus",
+            "species",
+        ]:
             key = " ".join(key.split("_")).upper()
             pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
-            pdf.cell(lcell_width, tcell_height, str(key), align="L", border=1)
-            pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
-            pdf.cell(rcell_width, tcell_height, str(value), align="L", border=1)
-            pdf.ln(tcell_height)
+            if key == "GEOGRAPHIC REGION":
+
+                max_tcell_height = 4 + (len(value) / 45) * 4
+                if max_tcell_height < 16:
+                    max_tcell_height = 16
+                pdf.multi_cell(
+                    lcell_width,
+                    max_tcell_height,
+                    str(key),
+                    align="L",
+                    border=1,
+                    new_x="RIGHT",
+                    new_y="TOP",
+                    max_line_height=max_tcell_height,
+                )
+                pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
+                pdf.multi_cell(
+                    w=rcell_width,
+                    h=max_tcell_height,
+                    txt=value,
+                    align="L",
+                    border=1,
+                    new_x="RIGHT",
+                    new_y="TOP",
+                    max_line_height=tcell_height,
+                )
+                pdf.ln(max_tcell_height)
+            else:
+                pdf.cell(
+                    lcell_width,
+                    tcell_height,
+                    str(key),
+                    align="L",
+                    border=1,
+                    new_x="RIGHT",
+                    new_y="TOP",
+                )
+                pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
+                pdf.cell(rcell_width, tcell_height, str(value), align="L", border=1)
+                pdf.ln(tcell_height)
+            tcell_height = 4
 
     return pdf
 
