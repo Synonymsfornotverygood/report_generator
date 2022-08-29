@@ -32,16 +32,16 @@ class AmphibianData:
         self.genus = amp_info[3]
         self.species = amp_info[4]
         self.body_size_max = self.get_SVLMx(amp_info)
-        self.longevity = amp_info[8]
+        self.longevity = self.rtz(amp_info[8])
         self.nesting_site = amp_info[9]
         self.clutch = self.get_clutch(amp_info)
         self.parity_mode = amp_info[13]
-        self.egg_diameter = amp_info[14]
+        self.egg_diameter = self.rtz(amp_info[14])
         self.activity = amp_info[15]
         self.micro_habitat = amp_info[16]
         self.IUCN = amp_info[18]
         self.pop_trend = amp_info[19]
-        self.range_size = amp_info[20]
+        self.range_size = self.rtz(amp_info[20])
         self.elevation = self.get_elevation(amp_info)
         self.image_url_male = ""
         self.image_url_female = ""
@@ -63,34 +63,26 @@ class AmphibianData:
 
     def get_SVLMx(self, amp_info: list) -> str:
         """Get SVLMx."""
-        SVLMx = f"Male: {amp_info[5]}"
-        SVLMx += f"{' ' * (10 - len('male: ' + str(amp_info[5])))}| "
-        SVLMx += (
-            f"Female: {amp_info[6]}{' ' * (10 - len('Female: ' + str(amp_info[6])))}|"
-        )
-        SVLMx += f" Average: {amp_info[7]}"
+        SVLMx = f"Male: {self.rtz(amp_info[5])}"
+        SVLMx += f"{' ' * (10 - len('male: ' + str(self.rtz(amp_info[5]))))}| "
+        SVLMx += f"Female: {self.rtz(amp_info[6])}{' ' * (10 - len('Female: ' + str(self.rtz(amp_info[6]))))}|"
+        SVLMx += f" Average: {self.rtz(amp_info[7])}"
 
         return SVLMx
 
     def get_clutch(self, amp_info: list) -> str:
         """Get Clutch."""
-        clutch = f"Min: {amp_info[10]}{' ' * (10 - len('min: ' + str(amp_info[10])))}| "
-        clutch += (
-            f"Max: {amp_info[11]}{' ' * (10 - len('max: ' + str(amp_info[11])))}| "
-        )
-        clutch += f"Average: {amp_info[12]}"
+        clutch = f"Min: {self.rtz(amp_info[10])}{' ' * (10 - len('min: ' + str(amp_info[10])))}| "
+        clutch += f"Max: {self.rtz(amp_info[11])}{' ' * (10 - len('max: ' + str(self.rtz(amp_info[11]))))}| "
+        clutch += f"Average: {self.rtz(amp_info[12])}"
 
         return clutch
 
     def get_elevation(self, amp_info: list) -> str:
         """Get Elevation."""
-        elevation = (
-            f"Min: {amp_info[21]}{' ' * (10 - len('min: ' + str(amp_info[21])))}| "
-        )
-        elevation += (
-            f"Max: {amp_info[22]}{' ' * (10 - len('max: ' + str(amp_info[22])))}| "
-        )
-        elevation += f"Average: {amp_info[23]}"
+        elevation = f"Min: {self.rtz(amp_info[21])}{' ' * (10 - len('min: ' + str(self.rtz(amp_info[21]))))}| "
+        elevation += f"Max: {self.rtz(amp_info[22])}{' ' * (10 - len('max: ' + str(self.rtz(amp_info[22]))))}| "
+        elevation += f"Average: {self.rtz(amp_info[23])}"
 
         return elevation
 
@@ -137,3 +129,12 @@ class AmphibianData:
             bool
         """
         return self.image_url_male != "" and self.image_url_female != ""
+
+    def rtz(self, val) -> str:
+        """Remove trailing zero"""
+        if val != "Unknown":
+            if float(val) % 1 == 0:
+                val = int(val)
+            else:
+                val = f"{val:.2f}"
+        return val

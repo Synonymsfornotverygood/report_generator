@@ -110,7 +110,8 @@ def create_report(
     curtime = time.time()
 
     logger.debug("Started inserting chapters")
-    create_chapter_space(pdf, pdf_chapters)
+    if pdf_chapters != "" or pdf_chapters is not None:
+        create_chapter_space(pdf, pdf_chapters)
     logger.debug("Finished inserting chapters")
 
     logger.debug("Started creating report pages")
@@ -138,7 +139,7 @@ def create_report(
 
 def create_chapter_space(pdf, chapter_file_loc) -> object:
     """Create Space for chapters"""
-    if chapter_file_loc is not None:
+    if chapter_file_loc != "":
         config = load_config()
         header_font = config["fonts"]["default_header_font"]
         header_font_size = config["fonts"]["default_header_size"]
@@ -456,16 +457,16 @@ def create_report_section_pages(section, pdf, config):
             else:
                 image_offset = 0
 
-            if (i + 1) % 3 == 0:
+            if i % 3 == 2:
                 image_offset += 165
                 pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 pdf.add_page()
-            elif i % 2 == 0:
+            elif i % 3 == 1:
+                image_offset += 85
                 pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 if (i + 1) == len(amp_list):
                     pdf.add_page()
             else:
-                image_offset += 85
                 pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 if (i + 1) == len(amp_list):
                     pdf.add_page()
@@ -588,13 +589,13 @@ def create_report_page_table(amphibian_data, pdf, config):
     pdf.write(5, "Species Data:")
     pdf.ln(10)
     tcell_width = 88
-    tcell_height = 5
+    tcell_height = 6
 
     pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
 
     for key, value in amphibian_data.__dict__.items():
         if key not in ["position", "image_url_male", "image_url_female"]:
-            key = " ".join(key.split("_")).upper()
+            key = " ".join(key.split("_")).title()
             pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
             pdf.cell(tcell_width, tcell_height, str(key), align="L", border=1)
             pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
@@ -656,8 +657,8 @@ def create_report_page_table_compact(amphibian_data, pdf, config):
 
     pdf.ln(10)
     lcell_width = 35
-    rcell_width = 70
-    tcell_height = 4
+    rcell_width = 95
+    tcell_height = 4.5
 
     pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
 
@@ -671,11 +672,11 @@ def create_report_page_table_compact(amphibian_data, pdf, config):
             "genus",
             "species",
         ]:
-            key = " ".join(key.split("_")).upper()
+            key = " ".join(key.split("_")).title()
             pdf.set_font(paragraph_font, "b", paragraph_font_size - 2)
-            if key == "GEOGRAPHIC REGION":
-
-                max_tcell_height = 4 + (len(value) / 45) * 4
+            if key == "Geographic Region":
+                tcell_height = 3.5
+                max_tcell_height = 4 + (len(value) / 60) * 3
                 if max_tcell_height < 16:
                     max_tcell_height = 16
                 pdf.multi_cell(
@@ -688,7 +689,10 @@ def create_report_page_table_compact(amphibian_data, pdf, config):
                     new_y="TOP",
                     max_line_height=max_tcell_height,
                 )
-                pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
+                if max_tcell_height <= 16:
+                    pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
+                else:
+                    pdf.set_font(paragraph_font, "", paragraph_font_size - 3)
                 pdf.multi_cell(
                     w=rcell_width,
                     h=max_tcell_height,
@@ -713,7 +717,7 @@ def create_report_page_table_compact(amphibian_data, pdf, config):
                 pdf.set_font(paragraph_font, "", paragraph_font_size - 2)
                 pdf.cell(rcell_width, tcell_height, str(value), align="L", border=1)
                 pdf.ln(tcell_height)
-            tcell_height = 4
+            tcell_height = 4.5
 
     return pdf
 
@@ -744,54 +748,54 @@ def insert_species_images_compact(amp, pdf, image_offset, config):
     if amp.has_image_url():
         pdf.image(
             f"{amp.image_url_male}",
-            x=120,
+            x=145,
             y=(25 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'maletext.png')}",
-            x=120,
+            x=145,
             y=(55 + image_offset),
             h=5,
         )
         pdf.image(
             f"{amp.image_url_female}",
-            x=120,
+            x=145,
             y=(60 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'femaleimage.png')}",
-            x=120,
+            x=145,
             y=(91 + image_offset),
             h=4,
         )
     else:
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'frogsil1.png')}",
-            x=120,
+            x=145,
             y=(25 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'maletext.png')}",
-            x=120,
+            x=145,
             y=(55 + image_offset),
             h=5,
         )
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'frogsil2.png')}",
-            x=120,
+            x=145,
             y=(60 + image_offset),
             w=(WIDTH / 3) - 25,
             h=30,
         )
         pdf.image(
             f"{ os.path.join(IMAGES_PATH ,'femaleimage.png')}",
-            x=120,
+            x=145,
             y=(91 + image_offset),
             h=4,
         )
