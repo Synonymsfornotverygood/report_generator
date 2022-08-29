@@ -90,7 +90,13 @@ def create_report(
     curtime = time.time()
     logger.debug("Started creating title page")
     pdf = create_title_page(
-        report_name, report_author, university_name, university_school, pdf
+        report_name,
+        report_author,
+        university_name,
+        university_school,
+        pdf,
+        config,
+        font_options=None,
     )
     logger.debug("Finished creating title page: {round(time.time() - curtime, 2)}s")
 
@@ -109,7 +115,7 @@ def create_report(
 
     logger.debug("Started creating report pages")
 
-    pdf = create_report_order_sections(ds, pdf)
+    pdf = create_report_order_sections(ds, pdf, config)
     pdf_title = f"{'_'.join(report_name.split(' '))}.pdf"
     pdf_ouput_path = os.path.join(config["dir_path"], "report", pdf_title)
     pdf.output(pdf_ouput_path)
@@ -117,6 +123,9 @@ def create_report(
     logger.debug(f"Finished creating report pages: {round(time.time() - curtime, 2)}s")
     fp = pdf_ouput_path
     fs = round(os.path.getsize(fp) / (1 << 20), 2)
+
+    if pdf_chapters == "":
+        pdf_chapters = None
 
     insert_chapter_pdf(fp, pdf_chapters)
 
@@ -140,12 +149,11 @@ def create_chapter_space(pdf, chapter_file_loc) -> object:
     return pdf
 
 
-def insert_chapter_pdf(pdf_file_loc, chapter_file_loc) -> object:
+def insert_chapter_pdf(pdf_file_loc, chapter_file_loc=None) -> object:
     """Insert Chapter into pdf report."""
     if chapter_file_loc is not None:
         file1 = fitz.open(pdf_file_loc)
         file2 = fitz.open(chapter_file_loc)
-
         file1.insert_pdf(file2, start_at=13)
         file1.save("test2.pdf")
 
@@ -159,6 +167,8 @@ def create_title_page(
     university_name: str,
     university_school: str,
     pdf: object,
+    config: dict,
+    font_options: dict = None,
 ) -> object:
     """Create title page.
 
@@ -195,7 +205,6 @@ def create_title_page(
     with pdf.local_context(
         text_mode=TextMode.FILL, text_color=(227, 6, 19), line_width=2
     ):
-        config = load_config()
         pdf = fonts.add_font_choices_to_pdf(pdf, None)
         title_font = config["fonts"]["default_title_font"]
         title_sub_font = config["fonts"]["default_title_sub"]
@@ -288,7 +297,7 @@ def calc_number_of_contents_pages(data_frame: object) -> int:
     return count
 
 
-def create_report_order_sections(ds: object, pdf: object) -> object:
+def create_report_order_sections(ds: object, pdf: object, config: dict) -> object:
     """Create report order sections.
 
     Filter function that splits the data frame (ds) into smaller dataframes
@@ -304,12 +313,12 @@ def create_report_order_sections(ds: object, pdf: object) -> object:
     Args:
         ds - Pandas Dataframe object
         pdf - pdf object
+        config - config dict
 
     Returns:
         pdf - pdf object
 
     """
-    config = load_config()
     order = ds["Order"]
     order_names = order.value_counts().index.tolist()
     order_names.sort()
@@ -323,12 +332,14 @@ def create_report_order_sections(ds: object, pdf: object) -> object:
         pdf.ln(20)
         pdf.write(30, f"Order: {name}", "C")
         pdf.ln(20)
-        pdf = create_report_family_sections(sect, pdf)
+        pdf = create_report_family_sections(sect, pdf, config)
 
     return pdf
 
 
-def create_report_family_sections(section_list: object, pdf: object) -> object:
+def create_report_family_sections(
+    section_list: object, pdf: object, config: dict
+) -> object:
     """Create report family sections.
 
     Filter function that splits the data frame (section_list)
@@ -344,6 +355,7 @@ def create_report_family_sections(section_list: object, pdf: object) -> object:
     Args:
         section_list - Pandas Dataframe object
         pdf - pdf object
+        config - config dict
 
     Returns:
         pdf - pdf object
@@ -352,7 +364,6 @@ def create_report_family_sections(section_list: object, pdf: object) -> object:
     family = section_list["Family"]
     family_names = family.value_counts().index.tolist()
     family_names.sort()
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     for name in family_names:
@@ -362,12 +373,14 @@ def create_report_family_sections(section_list: object, pdf: object) -> object:
         pdf.ln(20)
         pdf.write(10, f"Family: {name}", "C")
         pdf.add_page()
-        pdf = create_report_genus_sections(sect, pdf)
+        pdf = create_report_genus_sections(sect, pdf, config)
 
     return pdf
 
 
-def create_report_genus_sections(section_list: object, pdf: object) -> object:
+def create_report_genus_sections(
+    section_list: object, pdf: object, config: dict
+) -> object:
     """Create report genus sections.
 
     Filter function that splits the data frame (ds) into smaller dataframes
@@ -384,6 +397,7 @@ def create_report_genus_sections(section_list: object, pdf: object) -> object:
     Args:
         section_list - Pandas Dataframe object
         pdf - pdf object
+        config - config dict
 
     Returns:
         pdf - pdf object
@@ -392,7 +406,6 @@ def create_report_genus_sections(section_list: object, pdf: object) -> object:
     genus = section_list["Genus"]
     genus_names = genus.value_counts().index.tolist()
     genus_names.sort()
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     for name in genus_names:
@@ -401,13 +414,13 @@ def create_report_genus_sections(section_list: object, pdf: object) -> object:
         pdf.write(10, f"Genus: {name}")
         pdf.start_section(name=name, level=2)
         pdf.ln(10)
-        pdf = create_report_section_pages(sect, pdf)
+        pdf = create_report_section_pages(sect, pdf, config)
 
     return pdf
 
 
 # Create pages
-def create_report_section_pages(section, pdf):
+def create_report_section_pages(section, pdf, config):
     """Create report section pages.
 
     Takes the section passed to it. Passes section to 'create_amphibian_list'
@@ -418,6 +431,7 @@ def create_report_section_pages(section, pdf):
     Args:
         section - pandas dataframe object
         pdf - pdf object
+        config - config dict
 
     Return:
         pdf - pdf object
@@ -444,22 +458,22 @@ def create_report_section_pages(section, pdf):
 
             if (i + 1) % 3 == 0:
                 image_offset += 165
-                pdf = create_report_page_compact(amp, pdf, image_offset)
+                pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 pdf.add_page()
             elif i % 2 == 0:
-                pdf = create_report_page_compact(amp, pdf, image_offset)
+                pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 if (i + 1) == len(amp_list):
                     pdf.add_page()
             else:
                 image_offset += 85
-                pdf = create_report_page_compact(amp, pdf, image_offset)
+                pdf = create_report_page_compact(amp, pdf, image_offset, config)
                 if (i + 1) == len(amp_list):
                     pdf.add_page()
     return pdf
 
 
 # create page
-def create_report_section_page(amp, pdf):
+def create_report_section_page(amp, pdf, config):
     """Create report section page.
 
     Takes an instance of Amphibian and creates a page. Adds title.
@@ -469,20 +483,20 @@ def create_report_section_page(amp, pdf):
     Args:
         amp - Amphibian object
         pdf - pdf object
+        config - config dict
 
     Return:
         pdf - pdf object
 
     """
     pdf.start_section(name=amp.get_short_name(), level=3)
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     pdf.set_font(header_font, "", (header_font_size / 4) * 2)
     pdf.ln(20)
     pdf.write(10, amp.get_short_name())
-    pdf = insert_species_images(amp, pdf)
-    pdf = create_report_page_table(amp, pdf)
+    pdf = insert_species_images(amp, pdf, config)
+    pdf = create_report_page_table(amp, pdf, config)
     pdf.add_page()
 
     return pdf
@@ -491,7 +505,7 @@ def create_report_section_page(amp, pdf):
 # add images
 
 
-def insert_species_images(amp, pdf):
+def insert_species_images(amp, pdf, config):
     """Insert species images.
 
     Takes an instance of Amphibian and pdf. Adds images (insert_species_images)
@@ -502,12 +516,12 @@ def insert_species_images(amp, pdf):
     Args:
         amp - Amphibian object
         pdf - pdf object
+        config -  config dict
 
     Return:
         pdf - pdf object
 
     """
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     paragraph_font = config["fonts"]["default_paragraph_font"]
@@ -550,7 +564,7 @@ def insert_species_images(amp, pdf):
 
 
 # create data table
-def create_report_page_table(amphibian_data, pdf):
+def create_report_page_table(amphibian_data, pdf, config):
     """Create report page table.
 
     Takes an instance of Amphibian and pdf. Adds the data in object to current pdf page
@@ -559,12 +573,12 @@ def create_report_page_table(amphibian_data, pdf):
     Args:
         amp - Amphibian object
         pdf - pdf object
+        config - dict
 
     Return:
         pdf - pdf object
 
     """
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     paragraph_font = config["fonts"]["default_paragraph_font"]
@@ -590,7 +604,7 @@ def create_report_page_table(amphibian_data, pdf):
     return pdf
 
 
-def create_report_page_compact(amp: object, pdf, image_offset) -> object:
+def create_report_page_compact(amp: object, pdf, image_offset, config) -> object:
     """Create report page compact.
 
     Creates a report page with a more compact style.
@@ -600,12 +614,12 @@ def create_report_page_compact(amp: object, pdf, image_offset) -> object:
         amp: Amphibian object
         pdf: Fpdf2 pdf object
         image_offset: offset values for image placement
+        config: config dict
 
     Returns:
         pdf: Fpdf2 pdf object
 
     """
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     config["fonts"]["default_paragraph_font"]
@@ -614,13 +628,13 @@ def create_report_page_compact(amp: object, pdf, image_offset) -> object:
     pdf.set_font(header_font, "", (header_font_size / 4) + 4)
     pdf.ln(5)
     pdf.write(10, amp.get_short_name())
-    pdf = insert_species_images_compact(amp, pdf, image_offset)
-    pdf = create_report_page_table_compact(amp, pdf)
+    pdf = insert_species_images_compact(amp, pdf, image_offset, config)
+    pdf = create_report_page_table_compact(amp, pdf, config)
 
     return pdf
 
 
-def create_report_page_table_compact(amphibian_data, pdf):
+def create_report_page_table_compact(amphibian_data, pdf, config):
     """Create report page table compact.
 
     Takes an instance of Amphibian and pdf. Adds the data in object
@@ -629,12 +643,12 @@ def create_report_page_table_compact(amphibian_data, pdf):
     Args:
         amp - Amphibian object
         pdf - pdf object
+        config - config dict
 
     Return:
         pdf - pdf object
 
     """
-    config = load_config()
     config["fonts"]["default_header_font"]
     config["fonts"]["default_header_size"]
     paragraph_font = config["fonts"]["default_paragraph_font"]
@@ -704,7 +718,7 @@ def create_report_page_table_compact(amphibian_data, pdf):
     return pdf
 
 
-def insert_species_images_compact(amp, pdf, image_offset):
+def insert_species_images_compact(amp, pdf, image_offset, config):
     """Insert species images compact.
 
     Takes an instance of Amphibian and pdf. Adds images (insert_species_images)
@@ -715,13 +729,13 @@ def insert_species_images_compact(amp, pdf, image_offset):
     Args:
         amp - Amphibian object
         pdf - pdf object
+        config - config dict
 
     Return:
         pdf - pdf object
 
     """
     WIDTH = 210
-    config = load_config()
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     config["fonts"]["default_paragraph_font"]
