@@ -50,7 +50,7 @@ def export_to_database(
 
         # Update the locations
         updated_data_frame = update_location(clean_data_frame)
-
+        # updated_data_frame.to_excel(r"updated_locations.xlsx")
         # with open("min.txt", "w") as file:
         #     file.write("\n".join(clean_data_frame["ElevationMin"].unique().tolist()))
 
@@ -166,7 +166,7 @@ def create_data_frame(path_to_dataset: str):
     return data_frame
 
 
-def main(path_to_file: str) -> None:
+def main(path_to_file: str, output: str) -> None:
     """Run main method.
 
     Main function for excel to sql
@@ -174,7 +174,7 @@ def main(path_to_file: str) -> None:
     Args:
         path_to_file(str): File path string.
     """
-    export_to_database(path_to_file)
+    export_to_database(path_to_file, output)
 
 
 if __name__ == "__main__":
@@ -184,8 +184,10 @@ if __name__ == "__main__":
     path_to_file = ""
 
     if len(args) < 2:
-        path_to_file = "example/output_3.xlsx"
+        path_to_file = "/home/cush/GABiP DATABASE_V5_06.July.2022-1.xlsx"
+        output = "test.db"
     else:
         path_to_file = args[1]
+        output = args[2]
 
-    main(path_to_file)
+    main(path_to_file, output)

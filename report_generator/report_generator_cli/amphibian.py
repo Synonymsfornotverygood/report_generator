@@ -26,21 +26,21 @@ class AmphibianData:
             amp_info: amphibian info list
 
         """
-        self.position = amp_info[0]
-        self.order = amp_info[1]
-        self.family = amp_info[2]
-        self.genus = amp_info[3]
-        self.species = amp_info[4]
+        self.position = self.rtz(amp_info[0])
+        self.order = self.rtz(amp_info[1])
+        self.family = self.rtz(amp_info[2])
+        self.genus = self.rtz(amp_info[3])
+        self.species = self.rtz(amp_info[4])
         self.body_size_max = self.get_SVLMx(amp_info)
         self.longevity = self.rtz(amp_info[8])
-        self.nesting_site = amp_info[9]
+        self.nesting_site = self.rtz(amp_info[9])
         self.clutch = self.get_clutch(amp_info)
-        self.parity_mode = amp_info[13]
+        self.parity_mode = self.rtz(amp_info[13])
         self.egg_diameter = self.rtz(amp_info[14])
-        self.activity = amp_info[15]
-        self.micro_habitat = amp_info[16]
-        self.IUCN = amp_info[18]
-        self.pop_trend = amp_info[19]
+        self.activity = self.rtz(amp_info[15])
+        self.microhabitat = self.rtz(amp_info[16])
+        self.IUCN_category = self.rtz(amp_info[18])
+        self.population_trend = self.rtz(amp_info[19])
         self.range_size = self.rtz(amp_info[20])
         self.elevation = self.get_elevation(amp_info)
         self.image_url_male = ""
@@ -54,8 +54,10 @@ class AmphibianData:
         geo = geo.split(",")
         geo_n = []
         for g in geo:
-            a = g.replace(" Nocountry", "")
+            a = g.replace("Nocontinent", "")
+            a = a.replace(" Nocountry", "")
             a = a.replace("Noregion", "")
+            a = a.strip("/")
             geo_n.append(a)
         geo_set = {x for x in geo_n}
         geo_l = [*geo_set]
@@ -133,8 +135,13 @@ class AmphibianData:
     def rtz(self, val) -> str:
         """Remove trailing zero"""
         if val != "Unknown":
-            if float(val) % 1 == 0:
-                val = int(val)
-            else:
-                val = f"{val:.2f}"
+            try:
+                if float(val) % 1 == 0:
+                    val = int(val)
+                else:
+                    val = f"{val:.2f}"
+            except:
+                pass
+        else:
+            val = "Unavailable"
         return val

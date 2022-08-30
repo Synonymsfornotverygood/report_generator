@@ -246,8 +246,8 @@ def search_for_unknowns(unknowns: list):
         select Country_Name, Continent_Name, latitude, longitude, country_code
         from geocode
         join country_codes on geocode.country_code=country_codes.Two_Letter_Country_Code
-        where place_name like '%{unknown.title()}%'
-        or alternate_names like '%{unknown.title}%' limit 1
+        where place_name like '{unknown.title()}'
+        or alternate_names like '{unknown.title}%' limit 1
         """
 
         # Execute

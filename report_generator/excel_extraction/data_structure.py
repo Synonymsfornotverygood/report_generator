@@ -33,10 +33,11 @@ def structure_data(data_frame: object) -> object:
     micro_habitat_species = structure_micro_habitat_species(
         data_frame, species, micro_habitat
     )
-    spec_df, continent, country, geo_location = structure_geo_location(
-        data_frame, species
+    continent, country, geo_location, geo_location_species = structure_geo_location(
+        data_frame, species, genus
     )
-    geo_location_species = structure_geo_location_species(spec_df, geo_location)
+    print(country)
+    species.drop("sg", axis=1, inplace=True)
 
     tables_object = {
         "order_taxon": order,
@@ -203,7 +204,9 @@ def structure_country(data_frame: object, continent: object) -> object:
     """
 
 
-def structure_geo_location(data_frame: object, species: object) -> object:
+def structure_geo_location(
+    data_frame: object, species_df: object, genus_df: object
+) -> object:
     """Structures data for geo_location table.
 
     Args:
@@ -216,9 +219,17 @@ def structure_geo_location(data_frame: object, species: object) -> object:
     print("Geo Location")
 
     # geo dataframe
-    geolocation = data_frame[["Species", "FormattedGeographicRegion"]]
+    geolocation = data_frame[["Species", "Genus", "FormattedGeographicRegion"]]
+    geolocation["spec_gen"] = geolocation["Species"] + " " + geolocation["Genus"]
+    # print(len(geolocation["spec_gen"].dropna().unique()))
+    # print(geolocation)
+    # print(species)
+    # print(genus)
+
     geolocation["SpecInd"] = geolocation["Species"].map(
-        lambda x: str(species.index[species["species_name_latin"] == x].tolist()[0] + 1)
+        lambda x: str(
+            species_df.index[species_df["species_name_latin"] == x].tolist()[0] + 1
+        )
     )
 
     print("Split Lines")
@@ -232,15 +243,14 @@ def structure_geo_location(data_frame: object, species: object) -> object:
             else:
                 vals = [*vals, *value.values]
 
-        species = vals[1]
-        locations_strs = vals[2].split("/")
-        species_ind = vals[3]
+        locations_strs = vals[3].split("/")
+        spec_gen = vals[4]
 
         for location_str in locations_strs:
             parts = location_str.split("_")
-            results.append([species_ind, *parts])
+            results.append([spec_gen, *parts])
 
-    species = []
+    species_id = []
     continent = []
     country = []
     region = []
@@ -248,9 +258,18 @@ def structure_geo_location(data_frame: object, species: object) -> object:
     longitude = []
     country_code = []
 
+    # print(results)
+    print(species_df)
+    species_df["sg"] = species_df["species_name_latin"] + species_df["genus_id"]
+
     print("Lines to new dataframe")
     for x in results:
-        species.append(x[0])
+        spec = x[0].split(" ")[0]
+        gen = x[0].split(" ")[1]
+        gen_id = genus_df.index[genus_df["genus_name"] == gen].tolist()[0] + 1
+        sgval = spec + str(gen_id)
+        spec_id = species_df.index[species_df["sg"] == sgval].tolist()[0] + 1
+        species_id.append(spec_id)
         continent.append(x[1])
         country.append(x[2])
         region.append(x[3])
@@ -261,7 +280,7 @@ def structure_geo_location(data_frame: object, species: object) -> object:
     # new base dataframe
     df = pandas.DataFrame(
         {
-            "species_index": species,
+            "species_id": species_id,
             "continent": continent,
             "country": country,
             "region": region,
@@ -271,67 +290,74 @@ def structure_geo_location(data_frame: object, species: object) -> object:
         }
     )
 
+    print(df)
     print("create continent")
     # continent dataframe
     continent_sp = df["continent"].dropna().unique()
     continent_df = pandas.DataFrame(continent_sp, columns=["continent_name"])
+    print(continent_df)
 
-    print("creart country")
-    # country
-    country_sp = df[["continent", "country"]]
-    country_sp["Ind"] = country_sp["continent"].map(
-        lambda x: str(
-            continent_df.index[continent_df["continent_name"] == x].tolist()[0] + 1
-        )
+    df["continent_id"] = df["continent"].map(
+        lambda x: continent_df.index[continent_df["continent_name"] == x].tolist()[0]
+        + 1
     )
-    country_sp["contcount"] = country_sp["country"] + "+" + country_sp["Ind"]
-    uni = [x.split("+") for x in country_sp["contcount"].dropna().unique()]
+    print(df)
 
-    a = []
-    b = []
+    country_df = df[["country", "continent_id"]].drop_duplicates(ignore_index=True)
+    print(country_df)
+    df["country_cont"] = df.agg(lambda x: f"{x['country']} {x['continent_id']}", axis=1)
+    country_df["country_cont"] = country_df.agg(
+        lambda x: f"{x['country']} {x['continent_id']}", axis=1
+    )
 
-    for x in uni:
-        a.append(x[0])
-        b.append(x[1])
+    print(df)
+    print(country_df)
 
-    country_df = pandas.DataFrame({"country_name": a, "continent_id": b})
+    df["country_id"] = df["country_cont"].map(
+        lambda x: country_df.index[country_df["country_cont"] == x].tolist()[0] + 1
+    )
 
+    print(df)
     # geo_location
     print("create geolocation")
-    geo_sp = df[["region", "country", "latitude", "longitude"]]
-    geo_sp["Ind"] = geo_sp["country"].map(
-        lambda x: str(country_df.index[country_df["country_name"] == x].tolist()[0] + 1)
-    )
-    geo_sp["countreglatlon"] = (
-        geo_sp["region"]
-        + "+"
-        + geo_sp["latitude"]
-        + "+"
-        + geo_sp["longitude"]
-        + "+"
-        + geo_sp["Ind"]
-    )
-    uni = [x.split("+") for x in geo_sp["countreglatlon"].dropna().unique()]
-
-    a = []
-    b = []
-    c = []
-    d = []
-
-    for x in uni:
-        a.append(x[0])
-        b.append(x[1] if str(x[1]) != "None" else None)
-        c.append(x[2] if str(x[2]) != "None" else None)
-        d.append(x[3])
-
-    geolocation_df = pandas.DataFrame(
-        {"region_name": a, "latitude": b, "longitude": c, "country_id": d}
+    geo_sp = df[["region", "latitude", "longitude", "country_id"]].drop_duplicates(
+        ignore_index=True
     )
 
-    return [df, continent_df, country_df, geolocation_df]
+    df["reg_count"] = df.agg(lambda x: f"{x['country_id']} {x['region']}", axis=1)
+    geo_sp["reg_count"] = geo_sp.agg(
+        lambda x: f"{x['country_id']} {x['region']}", axis=1
+    )
+
+    df["geo_location_id"] = df["reg_count"].map(
+        lambda x: geo_sp.index[geo_sp["reg_count"] == x].tolist()[0] + 1
+    )
+
+    geolocation_species = df[
+        [
+            "geo_location_id",
+            "species_id",
+        ]
+    ].drop_duplicates()
+    continent = continent_df.rename(columns={"continent": "continent_name"})
+    country = country_df[["country", "continent_id"]].rename(
+        columns={"country": "country_name"}
+    )
+    geolocation = geo_sp[["region", "latitude", "longitude", "country_id"]].rename(
+        columns={"region": "region_name"}
+    )
+
+    print(geolocation_species)
+    print(continent)
+    print(country)
+    print(geolocation)
+
+    return [continent, country, geolocation, geolocation_species]
 
 
-def structure_geo_location_species(data_frame: object, geo_location: object) -> object:
+def structure_geo_location_species(
+    data_frame: object, geo_location: object, country_df, continent_df
+) -> object:
     """Structures data for geo_location table.
 
     Args:
@@ -341,7 +367,22 @@ def structure_geo_location_species(data_frame: object, geo_location: object) -> 
     Returns:
         geo_location_frame(object):Pandas DataFrame object with geo_location data
     """
-    loc_spec = data_frame[["species_index", "region"]]
+    exit()
+    data_frame["continent_id"] = data_frame["continent"].map(
+        lambda x: str(
+            continent_df.index[continent_df["continent_name"] == x].tolist()[0] + 1
+        )
+    )
+
+    data_frame["country_id"] = data_frame["country"]
+    geo_loc = geo_location[["region_name", "country_id"]]
+    geo_loc = geo_loc.dropna().unique()
+
+    geo_loc["country_name"] = geo_loc["country_id"].map(
+        lambda x: str(country_df[country_df["country_id"] == x].tolist()[0] + 1)
+    )
+
+    loc_spec = data_frame[["species_index", "region", "country_id"]]
     loc_spec["geo_id"] = loc_spec["region"].map(
         lambda x: str(
             geo_location.index[geo_location["region_name"] == x].tolist()[0] + 1
@@ -356,7 +397,6 @@ def structure_geo_location_species(data_frame: object, geo_location: object) -> 
     for x in uni:
         a.append(x[0])
         b.append(x[1])
-
     df = pandas.DataFrame({"geo_location_id": a, "species_id": b})
 
     return df

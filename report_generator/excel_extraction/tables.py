@@ -300,6 +300,7 @@ def geo_location_table() -> str:
         country_id INTEGER,
         FOREIGN KEY (country_id)
             REFERENCES country (country_id)
+        UNIQUE(region_name, country_id)
     )
 
     """
@@ -322,6 +323,7 @@ def country_table() -> str:
         continent_id INTEGER,
         FOREIGN KEY (continent_id)
             REFERENCES continent (continent_id)
+        UNIQUE(country_name, continent_id)
     )
 
 
