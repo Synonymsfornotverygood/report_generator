@@ -1,7 +1,18 @@
-author_name: DANIEL PINCHEIRA-DONOSO
-data_set: /home/cush/a/data/excel_src/example_dataset_2_10000.xlsx
-dir_path: /home/cush/a
-project_name: a
-report_name: Example Report
-school_name: SCHOOL OF BIOLOGICAL SCIENCES
-uni_name: QUEEN'S UNIVERSITY BELFAST
+author_name: Daniel Pincheira-Donoso
+data_set: /home/cush/GABiP DATABASE_V5_06.July.2022-1.xlsx
+dir_path: /home/cush/testproj
+fonts:
+  default_header_colour: Black
+  default_header_font: Helvetica
+  default_header_size: 48
+  default_paragraph_colour: Black
+  default_paragraph_font: Helvetica
+  default_paragraph_size: 10
+  default_title_colour: Red
+  default_title_font: OpenSans-Bold
+  default_title_size: 56
+  default_title_sub: OpenSans
+project_name: testproj
+report_name: TEST REPORT
+school_name: QUEEN'S UNIVERSITY BELFAST
+uni_name: SCHOOL OF BIOLOGICAL SCIENCES
