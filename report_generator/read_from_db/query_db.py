@@ -8,8 +8,19 @@ from report_generator.config import load_config
 from report_generator.excel_extraction.excel_to_sql import create_connection
 
 
-def read_from_db(options: dict):
+def read_from_db(options: dict) -> pandas.DataFrame:
+    """Queries Database.
 
+    Queries database based on options dict parameters supplied by GUI
+    selection or CLI options.
+
+    Args:
+        options (dict):                 Dictionary of query parameters
+
+    Returns:
+        results (pandas.DataFrame):     DataFrame of results from
+                                        SQL query
+    """
     config = load_config()
     dir_path = config["dir_path"]
     conn_path = os.path.join(dir_path, "data", "database", "species.db")
@@ -22,6 +33,17 @@ def read_from_db(options: dict):
 
 
 def get_query_options(options: dict) -> dict:
+    """Parses Query options from options dict.
+
+    Filters out non query options and null value query options.
+
+    Args:
+        options (dict):         Dictionary of parameters
+
+    Returns:
+        query_options (dict):   Dictionary of non null query
+                                parameters
+    """
     query_options = {}
     print(options)
     for key, value in options.items():
@@ -36,8 +58,16 @@ def get_query_options(options: dict) -> dict:
     return query_options
 
 
-def build_query(params: dict):
+def build_query(params: dict) -> str:
+    """Builds query.
 
+    Takes dictionary of query parameters and builds an
+    SQL query string.
+
+    Args:
+        params (dict):      Query params
+        sql (str):          SQL query string
+    """
     where_list = []
     having_str = ""
     for key, value in params.items():
@@ -120,13 +150,25 @@ def build_query(params: dict):
     return sql
 
 
-def build_where_statements(key: str, values):
+def build_where_statements(key: str, values) -> str:
+    """Builds SQL where statements.
+
+    Takes key and values and builds a where statement
+    string to insert into the SQL Query string.
+
+    Args:
+        key (str):          Key is the table column name
+        values (list|int):  List of values to be compared
+
+    Returns:
+        where (str):        Where SQL statement string
+    """
     where = ""
     if isinstance(values, list):
         if len(values) == 2 and all(x.isdigit() for x in values):
             print(values)
             # values = [int(x) for x in values].sort()
-            where = f"{key} BETWEEN {values[0]} AND {values[1]}"
+            where = f" {key} BETWEEN {values[0]} AND {values[1]} "
         elif len(values) > 2:
             ors = []
             for val in values:
@@ -142,6 +184,17 @@ def build_where_statements(key: str, values):
 
 
 def query_db(conn: sqlite3.Connection, query: str) -> pandas.DataFrame:
+    """Queries database.
+
+    Queries database based on query string.
+
+    Args:
+        conn (sqlite3.Connection):  SQLite connection instance
+        query (str):                SQL query string
+
+    Returns:
+        data_frame (pandas.DataFrame): Pandas dataframe of results
+    """
     data_frame = pandas.read_sql_query(query, conn)
     print(data_frame.head())
     print(len(data_frame.index))

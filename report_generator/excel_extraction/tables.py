@@ -1,6 +1,6 @@
-"""Functions to create sql table strings and return in loading/creation order.
+"""# Tables module.
 
-Other descriptive information to be filled in.
+Functions to create sql table strings and return in loading/creation order.
 """
 
 

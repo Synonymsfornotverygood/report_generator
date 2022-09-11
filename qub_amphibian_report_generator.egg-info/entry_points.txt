@@ -1,0 +1,3 @@
+[console_scripts]
+create-report-generator = report_generator.project_setup.new_report_project:main
+report-generator = report_generator.app:main

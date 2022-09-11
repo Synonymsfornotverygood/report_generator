@@ -1,4 +1,6 @@
-"""Setup configuration files and directories for report project.
+"""# New Report Project.
+
+Setup configuration files and directories for report project.
 
 Will have more info soon
 

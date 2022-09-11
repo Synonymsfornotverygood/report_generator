@@ -1,4 +1,4 @@
-"""Locations finder.
+"""# Locations finder.
 
 Methods used to break down locations strings and categorise the locations
 into continents, countries, regions and unknown locations.

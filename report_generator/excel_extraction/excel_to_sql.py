@@ -1,4 +1,6 @@
-"""Application to open and extract data from version of amphibian dataset in excel.
+"""# Excel Extraction
+
+Application to open and extract data from version of amphibian dataset in excel.
 
 CLI interface takes file path argument and extracts data. Then cleans dataset then
 passes the data to api.
@@ -50,9 +52,6 @@ def export_to_database(
 
         # Update the locations
         updated_data_frame = update_location(clean_data_frame)
-        # updated_data_frame.to_excel(r"updated_locations.xlsx")
-        # with open("min.txt", "w") as file:
-        #     file.write("\n".join(clean_data_frame["ElevationMin"].unique().tolist()))
 
         # Create the database/database connection
         conn = create_connection(db_output_name)
@@ -112,34 +111,34 @@ def create_tables(conn: object) -> None:
         print(e)
 
 
-def populate_tables(structured_data: object, conn: object) -> None:
+def populate_tables(structured_data: dict, conn: sqlite3.Connection) -> None:
     """Populate database with data from structured_data.
 
     Takes structured data and sqlite3 connector object loops through
     structured_data obj and passes values to the populate_table method
 
     Args:
-        structured_data(obj): object made up of Panda's DataFrame objects
-        conn(obj): sqlite3 connector object
+        structured_data (dict):     dict made up of Panda's DataFrame objects
+        conn (sqlite3.Connection):  sqlite3 connector object
     """
     for table_name, table_data in structured_data.items():
-        print(f"Populating {table_name}")
         populate_table(table_name, table_data, conn)
 
 
-def populate_table(table_name: str, table_data: object, conn: object) -> None:
+def populate_table(
+    table_name: str, table_data: pandas.DataFrame, conn: sqlite3.Connection
+) -> None:
     """Populate database tables with data.
 
     Takes args and calls Pandas.DataFrame.to_sql Method
 
     Args:
-        table_name(str) - name of table for data to be passed to
-        table_data(object) - Panda's DataFrame object containing data to go in table
-        conn(object) - sqlite3 connection object
+        table_name(str):                 name of table for data to be passed to
+        table_data (pandas.DataFrame):   Panda's DataFrame object containing data to go in table
+        conn (sqlite3.Connection):       sqlite3 connection object
     """
     if table_name == "species":
         table_data["elevation_min"] = pandas.to_numeric(table_data["elevation_min"])
-        print(table_data["elevation_min"])
 
     table_data.to_sql(table_name, conn, index=False, if_exists="append")
 

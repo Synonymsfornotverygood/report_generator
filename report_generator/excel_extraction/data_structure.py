@@ -1,4 +1,8 @@
-"""Functions to structure data from dataset to fit into sql tables schema."""
+"""# Data Structure.
+
+Functions to structure data from dataset to fit into sql tables schema.
+
+"""
 
 # stand lib imports
 
@@ -76,13 +80,16 @@ def structure_order(data_frame: object) -> object:
     return df
 
 
-def structure_family(data_frame: object, order: object) -> object:
+def structure_family(
+    data_frame: pandas.DataFrame, order: pandas.DataFrame
+) -> pandas.DataFrame:
     """Structures data for Family table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame):        Dataset DataFrame
+        order (pandas.DataFrame):             Order Dataframe
     Returns:
-        family_data_frame(object):Pandas DataFrame object with Family data
+        family_data_frame (pandas.DataFrame): Pandas DataFrame object with Family data
     """
     print("Family")
 

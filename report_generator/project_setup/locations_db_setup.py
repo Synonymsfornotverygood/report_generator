@@ -1,4 +1,4 @@
-"""Database setup.
+"""# Database setup.
 
 Setup file to create a locations SQLITE database and load location information
 into the database to allow for queries.

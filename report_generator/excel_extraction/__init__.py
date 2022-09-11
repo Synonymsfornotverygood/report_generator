@@ -1,16 +1,10 @@
 """# Excel Extraction Package.
 
-## Modules Contained inside:
+This is a package intended to help extract data from an excel spreadsheet and insert it into the designed database.
 
-**excel_to_sql**: Module to extact a data set from an excel speadsheet
-and insert it into a SQLite database.
-
-**clean_data**: A module for cleaning the data from the data set.
-
-**data_structure**: A module to structure the data from original
-data set to be inserted into database.
-
-**tables**: A module to create SQL strings to build the tables for the
-database the data is to be inserted into.
-
+It is made up of the following python modules:
+- clean_data.py:  Code used to clean the data of whitespace, quotation marks, etc. It also locates and removes duplicated entries.
+- data_structure.py: This module takes the extracted data from the dataset file and structures it to be inserted into the database.
+- excel_to_sql.py: The controller of the package. Creates the database, opens the dataset passes data to other modules before inserting data into database.
+- tables.py: Creates strings of SQL to build the database before data is inserted.
 """
