@@ -12,6 +12,8 @@ Application to create report based on parameters passed into it.
 """
 import time
 
+from loguru import logger
+
 import report_generator.config
 import report_generator.project_setup.new_report_project as new_project
 import report_generator.report_generator_cli.create_report as create_report
@@ -51,7 +53,7 @@ def main(arguments: dict = {}) -> None:
     university_name = config["uni_name"].upper()
     university_school = config["school_name"].upper()
 
-    print(f"Creating Report: {report_name}.pdf")
+    logger.info(f"Creating Report: {report_name}.pdf")
     create_report.create_report(
         data_source,
         arguments,
@@ -60,10 +62,10 @@ def main(arguments: dict = {}) -> None:
         university_name,
         university_school,
     )
-    print(f"Report Complete: {report_name}.pdf")
+    logger.info(f"Report Complete: {report_name}.pdf")
 
     executionTime = time.time() - startTime
-    print("Report creation time in seconds: " + str(executionTime))
+    logger.info("Report creation time in seconds: " + str(executionTime))
 
 
 if __name__ == "__main__":

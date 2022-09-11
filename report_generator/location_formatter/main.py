@@ -73,11 +73,11 @@ if __name__ == "__main__":
     args = sys.argv
     start_time = time.time()
     if len(args) < 3:
-        print("Invalid number of arguments:")
-        print("python3 main.py {input_file} {output_file}")
+        logger.warning("Invalid number of arguments:")
+        logger.warning("python3 main.py {input_file} {output_file}")
     else:
         if len(args) == 4:
             cProfile.run("main(args[1], args[2], args[3])", "profile")
         else:
             cProfile.run("main(args[1], args[2])", "profile")
-    print(f"Time taken: {time.time() - start_time}s")
+    logger.info(f"Time taken: {time.time() - start_time}s")

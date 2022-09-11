@@ -19,6 +19,7 @@ import sys
 from sqlite3 import Error
 
 import pandas
+from loguru import logger
 
 import report_generator.excel_extraction.tables as tables
 from report_generator.excel_extraction.clean_data import clean_data
@@ -39,6 +40,7 @@ def export_to_database(
         path_to_excel(str): file path string
         db_output_name(str): db file name
     """
+    logger.info("Export to Database Start")
     pandas.options.mode.chained_assignment = None
     if db_output_name is None:
         dtstr = datetime.datetime.now().strftime("%m-%d-%Y_%H:%M:%S")
@@ -66,7 +68,8 @@ def export_to_database(
         populate_tables(structured_data, conn)
 
     except FileNotFoundError as e:
-        print(e)
+        logger.error(e)
+    logger.info("Export to database end.")
 
 
 def create_connection(db_output_name: str) -> object:
@@ -85,7 +88,7 @@ def create_connection(db_output_name: str) -> object:
     try:
         conn = sqlite3.connect(db_output_name)
     except Error as e:
-        print(e)
+        logger.error(e)
 
     return conn
 
@@ -98,17 +101,16 @@ def create_tables(conn: object) -> None:
     Args:
         conn(object): sqlite3 connection object
     """
+    logger.info("Creating tables")
     tables_list = tables.get_tables_sql()
 
     try:
         cursor = conn.cursor()
         for table in tables_list:
-            # print(table)
             cursor.execute(table)
-            # print("Tables Created")
         cursor.close()
     except Error as e:
-        print(e)
+        logger.error(e)
 
 
 def populate_tables(structured_data: dict, conn: sqlite3.Connection) -> None:
@@ -121,6 +123,7 @@ def populate_tables(structured_data: dict, conn: sqlite3.Connection) -> None:
         structured_data (dict):     dict made up of Panda's DataFrame objects
         conn (sqlite3.Connection):  sqlite3 connector object
     """
+    logger.info("Populating tables")
     for table_name, table_data in structured_data.items():
         populate_table(table_name, table_data, conn)
 
@@ -154,13 +157,14 @@ def create_data_frame(path_to_dataset: str):
     Returns:
         data_frame(object): Pandas DataFrame object
     """
+    logger.info("Created DataFrame")
     data_frame = None
     try:
         data_frame = pandas.read_excel(path_to_dataset)
 
     except FileNotFoundError as e:
-        print("Failed to open excel file")
-        print(e)
+        logger.error("Failed to open excel file")
+        logger.error(e)
 
     return data_frame
 

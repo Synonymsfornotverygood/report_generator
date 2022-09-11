@@ -17,6 +17,7 @@ import re
 import sys
 
 import pandas
+from loguru import logger
 
 
 def create_data_frame(path_to_dataset: str):
@@ -35,8 +36,7 @@ def create_data_frame(path_to_dataset: str):
         data_frame = pandas.read_excel(path_to_dataset)
 
     except FileNotFoundError as e:
-        print("Failed to open excel file")
-        print(e)
+        logger.error(f"Cleaning Data - Failed to open excel file: {e}")
 
     return data_frame
 

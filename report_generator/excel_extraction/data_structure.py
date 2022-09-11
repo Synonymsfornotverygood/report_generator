@@ -8,18 +8,20 @@ Functions to structure data from dataset to fit into sql tables schema.
 
 # pip package imports
 import pandas
+from loguru import logger
 
 # other imports
 
 
-def structure_data(data_frame: object) -> object:
+def structure_data(data_frame: pandas.DataFrame) -> dict:
     """Structures data_frame.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame(pandas.DataFrame): Pandas DataFrame object
     Returns:
-        tables_object(object): Object containing structured Pandas DataFrames
+        tables_object(dict): Dict containing structured Pandas DataFrames
     """
+    logger.info("Structuring data start")
     order = structure_order(data_frame)
     family = structure_family(data_frame, order)
     genus = structure_genus(data_frame, family)
@@ -40,7 +42,6 @@ def structure_data(data_frame: object) -> object:
     continent, country, geo_location, geo_location_species = structure_geo_location(
         data_frame, species, genus
     )
-    print(country)
     species.drop("sg", axis=1, inplace=True)
 
     tables_object = {
@@ -62,19 +63,19 @@ def structure_data(data_frame: object) -> object:
         "geo_location": geo_location,
         "geo_location_species": geo_location_species,
     }
-
+    logger.info("Structuring Data End")
     return tables_object
 
 
-def structure_order(data_frame: object) -> object:
+def structure_order(data_frame: pandas.DataFrame) -> object:
     """Structures data for Order table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame):  Pandas DataFrame object
     Returns:
-        order_data_frame(object):Pandas DataFrame object with order data
+        order_data_frame (pandas.DataFrame):    Pandas DataFrame object with order data
     """
-    print("Order")
+    logger.debug("Order")
     order = data_frame["Order"].dropna().unique()
     df = pandas.DataFrame(order, columns=["order_taxon_name"])
     return df
@@ -91,8 +92,7 @@ def structure_family(
     Returns:
         family_data_frame (pandas.DataFrame): Pandas DataFrame object with Family data
     """
-    print("Family")
-
+    logger.debug("Family")
     fam = data_frame[["Order", "Family"]]
     fam["Ind"] = fam["Order"].map(
         lambda x: str(order.index[order["order_taxon_name"] == x].tolist()[0] + 1)
@@ -113,16 +113,18 @@ def structure_family(
     return df
 
 
-def structure_genus(data_frame: object, family: object) -> object:
+def structure_genus(
+    data_frame: pandas.DataFrame, family: pandas.DataFrame
+) -> pandas.DataFrame:
     """Structures data for Genus table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        family(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        family (pandas.DataFrame): Pandas DataFrame object
     Returns:
-        genus_data_frame(object):Pandas DataFrame object with Genus data
+        genus_data_frame (pandas.DataFrame): Pandas DataFrame object with Genus data
     """
-    print("Genus")
+    logger.debug("Genus")
 
     genus = data_frame[["Family", "Genus"]]
     genus["Ind"] = genus["Family"].map(
@@ -144,94 +146,94 @@ def structure_genus(data_frame: object, family: object) -> object:
     return df
 
 
-def structure_pop_trend(data_frame: object) -> object:
+def structure_pop_trend(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for pop_trend table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
     Returns:
-        pop_trend_frame(object):Pandas DataFrame object with pop_trend data
+        pop_trend_frame (pandas.DataFrame):Pandas DataFrame object with pop_trend data
     """
-    print("PopTrend")
+    logger.debug("PopTrend")
 
     pop_trend = data_frame["PopTrend"].dropna().unique()
     df = pandas.DataFrame(pop_trend, columns=["pop_trend_status"])
     return df
 
 
-def structure_iucn(data_frame: object) -> object:
+def structure_iucn(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for IUCN table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
     Returns:
-        IUCN_frame(object):Pandas DataFrame object with IUCN data
+        IUCN_frame (pandas.DataFrame): Pandas DataFrame object with IUCN data
     """
-    print("IUCN")
+    logger.debug("IUCN")
 
     iucn = data_frame["IUCN"].dropna().unique()
     df = pandas.DataFrame(iucn, columns=["iucn_status"])
     return df
 
 
-def structure_parity_mode(data_frame: object) -> object:
+def structure_parity_mode(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for Parity table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
     Returns:
-        IUCN_frame(object):Pandas DataFrame object with Parity data
+        IUCN_frame (pandas.DataFrame):Pandas DataFrame object with Parity data
     """
-    print("Parity")
+    logger.debug("Parity")
 
     parity_mode = data_frame["ParityMode"].dropna().unique()
     df = pandas.DataFrame(parity_mode, columns=["parity_mode_desc"])
     return df
 
 
-def structure_continent(data_frame: object) -> object:
+def structure_continent(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for Continent table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
     Returns:
-        Continent_frame(object):Pandas DataFrame object with Continent data
+        Continent_frame (pandas.DataFrame):Pandas DataFrame object with Continent data
     """
 
 
-def structure_country(data_frame: object, continent: object) -> object:
+def structure_country(
+    data_frame: pandas.DataFrame, continent: pandas.DataFrame
+) -> pandas.DataFrame:
     """Structures data for Country table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        continent(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        continent (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        Country_frame(object):Pandas DataFrame object with Country data
+        Country_frame (pandas.DataFrame):Pandas DataFrame object with Country data
     """
 
 
 def structure_geo_location(
-    data_frame: object, species_df: object, genus_df: object
-) -> object:
+    data_frame: pandas.DataFrame,
+    species_df: pandas.DataFrame,
+    genus_df: pandas.DataFrame,
+) -> pandas.DataFrame:
     """Structures data for geo_location table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        species(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        species (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        geo_location_frame(object):Pandas DataFrame object with geo_location data
+        geo_location_frame (pandas.DataFrame):Pandas DataFrame object with geo_location data
     """
-    print("Geo Location")
+    logger.debug("Geo Location")
 
     # geo dataframe
     geolocation = data_frame[["Species", "Genus", "FormattedGeographicRegion"]]
     geolocation["spec_gen"] = geolocation["Species"] + " " + geolocation["Genus"]
-    # print(len(geolocation["spec_gen"].dropna().unique()))
-    # print(geolocation)
-    # print(species)
-    # print(genus)
 
     geolocation["SpecInd"] = geolocation["Species"].map(
         lambda x: str(
@@ -239,7 +241,7 @@ def structure_geo_location(
         )
     )
 
-    print("Split Lines")
+    logger.debug("Geolocation Split Lines")
     # process lines
     results = []
     for row in geolocation.iterrows():
@@ -266,10 +268,9 @@ def structure_geo_location(
     country_code = []
 
     # print(results)
-    print(species_df)
     species_df["sg"] = species_df["species_name_latin"] + species_df["genus_id"]
 
-    print("Lines to new dataframe")
+    logger.debug("Geolocation: Lines to new dataframe")
     for x in results:
         spec = x[0].split(" ")[0]
         gen = x[0].split(" ")[1]
@@ -297,36 +298,28 @@ def structure_geo_location(
         }
     )
 
-    print(df)
-    print("create continent")
+    logger.debug("create continent")
     # continent dataframe
     continent_sp = df["continent"].dropna().unique()
     continent_df = pandas.DataFrame(continent_sp, columns=["continent_name"])
-    print(continent_df)
 
     df["continent_id"] = df["continent"].map(
         lambda x: continent_df.index[continent_df["continent_name"] == x].tolist()[0]
         + 1
     )
-    print(df)
 
     country_df = df[["country", "continent_id"]].drop_duplicates(ignore_index=True)
-    print(country_df)
     df["country_cont"] = df.agg(lambda x: f"{x['country']} {x['continent_id']}", axis=1)
     country_df["country_cont"] = country_df.agg(
         lambda x: f"{x['country']} {x['continent_id']}", axis=1
     )
 
-    print(df)
-    print(country_df)
-
     df["country_id"] = df["country_cont"].map(
         lambda x: country_df.index[country_df["country_cont"] == x].tolist()[0] + 1
     )
 
-    print(df)
     # geo_location
-    print("create geolocation")
+    logger.debug("create geolocation")
     geo_sp = df[["region", "latitude", "longitude", "country_id"]].drop_duplicates(
         ignore_index=True
     )
@@ -354,103 +347,68 @@ def structure_geo_location(
         columns={"region": "region_name"}
     )
 
-    print(geolocation_species)
-    print(continent)
-    print(country)
-    print(geolocation)
-
     return [continent, country, geolocation, geolocation_species]
 
 
 def structure_geo_location_species(
-    data_frame: object, geo_location: object, country_df, continent_df
-) -> object:
+    data_frame: pandas.DataFrame,
+    geo_location: pandas.DataFrame,
+    country_df,
+    continent_df,
+) -> pandas.DataFrame:
     """Structures data for geo_location table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        species(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        species (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        geo_location_frame(object):Pandas DataFrame object with geo_location data
+        geo_location_frame (pandas.DataFrame) :Pandas DataFrame object with geo_location data
     """
-    exit()
-    data_frame["continent_id"] = data_frame["continent"].map(
-        lambda x: str(
-            continent_df.index[continent_df["continent_name"] == x].tolist()[0] + 1
-        )
-    )
-
-    data_frame["country_id"] = data_frame["country"]
-    geo_loc = geo_location[["region_name", "country_id"]]
-    geo_loc = geo_loc.dropna().unique()
-
-    geo_loc["country_name"] = geo_loc["country_id"].map(
-        lambda x: str(country_df[country_df["country_id"] == x].tolist()[0] + 1)
-    )
-
-    loc_spec = data_frame[["species_index", "region", "country_id"]]
-    loc_spec["geo_id"] = loc_spec["region"].map(
-        lambda x: str(
-            geo_location.index[geo_location["region_name"] == x].tolist()[0] + 1
-        )
-    )
-    loc_spec["geo_spec"] = loc_spec["geo_id"] + "+" + loc_spec["species_index"]
-    uni = [x.split("+") for x in loc_spec["geo_spec"].dropna().unique()]
-
-    a = []
-    b = []
-
-    for x in uni:
-        a.append(x[0])
-        b.append(x[1])
-    df = pandas.DataFrame({"geo_location_id": a, "species_id": b})
-
-    return df
 
 
-def structure_micro_habitat(data_frame: object) -> object:
+def structure_micro_habitat(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for micro_habitat table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        micro_habitat_frame(object):Pandas DataFrame object with micro_habitat data
+        micro_habitat_frame (pandas.DataFrame): Pandas DataFrame object with micro_habitat data
     """
-    print("Habitat")
+    logger.debug("Habitat")
 
-    micro = data_frame["Microhabitat"].dropna().unique()
+    micro = data_frame["MicroHabitat"].dropna().unique()
     df = pandas.DataFrame(micro, columns=["micro_habitat_name"])
     return df
 
 
-def structure_activity(data_frame: object) -> object:
+def structure_activity(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for activity table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        activity_frame(object):Pandas DataFrame object with activity data
+        activity_frame (pandas.DataFrame): Pandas DataFrame object with activity data
     """
-    print("Activity")
+    logger.debug("Activity")
 
     activity = data_frame["Activity"].dropna().unique()
     df = pandas.DataFrame(activity, columns=["activity_kind"])
     return df
 
 
-def structure_nesting_site(data_frame: object) -> object:
+def structure_nesting_site(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Structures data for nesting_site table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame(pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        nesting_site_frame(object):Pandas DataFrame object with nesting_site data
+        nesting_site_frame(pandas.DataFrame):Pandas DataFrame object with nesting_site data
     """
-    print("Nesting")
+    logger.debug("Nesting")
 
     nesting_site = data_frame["NestingSite"].dropna().unique()
     df = pandas.DataFrame(nesting_site, columns=["nesting_site_desc"])
@@ -458,27 +416,25 @@ def structure_nesting_site(data_frame: object) -> object:
 
 
 def structure_species(
-    data_frame: object,
-    genus: object,
-    parity_mode: object,
-    iucn: object,
-    pop_trend: object,
-) -> object:
+    data_frame: pandas.DataFrame,
+    genus: pandas.DataFrame,
+    parity_mode: pandas.DataFrame,
+    iucn: pandas.DataFrame,
+    pop_trend: pandas.DataFrame,
+) -> pandas.DataFrame:
     """Structures data for species table.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        genus(object): Pandas DataFrame object
-        parity_mode(object): Pandas DataFrame object
-        iucn(object): Pandas DataFrame object
-        pop_trend(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        genus (pandas.DataFrame): Pandas DataFrame object
+        parity_mode (pandas.DataFrame): Pandas DataFrame object
+        iucn (pandas.DataFrame): Pandas DataFrame object
+        pop_trend (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        species_frame(object):Pandas DataFrame object with species data
+        species_frame (pandas.DataFrame): Pandas DataFrame object with species data
     """
-    print("Struct Spec")
-
-    print(data_frame["ElevationMin"].head())
+    logger.debug("Struct Spec")
 
     species = data_frame[
         [
@@ -537,8 +493,6 @@ def structure_species(
     species.insert(14, "img_url_male", "")
     species.insert(15, "verif_status", True)
 
-    print(species["ElevationMin"].head())
-
     species.columns = [
         "species_name_latin",
         "size_max_male",
@@ -562,8 +516,6 @@ def structure_species(
         "genus_id",
     ]
 
-    print(species["elevation_min"].head())
-
     return species
 
 
@@ -580,17 +532,12 @@ def structure_micro_habitat_species(
     Returns:
         micro_habitat_species_frame(object):Pandas DataFrame object with m_h_s data
     """
-    print("hab spec")
-    print(species["elevation_min"].head())
+    logger.debug("hab spec")
 
-    print(micro_habitat)
-    micro_habitat_species = data_frame[["Species", "Microhabitat"]]
-    print("spec")
+    micro_habitat_species = data_frame[["Species", "MicroHabitat"]]
     micro_habitat_species["species_index"] = micro_habitat_species["Species"].map(
         lambda x: str(species.index[species["species_name_latin"] == x].tolist()[0] + 1)
     )
-
-    print("hab")
 
     def hab(x):
         b = (
@@ -604,7 +551,7 @@ def structure_micro_habitat_species(
             a = None
         return a
 
-    micro_habitat_species["habitat_index"] = micro_habitat_species["Microhabitat"].map(
+    micro_habitat_species["habitat_index"] = micro_habitat_species["MicroHabitat"].map(
         lambda x: hab(x)
     )
 
@@ -644,8 +591,7 @@ def structure_nesting_site_species(
     Returns:
         nesting_site_species_frame(object):Pandas DataFrame object with data
     """
-    print("nest spec")
-    print(species["elevation_min"].head())
+    logger.debug("nest spec")
 
     nesting_site_species = data_frame[["Species", "NestingSite"]]
 
@@ -698,8 +644,7 @@ def structure_activity_species(
     Returns:
         activity_species_frame(object):Pandas DataFrame object with data
     """
-    print("act spec")
-    print(species["elevation_min"].head())
+    logger.debug("act spec")
 
     activity_species = data_frame[["Species", "Activity"]]
 

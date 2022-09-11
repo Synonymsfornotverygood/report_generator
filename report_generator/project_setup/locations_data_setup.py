@@ -17,6 +17,7 @@ import zipfile
 
 import requests
 import tqdm
+from loguru import logger
 
 
 def insert_default_data(dir_path: str) -> None:
@@ -29,9 +30,10 @@ def insert_default_data(dir_path: str) -> None:
         dir_path (str): String path to the project directory.
 
     """
+    logger.info("Inserting Default Data")
     data_path = os.path.join(os.getcwd(), "data")
     # data_path = pkg_resources.resource_string(__name__, "")
-    # print(data_path)
+    logger.debug(data_path)
     # exit()
     old_image_path = os.path.join(data_path, "images")
     old_font_path = os.path.join(data_path, "fonts")
@@ -55,6 +57,7 @@ def copy_files_from_directory(old_directory: str, new_directory: str) -> None:
 
 def location_data_setup(new_locations_path: str) -> None:
     """Location Data Setup."""
+    logger.info("Starting Location data setup")
     download_location_data_file(new_locations_path)
 
     locations_data_file_path = os.path.join(new_locations_path, "all_countries.zip")
@@ -63,17 +66,18 @@ def location_data_setup(new_locations_path: str) -> None:
     extract_location_data_file(new_locations_path, locations_data_file_path)
     split_location_data_file(new_locations_path)
     location_data_cleanup(new_locations_path, locations_data_file_path)
+    logger.info("Location data setup complete")
 
 
 def location_data_cleanup(locations_path, locations_data_file_path):
     """Cleanup unneeded location data."""
-    print("Cleaning up data.")
+    logger.info("Cleaning up data.")
     zip_path = locations_data_file_path
     txt_path = os.path.join(locations_path, "allCountries.txt")
 
     os.remove(zip_path)
     os.remove(txt_path)
-    print("Clean up complete.")
+    logger.info("Clean up complete.")
 
 
 def download_location_data_file(location_dir: str) -> None:
@@ -81,7 +85,7 @@ def download_location_data_file(location_dir: str) -> None:
 
     Download location data file from the geocodes website.
     """
-    print("Downloading location data file")
+    logger.info("Downloading location data file")
     location_file_url = "https://download.geonames.org/export/dump/allCountries.zip"
     with requests.get(location_file_url, stream=True) as response:
 
@@ -98,11 +102,7 @@ def extract_location_data_file(
     new_locations_path: str, location_data_zip_path: str
 ) -> None:
     """Extract location data."""
-    print("Unzipping Locations Data File:")
-    # old_zip_path = os.path.join(
-    #     os.getcwd(), "data", "location", "csv_files", "all_countries.zip"
-    # )
-    # shutil.copy(old_zip_path, new_locations_path)
+    logger.info("Unzipping Locations Data File")
 
     with zipfile.ZipFile(location_data_zip_path) as zipf:
         for member in tqdm.tqdm(zipf.infolist(), desc="Extracting"):
@@ -126,7 +126,7 @@ def split_location_data_file(locations_path: str) -> None:
 
     file_location = os.path.join(locations_path, "allCountries.txt")
 
-    print("Splitting csv into chunks:")
+    logger.info("Splitting csv into chunks:")
     os.makedirs(os.path.join(locations_path, "csv_files", "split_csv"))
     smallfile = None
     with open(file_location, "r") as big_file:

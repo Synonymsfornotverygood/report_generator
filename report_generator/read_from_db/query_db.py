@@ -3,6 +3,7 @@ import os
 import sqlite3
 
 import pandas
+from loguru import logger
 
 from report_generator.config import load_config
 from report_generator.excel_extraction.excel_to_sql import create_connection
@@ -21,10 +22,11 @@ def read_from_db(options: dict) -> pandas.DataFrame:
         results (pandas.DataFrame):     DataFrame of results from
                                         SQL query
     """
+    logger.info("Reading from Species Database")
     config = load_config()
     dir_path = config["dir_path"]
     conn_path = os.path.join(dir_path, "data", "database", "species.db")
-    print(conn_path)
+    logger.debug(conn_path)
     conn = create_connection(conn_path)
     query_options = get_query_options(options)
     query = build_query(query_options)
@@ -45,7 +47,6 @@ def get_query_options(options: dict) -> dict:
                                 parameters
     """
     query_options = {}
-    print(options)
     for key, value in options.items():
         key = key.strip("--")
         if value == "":
@@ -134,8 +135,9 @@ def build_query(params: dict) -> str:
     LEFT JOIN parity_mode ON species_comp.parity_mode_id = parity_mode.parity_mode_id
     LEFT JOIN pop_trend ON species_comp.pop_trend_id = pop_trend.pop_trend_id
     """
-    print(where_list)
+
     where_sql = "AND ".join(where_list)
+
     if len(where_sql) > 0:
         sql += "WHERE "
     sql += where_sql
@@ -166,8 +168,6 @@ def build_where_statements(key: str, values) -> str:
     where = ""
     if isinstance(values, list):
         if len(values) == 2 and all(x.isdigit() for x in values):
-            print(values)
-            # values = [int(x) for x in values].sort()
             where = f" {key} BETWEEN {values[0]} AND {values[1]} "
         elif len(values) > 2:
             ors = []
@@ -196,6 +196,4 @@ def query_db(conn: sqlite3.Connection, query: str) -> pandas.DataFrame:
         data_frame (pandas.DataFrame): Pandas dataframe of results
     """
     data_frame = pandas.read_sql_query(query, conn)
-    print(data_frame.head())
-    print(len(data_frame.index))
     return data_frame

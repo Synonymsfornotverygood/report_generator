@@ -20,11 +20,12 @@ import re
 import sys
 
 import pandas
+from loguru import logger
 
 import report_generator.config
 
 
-def create_data_frame(path_to_dataset: str) -> object:
+def create_data_frame(path_to_dataset: str) -> pandas.DataFrame:
     """## Create data frame.
 
     Loads excel file and returns Pandas DataFrame obj
@@ -33,21 +34,24 @@ def create_data_frame(path_to_dataset: str) -> object:
         path_to_data_set (str): file path string
 
     Returns:
-        data_frame (object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Cleaned Pandas DataFrame
 
     """
+    logger.info("Clean Data Started")
+
     data_frame = None
     try:
         data_frame = pandas.read_excel(path_to_dataset)
 
     except FileNotFoundError as e:
-        print("Failed to open excel file")
-        print(e)
+        logger.error(f"Failed to open excel file: {e}")
+
+    logger.info("Clean Data Ended")
 
     return data_frame
 
 
-def clean_data(data_frame: object) -> object:
+def clean_data(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """## Clean data.
 
     Takes data_frame object and cleans data by using 'applymap' to apply a lamda
@@ -60,10 +64,10 @@ def clean_data(data_frame: object) -> object:
     values.
 
     Args:
-        data_frame (object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        clean_data_frame (object) Pandas DataFrame object
+        clean_data_frame (pandas.DataFrame) Pandas DataFrame object
 
     """
     clean_data_frame = data_frame.applymap(
@@ -80,43 +84,38 @@ def clean_data(data_frame: object) -> object:
     return clean_data_frame
 
 
-def remove_duplicates(data_frame: object) -> object:
+def remove_duplicates(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """## Remove duplicates from data.
 
     Takes a data_frame object and looks for duplicate name combination entries
     and removes the row from the dataset and puts it into a separate file.
 
     Args:
-        data_frame (object): Pandas Dataframe object
+        data_frame (pandas.DataFrame): Pandas Dataframe object
 
     Returns
-        clear_data_frame (object): Cleaned Dataframe for duplicates
+        clear_data_frame (pandas.DataFrame): Cleaned Dataframe for duplicates
     """
-    print("****************************************")
-    print(f"Searching Duplicates: Current Row Count={len(data_frame.index)}")
+    logger.info(f"Searching Duplicates: Current Row Count={len(data_frame.index)}")
     dups = data_frame[
         data_frame.duplicated(["Order", "Family", "Genus", "Species"], keep=False)
     ]
-    print(len(data_frame.index))
-    print(dups)
+
     settings = report_generator.config.load_config()
     dir_path = settings["dir_path"]
     duplicate_path = os.path.join(dir_path, "data", "duplicates", "duplicates.xlsx")
-    print(f"Saving duplicates to duplicates file: {duplicate_path}")
-    print()
+    logger.info(f"Saving duplicates to duplicates file: {duplicate_path}")
     dups.to_excel(duplicate_path)
 
-    print("Removing Duplicates")
+    logger.debug("Removing Duplicates")
 
     dups = data_frame[
         data_frame.duplicated(["Order", "Family", "Genus", "Species"], keep="first")
     ]
-    print(dups)
     data_frame = data_frame.drop_duplicates(
         subset=["Order", "Family", "Genus", "Species"], keep="first"
     )
-    print(f"Removed Duplicates: Current Row Count={len(data_frame.index)}")
-    print("***************************************")
+    logger.info(f"Removed Duplicates: Current Row Count={len(data_frame.index)}")
     return data_frame
 
 
@@ -141,11 +140,9 @@ def main(input_file_name: str, output_file_name: str) -> None:
     # load df
     try:
         data_frame = create_data_frame(path_to_dataset)
-        # print(data_frame["RangeSize"].head(5))
 
         # clean df
         clean_data_frame = clean_data(data_frame)
-        # print(clean_data_frame["RangeSize"].head())
 
         # output to new file
         clean_data_frame.to_excel(path_to_output_file, index=False)

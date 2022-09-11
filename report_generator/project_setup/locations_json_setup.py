@@ -11,10 +11,13 @@ from sqlite3 import Error
 
 import pandas
 import tqdm
+from loguru import logger
 
 
 def locations_json_setup(location_path: str) -> None:
     """Location json setup."""
+    logger.info("Locations Json Setup")
+
     # Read Csvs
     continents = [
         "africa",
@@ -30,16 +33,7 @@ def locations_json_setup(location_path: str) -> None:
         dtype=object,
         na_filter=False,
     )
-    # countries_2 = pandas.read_csv(
-    #     os.path.join(location_path, "csv_files", "country_and_area_data.csv"),
-    #     dtype=object,
-    #     na_filter=False,
-    # )
-    # countries_3 = pandas.read_csv(
-    #     os.path.join(location_path, "csv_files", "countrys_lat_long.csv"),
-    #     dtype=object,
-    #     na_filter=False,
-    # )
+
     states = pandas.read_csv(
         os.path.join(location_path, "csv_files", "states.csv"), encoding="iso8859_15"
     )
@@ -57,13 +51,13 @@ def locations_json_setup(location_path: str) -> None:
             os.path.join(location_path, "location_database", "location.db")
         )
     except Error as e:
-        print(e)
+        logger.error(e)
 
     cursor = conn.cursor()
 
     # Iterate through continents:
-    print("Setting up Location Json:")
-    print("Searching for continent data:")
+    logger.info("Setting up Location Json:")
+    logger.debug("Searching for continent data:")
 
     progress_continents = tqdm.tqdm(total=len(continents), desc="Searching Continents")
     for continent in continents:
@@ -87,7 +81,7 @@ def locations_json_setup(location_path: str) -> None:
 
     # Iterate through countries
     country_results = []
-    print("Searching for country data:")
+    logger.debug("Searching for country data:")
     progress_countries = tqdm.tqdm(
         total=len(countries.index), desc="Searching Countries"
     )
@@ -147,7 +141,7 @@ def locations_json_setup(location_path: str) -> None:
         progress_countries.update(1)
 
     # Iterate through regions
-    print("Searching region data:")
+    logger.debug("Searching region data:")
     progress_regions = tqdm.tqdm(total=len(states.index), desc="Searching Regions")
     for row in states.iterrows():
         vals = []

@@ -13,7 +13,7 @@ from loguru import logger
 from report_generator.location_formatter.location import Location
 
 
-def find_location(location_str: str, locations_data: object) -> object:
+def find_location(location_str: str, locations_data: object) -> list:
     """Find location.
 
     Takes a location string splits it into sections. Attempts
@@ -34,9 +34,10 @@ def find_location(location_str: str, locations_data: object) -> object:
     process_start_time = time.time()
 
     if locations_data is None:
-        print("something wrong")
+        logger.error("Locations data is None")
+        raise Exception
 
-    # print(f"Sections: {location_str}")
+    logger.debug(f"Sections: {location_str}")
 
     # Handling nan/null dataset error
     if str(location_str) == "nan":
@@ -57,7 +58,7 @@ def find_location(location_str: str, locations_data: object) -> object:
     # Iterate through the sections to try and determine what kind of location they are
 
     for section in sections:
-        # print(f"Section: {section}")
+        # logger.debug(f"Section: {section}")
 
         # Data Cleaning
         # section = re.sub(" s$| is$", "", section)
@@ -81,10 +82,9 @@ def find_location(location_str: str, locations_data: object) -> object:
             countries_list.append(country)
         elif section in locations_data["region"].keys():
             region = locations_data["region"][section]
-            print(region.items())
             regions_list.append(locations_data["region"][section])
         else:
-            # print(f"Region Found: {section}")
+            # logger.debug(f"Region Found: {section}")
             unknown_list.append(section)
 
     # Try to create a location object based on results
@@ -144,6 +144,8 @@ def find_unknown(location_str: str, locations_data: object) -> object:
         location_objs(list): list of Location objects
 
     """
+    if locations_data is None:
+        raise Exception
     # logger
     logger.info("unknown finder func Start")
     process_start_time = time.time()
@@ -162,7 +164,7 @@ def find_unknown(location_str: str, locations_data: object) -> object:
     # Iterate through the sections to try and determine what kind of location they are
 
     for section in sections:
-        # print("Section: {section}")
+        # logger.debug("Section: {section}")
 
         # Data Cleaning
         # section = re.sub(r"\ss$", "", section)

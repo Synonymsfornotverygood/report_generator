@@ -4,6 +4,7 @@
 import os
 
 import yaml
+from loguru import logger
 
 from report_generator.config import dump_config, load_config
 
@@ -65,7 +66,7 @@ def add_font_choices_to_pdf(pdf: object, font_options: dict) -> object:
 
     for font_name, font_val in font_dict["font_types"].items():
         if font_val is not True:
-            print(font_name, font_val)
+            logger.debug(font_name, font_val)
             font_path = os.path.join(config["dir_path"], "data", "fonts")
             font_loc = os.path.join(font_path, font_val)
             pdf.add_font(font_name, "", font_loc)
@@ -74,37 +75,6 @@ def add_font_choices_to_pdf(pdf: object, font_options: dict) -> object:
     font_loc = os.path.join(font_path, "OpenSans-Bold.ttf")
     pdf.add_font("OpenSans", "b", font_loc)
 
-    # if (font_options is None):
-    #     header_font = config['fonts']['default_header_font']
-    #     title_font = config['fonts']['default_title_font']
-    #     title_sub_font = config['fonts']['default_title_sub']
-    #     paragraph_font = config['fonts']['default_paragraph_font']
-
-    #     fonts = [header_font, title_font, title_sub_font,paragraph_font]
-    #     font_path = os.path.join(config['dir_path'], "data", "fonts")
-
-    #     for font in fonts:
-    #         if not check_if_default_font(font):
-    #             font_location = os.path.join(
-    #                 font_path,
-    #                 font_dict['font_types'][font]
-    #             )
-    #             pdf.add_font(font,"", font_location)
-    # else:
-    #     header_font = font_options['header_font']
-    #     title_font = font_options['title_font']
-    #     paragraph_font = font_options['paragraph_font']
-
-    #     fonts = [header_font, title_font, paragraph_font]
-    #     font_path = os.path.join(config['dir_path'], "data", "fonts")
-
-    #     for font in fonts:
-    #         if not check_if_default_font(font):
-    #             font_location = os.path.join(
-    #                 font_path,
-    #                 font_dict["font_types"][font]
-    #             )
-    #             pdf.add_font(font,"", font_location)
     return pdf
 
 

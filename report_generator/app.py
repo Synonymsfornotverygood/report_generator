@@ -69,6 +69,7 @@ Options:
 
 
 from docopt import docopt
+from loguru import logger
 
 import report_generator.report_generator_cli.main
 import report_generator.report_generator_gui.main
@@ -84,7 +85,7 @@ def main():
     # check if gui option selected
     # print(arguments)
     if arguments["--cli"] is True:
-        print("Report Generator CLI")
+        logger.info("Report Generator CLI")
         report_generator.report_generator_cli.main.main(arguments)
     else:
         report_generator.report_generator_gui.main.main()

@@ -9,10 +9,10 @@ update that data to provide better information.
 import json
 import os
 import sqlite3
-import threading
 import time
 from sqlite3 import Error
 
+import pandas
 from loguru import logger
 
 import report_generator.config
@@ -22,7 +22,7 @@ from report_generator.location_formatter.location_finder import (
 )
 
 
-def update_location(data_frame: object) -> object:
+def update_location(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """Update location.
 
     Takes a pandas data frame object and runs the location finder on each cell of the
@@ -32,10 +32,10 @@ def update_location(data_frame: object) -> object:
     data frame.
 
     Args:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
 
     Returns:
-        updated_data_frame(object): Pandas DataFrame object
+        updated_data_frame (pandas.DataFrame): Pandas DataFrame object
 
     """
     # Load Locations Data
@@ -52,18 +52,20 @@ def update_location(data_frame: object) -> object:
     return updated_data_frame
 
 
-def update_location_entries(data_frame: object, LOCATIONS_DATA: object) -> object:
+def update_location_entries(
+    data_frame: pandas.DataFrame, LOCATIONS_DATA: object
+) -> pandas.DataFrame:
     """Update location entries.
 
     Takes pandas data frame object and calls lambda function on each entry in
     'GeographicRegion' to update the entry. Then returns updated data frame object.
 
     Args:
-        data_frame(object): Pandas DataFrame object
-        LOCATIONS_DATA(object) : location data
+        data_frame (pandas.DataFrame): Pandas DataFrame object
+        LOCATIONS_DATA (object) : location data
 
     Returns:
-        data_frame(object): Pandas DataFrame object
+        data_frame (pandas.DataFrame): Pandas DataFrame object
 
     """
     locations = data_frame["GeographicRegion"].values.tolist()
@@ -85,12 +87,12 @@ def update_location_entry(location_str: str, LOCATIONS_DATA: object) -> str:
         'continent-country-region/continent-country-region/etc'
 
     Args:
-        location_str(str): string location value
-        LOCATIONS_DATA(object) : location data
+        location_str (str): string location value
+        LOCATIONS_DATA (object) : location data
 
 
     Returns:
-        updated_location_str(str): string updated location value
+        updated_location_str (str): string updated location value
 
     """
     # location_strs = location_str.split("/")
@@ -116,24 +118,24 @@ def load_location_json(file_path: str) -> object:
     Opens and returns location object from json file
 
     Args:
-        file_path(str): file path string
+        file_path (str): file path string
 
     Returns:
-        location_data(object): location data python object
+        location_data (object): location data python object
 
     """
     with open(file_path, "r") as file:
         return json.load(file)
 
 
-def load_locations_data() -> object:
+def load_locations_data() -> dict:
     """Load locations data.
 
     Opens json file and loads locations data from json
     and returns locations object.
 
     Returns:
-        locations_data: Python object containing location info
+        locations_data (dict): Python dict containing location info
 
     """
     # load location object
@@ -149,23 +151,6 @@ def load_locations_data() -> object:
     logger.info(f"Read location json end: {process_time_taken}s")
 
     return locations_data
-
-
-def start_update_location_thread(x: str, locations_data: object) -> object:
-    """Start update location thread.
-
-    Creates a new thread for updating location.
-
-    Args:
-        x: thread name string
-        locations_data: Python object containing location data
-
-    Returns:
-        t: started thread
-
-    """
-    t = threading.Thread(update_location_entry, args=(x, locations_data))
-    return t.start()
 
 
 def update_locations_unknowns(locs: list, locations_data: object) -> object:
@@ -201,7 +186,7 @@ def update_locations_data(results: list, locations_data: object) -> None:
 
     """
     for region in results:
-        print(region[0])
+        logger.debug(region[0])
         region_data = {
             "region": region[0],
             "country": str(region[1]).split(",")[0],
@@ -253,15 +238,13 @@ def search_for_unknowns(unknowns: list):
         # Execute
         cursor.execute(sql)
         rows = cursor.fetchall()
-        print(unknown)
+        logger.debug(unknown)
 
         # Check if result
         if rows != []:
             results.append([unknown, *list(rows[0])])
         else:
-            print("no match")
-
-        print()
+            logger.debug("no match")
 
         # End logging time
         process_time_taken = time.time() - process_start_time
@@ -270,18 +253,16 @@ def search_for_unknowns(unknowns: list):
     logger.info("Search for unknowns Start")
     process_start_time = time.time()
     results = []
-    print(unknowns)
     try:
         for unknown in unknowns:
             unknown_sql_query(unknown)
 
     except Error as e:
-        print(e)
+        logger.error(e)
 
     process_time_taken = time.time() - process_start_time
     logger.info(f"Search for unknowns end: {process_time_taken}s")
 
-    print(results)
     return results
 
 
@@ -295,6 +276,7 @@ def save_locations_data(locations_data: object) -> None:
         locations_data - object containing locations data
 
     """
+    logger.debug("Saving locations data")
     dumped = json.dumps(locations_data)
     config = report_generator.config.load_config()
     file_path = os.path.join(
@@ -302,10 +284,3 @@ def save_locations_data(locations_data: object) -> None:
     )
     with open(file_path, "w") as file:
         file.write(dumped)
-
-
-def unknown_to_location(search_str: str) -> object:
-    """Uknown to location.
-
-    Currently unimplemented
-    """

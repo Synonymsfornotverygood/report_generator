@@ -12,6 +12,7 @@ from sqlite3 import Error
 
 import pandas
 import tqdm
+from loguru import logger
 
 
 def locations_database_setup(location_path: str) -> None:
@@ -28,18 +29,18 @@ def locations_database_setup(location_path: str) -> None:
     db_path = os.path.join(location_path, "location_database")
     csv_path = os.path.join(location_path, "csv_files")
     conn = create_connection(db_path)
-    print("Location Database Created")
+    logger.info("Location Database Created")
     create_tables(conn)
     time.sleep(1)
-    print("Tables Created")
+    logger.info("Tables Created")
     insert_country_data(conn, csv_path)
-    print("Country Data Populated")
+    logger.info("Country Data Populated")
     time.sleep(1)
-    print("Populating Geocode data:")
+    logger.info("Populating Geocode data:")
     insert_geocode_data(conn, csv_path)
-    print("Geocode Data Populated")
+    logger.info("Geocode Data Populated")
     time.sleep(1)
-    print("Location database set up complete.")
+    logger.info("Location database set up complete.")
     conn.close()
 
 
@@ -59,7 +60,7 @@ def create_connection(db_path: str) -> sqlite3.Connection:
     try:
         conn = sqlite3.connect(os.path.join(db_path, "location.db"))
     except Error as e:
-        print(e)
+        logger.error(e)
 
     return conn
 
@@ -117,11 +118,11 @@ def create_tables(conn: sqlite3.Connection) -> None:
     try:
         cursor = conn.cursor()
         cursor.execute(country_table)
-        print("Country Table Created")
+        logger.debug("Country Table Created")
         cursor.execute(geocode_table)
-        print("Geocode Table Created")
+        logger.debug("Geocode Table Created")
     except Error as e:
-        print(e)
+        logger.error(e)
 
 
 def insert_country_data(conn: sqlite3.Connection, csv_path: str) -> None:
@@ -166,8 +167,8 @@ def insert_country_data_row(conn: object, row_values: list) -> None:
         cursor.execute(sql, row_values)
         conn.commit()
     except Error as e:
-        print(row_values)
-        print(e)
+        logger.error(row_values)
+        logger.error(e)
 
 
 def insert_geocode_data(conn: object, csv_path: str) -> None:
@@ -209,7 +210,6 @@ def insert_geocode_data_section(conn: object, file_path: str) -> None:
 
     """
     data_frame = pandas.read_csv(file_path, sep="\t")
-    # data_frame.reset_index(drop=True)
     data_frame.to_sql("geocode", conn, if_exists="append", index=False)
 
 

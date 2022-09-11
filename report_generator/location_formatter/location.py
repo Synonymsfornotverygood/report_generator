@@ -40,7 +40,7 @@ class Location:
         self.country_code = country_code
         self.country_full_name = country_full_name
 
-    def get_location_obj(self) -> object:
+    def get_location_obj(self) -> dict:
         """Get location object.
 
         Creates a python object based on location data.

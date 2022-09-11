@@ -10,6 +10,7 @@ import sqlite3
 from sqlite3 import Error
 
 import pandas
+from loguru import logger
 
 # Read Csvs
 continents = [
@@ -53,13 +54,13 @@ conn = None
 try:
     conn = sqlite3.connect("location_database/location.db")
 except Error as e:
-    print(e)
+    logger.error(e)
 
 cursor = conn.cursor()
 
 
 # Iterate through continents:
-
+logger.debug("Iterating continents")
 for continent in continents:
 
     # SQL query
@@ -68,10 +69,8 @@ for continent in continents:
     select place_name, latitude, longitude FROM geocode
     WHERE place_name="{continent.title()}" AND country_code is NULL limit 1;
     """
-    print(continent)
     cursor.execute(sql)
     rows = cursor.fetchall()
-    print(rows)
     continent = {
         "continent": rows[0][0],
         "latitude": rows[0][1],
@@ -82,6 +81,7 @@ for continent in continents:
 
 # Iterate through countries
 country_results = []
+logger.debug("Iterating countries")
 
 for row in countries.iterrows():
     vals = []
@@ -96,8 +96,6 @@ for row in countries.iterrows():
     except TypeError:
         name = vals[3]
         ccode = vals[4]
-
-    print(name, ccode)
 
     sql_1 = f"""
     select latitude, longitude FROM geocode
@@ -114,8 +112,6 @@ for row in countries.iterrows():
 
     cursor.execute(sql_2)
     rows_2 = cursor.fetchall()
-    print(rows_1)
-    print(rows_2)
     country_results.append([rows_1, rows_2])
 
     lat = None
@@ -143,6 +139,8 @@ for row in countries.iterrows():
 
 
 # Iterate through regions
+logger.debug("Iterating regions")
+
 for row in states.iterrows():
     vals = []
     for value in row:
@@ -167,7 +165,6 @@ for row in states.iterrows():
     else:
         continent = None
         country_full_name = None
-    print(resps)
 
     region_name = (
         vals[2]
@@ -201,6 +198,7 @@ for row in states.iterrows():
 
 # dump to json
 location_json = json.dumps(location_data, ensure_ascii=False)
+logger.debug("Writing to Json")
 
 # write to file
 with open("location.json", "w") as file:

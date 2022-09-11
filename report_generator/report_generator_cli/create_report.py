@@ -70,26 +70,26 @@ def create_report(
         university_school   - Name of the university school
 
     """
-    print(pdf_chapters)
+    logger.debug(pdf_chapters)
     startTime = time.time()
-    logger.debug(f"Create Report Started: {report_name}")
+    logger.info(f"Create Report Started: {report_name}")
 
     # load config
     config = load_config()
 
     curtime = time.time()
-    logger.debug("Started reading data source")
+    logger.info("Started reading data source")
     ds = read_data_source(data_source, options)
-    logger.debug(f"Finished reading data source: {round(time.time() - curtime, 2)}s")
+    logger.info(f"Finished reading data source: {round(time.time() - curtime, 2)}s")
 
     pdf = FPDF()
     curtime = time.time()
-    logger.debug("Started adding fonts")
+    logger.info("Started adding fonts")
     fonts.add_font_choices_to_pdf(pdf, font_options)
-    logger.debug(f"Finished adding fonts: {round(time.time() - curtime,2)}s")
+    logger.info(f"Finished adding fonts: {round(time.time() - curtime,2)}s")
 
     curtime = time.time()
-    logger.debug("Started creating title page")
+    logger.info("Started creating title page")
     pdf = create_title_page(
         report_name,
         report_author,
@@ -99,29 +99,27 @@ def create_report(
         config,
         font_options=None,
     )
-    logger.debug("Finished creating title page: {round(time.time() - curtime, 2)}s")
+    logger.info("Finished creating title page: {round(time.time() - curtime, 2)}s")
 
     curtime = time.time()
-    logger.debug("Started creating contents pages")
+    logger.info("Started creating contents pages")
     pdf = create_contents_page(pdf, ds)
-    logger.debug(
-        f"Finished creating contents pages: {round(time.time() - curtime, 2)}s"
-    )
+    logger.info(f"Finished creating contents pages: {round(time.time() - curtime, 2)}s")
 
     curtime = time.time()
 
-    logger.debug("Started inserting chapters")
+    logger.info("Started inserting chapters")
     create_chapter_space(pdf, pdf_chapters)
-    logger.debug("Finished inserting chapters")
+    logger.info("Finished inserting chapters")
 
-    logger.debug("Started creating report pages")
+    logger.info("Started creating report pages")
 
     pdf = create_report_order_sections(ds, pdf, config)
     pdf_title = f"{'_'.join(report_name.split(' '))}.pdf"
     pdf_ouput_path = os.path.join(config["dir_path"], "report", pdf_title)
     pdf.output(pdf_ouput_path)
 
-    logger.debug(f"Finished creating report pages: {round(time.time() - curtime, 2)}s")
+    logger.info(f"Finished creating report pages: {round(time.time() - curtime, 2)}s")
     fp = pdf_ouput_path
     fs = round(os.path.getsize(fp) / (1 << 20), 2)
 
@@ -131,7 +129,7 @@ def create_report(
     debug_mess += f"Time Taken: {round((time.time() - startTime), 2)}s"
     debug_mess += ", File Size: "
     debug_mess += f"{fs}MB"
-    logger.debug(debug_mess)
+    logger.info(debug_mess)
 
 
 def create_chapter_space(pdf, chapter_file_loc) -> object:
@@ -907,8 +905,8 @@ def render_toc(pdf, outline):
 
 
 if __name__ == "__main__":
-    print(DIR_PATH)
-    print(os.getcwd())
+    logger.debug(DIR_PATH)
+    logger.debug(os.getcwd())
     args = sys.argv
 
     startTime = time.time()
@@ -918,10 +916,10 @@ if __name__ == "__main__":
     university_name = args[4].upper()
     university_school = args[5].upper()
 
-    print(f"Creating Report: {report_name}.pdf")
+    logger.debug(f"Creating Report: {report_name}.pdf")
     create_report(
         data_source, report_name, report_author, university_name, university_school
     )
-    print(f"Report Complete: {report_name}.pdf")
+    logger.debug(f"Report Complete: {report_name}.pdf")
     executionTime = time.time() - startTime
-    print("Execution time in seconds: " + str(executionTime))
+    logger.debug("Execution time in seconds: " + str(executionTime))

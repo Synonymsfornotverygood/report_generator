@@ -4,13 +4,13 @@ Functions to create sql table strings and return in loading/creation order.
 """
 
 
-def get_tables_sql() -> str:
+def get_tables_sql() -> list:
     """Generate sql string.
 
-    Calls tables functions in order and joins them to create one large sql query string
+    Calls tables functions in order and joins them to create one large sql query string list
 
     Returns:
-        sql_create_tables_str(str): string to create all tables
+        sql_create_tables_str (list): list of strings to create all tables
     """
     tables_list = [
         order_table(),

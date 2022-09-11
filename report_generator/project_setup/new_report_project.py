@@ -11,6 +11,7 @@ import pathlib
 import time
 
 import yaml
+from loguru import logger
 
 import report_generator.excel_extraction.excel_to_sql
 import report_generator.project_setup.locations_data_setup
@@ -29,7 +30,7 @@ def create_new_project(settings_dict: dict = None) -> None:
 
     """
     HOME_DIR = pathlib.Path.home()
-
+    logger.info("Starting new Project")
     try:
         settings = get_project_settings(settings_dict)
         dir_path = report_generator.project_setup.project_directory_setup.create_dirs(
@@ -57,14 +58,14 @@ def create_new_project(settings_dict: dict = None) -> None:
             settings["data_set"], database_path
         )
 
-        print("\nReport Project set up complete!")
+        logger.info("Report Project set up complete!")
     except FileExistsError as e:
-        print(e)
+        logger.error(e)
     except FileNotFoundError as e:
-        print(e)
+        logger.error(e)
     except KeyboardInterrupt as e:
-        print(e)
-        print("Quitting Application...")
+        logger.error(e)
+        logger.error("Quitting Application...")
 
 
 def get_project_settings(settings: dict = None) -> None:
@@ -83,7 +84,7 @@ def get_project_settings(settings: dict = None) -> None:
     """
     if settings is None:
 
-        print("Creating new project")
+        print("\nCreating new project")
         project_name = input("Please enter project name: ")
         report_name = input("Please enter report name: ")
         author_name = input("Please enter author name: ")
