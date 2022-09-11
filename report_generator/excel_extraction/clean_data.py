@@ -1,10 +1,10 @@
-"""
+"""# Clean Data.
+
 Script to clean data from dataset and create new excel sheet with data.
 
 Can be ran from command line.
 
         python3 clean_data.py {input_file} {output_file}
-
 
 Or import clean_data function.
 

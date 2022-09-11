@@ -8,13 +8,47 @@ plugins:
       default_handler: python
 
 nav:
-  - Report Generator Docs: index.md
+  - Report Generator Docs:
+    - index.md
     - tutorials.md
-    - How-To Guides: how-to-guides.md
+    - How-To Guides:
+      - how-to-guides/how-to-font.md
+      - how-to-guides/how-to-image.md
+      - how-to-guides/how-to-duplicate-vals.md
     - Reference:
-      - reference.md
-        - reference/location_formatter.md
-        - Excel Extraction: reference/excel_extraction.md
-        - reference/report_generator.md
-        - reference/report_generator_gui.md
-  - explanation.mds
+      - Location Formatter:
+        - reference/location_formatter/location_formatter.md
+        - reference/location_formatter/clean_data.md
+        - reference/location_formatter/location_finder.md
+        - reference/location_formatter/location_updater.md
+        - reference/location_formatter/location.md
+        - reference/location_formatter/locations_setup.md
+        - reference/location_formatter/main.md
+      - Excel Extraction:
+        - reference/excel_extraction/excel_extraction.md
+        - reference/excel_extraction/clean_data.md
+        - reference/excel_extraction/data_structure.md
+        - reference/excel_extraction/excel_extraction.md
+        - reference/excel_extraction/excel_to_sql.md
+        - reference/excel_extraction/tables.md
+      - Report Generator:
+        - reference/report_generator/report_generator.md
+        - reference/report_generator/amphibian.md
+        - reference/report_generator/create_report.md
+        - reference/report_generator/main.md
+      - Report Generator GUI:
+        - reference/report_generator_gui/report_generator_gui.md
+        - reference/report_generator_gui/app.md
+        - reference/report_generator_gui/main.md
+      - Project Setup:
+        - reference/project_setup/project_setup.md
+        - reference/project_setup/locations_data_setup.md
+        - reference/project_setup/locations_db_setup.md
+        - reference/project_setup/locations_json_setup.md
+        - reference/project_setup/new_report_project.md
+        - reference/project_setup/project_directory_setup.md
+      - Read from DB:
+        - reference/read_from_db/read_from_db.md
+        - reference/read_from_db/query_db.md
+      - Config: reference/config.md
+      - Fonts: reference/fonts.md

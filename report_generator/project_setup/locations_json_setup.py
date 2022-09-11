@@ -1,4 +1,4 @@
-"""Location setup.
+"""# Location setup.
 
 Initial set up script that creates a json file with countries continents
 and regions.

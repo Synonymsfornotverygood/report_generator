@@ -1,4 +1,4 @@
-"""Location data setup module.
+"""# Location data setup module.
 
 Module contains the following functions:
 
@@ -29,9 +29,13 @@ def insert_default_data(dir_path: str) -> None:
         dir_path (str): String path to the project directory.
 
     """
-    old_image_path = os.path.join(os.getcwd(), "data", "images")
-    old_font_path = os.path.join(os.getcwd(), "data", "fonts")
-    old_locations_path = os.path.join(os.getcwd(), "data", "location")
+    data_path = os.path.join(os.getcwd(), "data")
+    # data_path = pkg_resources.resource_string(__name__, "")
+    # print(data_path)
+    # exit()
+    old_image_path = os.path.join(data_path, "images")
+    old_font_path = os.path.join(data_path, "fonts")
+    old_locations_path = os.path.join(data_path, "location")
 
     new_image_path = os.path.join(dir_path, "data", "images")
     new_fonts_path = os.path.join(dir_path, "data", "fonts")

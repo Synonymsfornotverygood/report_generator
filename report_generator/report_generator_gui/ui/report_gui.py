@@ -831,40 +831,41 @@ class Ui_MainWindow(object):
         Load font yaml and place key names into the combobox.
         """
         config = load_config()
-        default_paragraph = config["fonts"]["default_paragraph_font"]
-        default_paragraph_size = config["fonts"]["default_paragraph_size"]
-        default_paragraph_colour = config["fonts"]["default_paragraph_colour"]
+        if config is not None:
+            default_paragraph = config["fonts"]["default_paragraph_font"]
+            default_paragraph_size = config["fonts"]["default_paragraph_size"]
+            default_paragraph_colour = config["fonts"]["default_paragraph_colour"]
 
-        default_header = config["fonts"]["default_header_font"]
-        default_header_size = config["fonts"]["default_header_size"]
-        default_header_colour = config["fonts"]["default_header_colour"]
+            default_header = config["fonts"]["default_header_font"]
+            default_header_size = config["fonts"]["default_header_size"]
+            default_header_colour = config["fonts"]["default_header_colour"]
 
-        default_title = config["fonts"]["default_title_font"]
-        default_title_size = config["fonts"]["default_title_size"]
-        default_title_colour = config["fonts"]["default_title_colour"]
+            default_title = config["fonts"]["default_title_font"]
+            default_title_size = config["fonts"]["default_title_size"]
+            default_title_colour = config["fonts"]["default_title_colour"]
 
-        self.paragraphFontComboBox.addItem(default_paragraph)
-        self.headingFontComboBox.addItem(default_header)
-        self.titleFontComboBox.addItem(default_title)
+            self.paragraphFontComboBox.addItem(default_paragraph)
+            self.headingFontComboBox.addItem(default_header)
+            self.titleFontComboBox.addItem(default_title)
 
-        self.paragraphFontColourComboBox.addItem(default_paragraph_colour)
-        self.headingFontColourComboBox.addItem(default_header_colour)
-        self.titleFontColourComboBox.addItem(default_title_colour)
+            self.paragraphFontColourComboBox.addItem(default_paragraph_colour)
+            self.headingFontColourComboBox.addItem(default_header_colour)
+            self.titleFontColourComboBox.addItem(default_title_colour)
 
-        self.titleFontSizeSpinBox.setValue(default_title_size)
-        self.headingFontSizeSpinBox.setValue(default_header_size)
-        self.paragraphFontSizeSpinBox.setValue(default_paragraph_size)
+            self.titleFontSizeSpinBox.setValue(default_title_size)
+            self.headingFontSizeSpinBox.setValue(default_header_size)
+            self.paragraphFontSizeSpinBox.setValue(default_paragraph_size)
 
-        fonts = font_dict_loader()
-        for font in fonts["font_types"].keys():
-            self.titleFontComboBox.addItem(font)
-            self.headingFontComboBox.addItem(font)
-            self.paragraphFontComboBox.addItem(font)
+            fonts = font_dict_loader()
+            for font in fonts["font_types"].keys():
+                self.titleFontComboBox.addItem(font)
+                self.headingFontComboBox.addItem(font)
+                self.paragraphFontComboBox.addItem(font)
 
-        for font_colour in fonts["font_colours"].keys():
-            self.titleFontColourComboBox.addItem(font_colour)
-            self.headingFontColourComboBox.addItem(font_colour)
-            self.paragraphFontColourComboBox.addItem(font_colour)
+            for font_colour in fonts["font_colours"].keys():
+                self.titleFontColourComboBox.addItem(font_colour)
+                self.headingFontColourComboBox.addItem(font_colour)
+                self.paragraphFontColourComboBox.addItem(font_colour)
 
     def create_report_button(self, MainWindow):
         """Create report button."""
@@ -1011,6 +1012,7 @@ def main():
         setup_ui = Ui_Dialog()
         setup_ui.setupUi(Widget)
         Widget.show()
+        ui.load_font_selection_combo()
 
     sys.exit(app.exec_())
 

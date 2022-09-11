@@ -1,4 +1,4 @@
-"""Report Generator.
+"""# Report Generator.
 
 Application to create report based on parameters passed into it.
 
@@ -8,11 +8,6 @@ Application to create report based on parameters passed into it.
         report_author       - Author of the report
         university_name     - Name of the university
         university_school   - Name of the university school
-
-@Todo:
-    - Implement passing params - statically implemented currently
-    - Implement detect data source type to allow for differing file types/sources?
-    - Abstract source reading into a different class - excel extraction for one
 
 """
 import time

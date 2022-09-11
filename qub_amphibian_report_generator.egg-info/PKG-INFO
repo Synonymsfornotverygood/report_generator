@@ -1,16 +1,28 @@
+Metadata-Version: 2.1
+Name: qub-amphibian-report-generator
+Version: 0.0.22
+Summary: Generate reports from amphibian info dataset
+Author: Ciaran Cushnahan
+Description-Content-Type: text/markdown
+
 # REPORT GENERATOR
 
 ## Requirements
 
 Python3 is required to be installed on the computer. Also, the python3 Venv package is required to be installed.
 
+If Python3 is not available program can be ran by downloading executable files found in zipped in the dist_zip directory.
+
 Further project requirements for external Python libraries can be found in the requirements.txt file. This file is located in the root folder of the project directory.
 
 The rest of the process of the project's setup is outlined in the installation section below.
 
-**Note: Project has only been used on Linux system - there are possible issues with hard-coded paths. I will update to resolve**
-
 ## Installation
+
+### Installation from PyPI
+
+
+### Installation from Git Repository
 
 To install the project: first download the project code from the repository.  Extract or pull the code into the directory of your choice. Open a terminal in this directory.
 
@@ -26,27 +38,43 @@ We then install the required files:
 
         pip install requirements.txt
 
+Then install package:
+
+        pip install requirements.txt
+
+
 When this process has been completed it is now possible to use the program.
 
+### Installation from executable files
+
+Download the file. Unzip file. Open directory and double-click app file.
 
 ## Use
 
-The program can then be used through either of the following methods:
+Once the package has been installed and setup the Report Generator program can be used from venv with the command:
 
-        python3 application/create_report.py {report_name} {report_author} {report_university} {report_school}
+        report-generator
 
-Or by editing the default values in application/main.py and typing the following command into the terminal:
+This will start the GUI application for the report generator
 
-        python3 application/main.py
+If the user wants to use the CLI:
 
+        report-generator --cli [options]
 
-## Example
+CLI options can be found with the command:
 
-An example of program use can be found below.
+        report-generator -h
+        report-generator -help
 
-        python3 application/create_report.py "AMPH PILOT DATASET_V5_25.June.2022.xlsx" "Test Report" "Daniel Pincheira-Donoso" "Queen's University Belfast" "School Of Biological Sciences"
+Or can be found in the projects documentation.
 
-The example report created can be found in the Test_Report.pdf in the examples directory
+If the user wants to set up a new project:
+
+        create-report-generator
+
+## Documentation
+
+Project documentation can be found [here](https://synonymsfornotverygood.github.io/report_generator/)
 
 
 ## Versions
@@ -58,4 +86,3 @@ Archived versions of the Report Generator Program can be found in links to repos
 
 ## Changelog
 
-###
