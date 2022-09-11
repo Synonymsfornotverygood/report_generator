@@ -1,0 +1,3084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>Excel Extraction Tables Module - Report Generator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#excel-extraction-tables-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Report Generator" class="md-header__button md-logo" aria-label="Report Generator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Report Generator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Excel Extraction Tables Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Report Generator" class="md-nav__button md-logo" aria-label="Report Generator" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Report Generator
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Report Generator Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Report Generator Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Report Generator Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Report Generator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          How-To Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="How-To Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          How-To Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-guides/how-to-font/" class="md-nav__link">
+        How to add font
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-guides/how-to-image/" class="md-nav__link">
+        How to change default images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-guides/how-to-duplicate-vals/" class="md-nav__link">
+        How to look at duplicate values output
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_1" type="checkbox" id="__nav_1_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_1">
+          Location Formatter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Location Formatter" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Location Formatter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/location_formatter/" class="md-nav__link">
+        Location Formatter Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/clean_data/" class="md-nav__link">
+        Clean data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/location_finder/" class="md-nav__link">
+        Location finder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/location_updater/" class="md-nav__link">
+        Location updater
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/location/" class="md-nav__link">
+        Location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/locations_setup/" class="md-nav__link">
+        Locations setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location_formatter/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_2" type="checkbox" id="__nav_1_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_2">
+          Excel Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Excel Extraction" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Excel Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../excel_extraction/" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clean_data/" class="md-nav__link">
+        Clean Data Module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_structure/" class="md-nav__link">
+        Data structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../excel_extraction/" class="md-nav__link">
+        Excel extraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../excel_to_sql/" class="md-nav__link">
+        Excel To SQL Module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Excel Extraction Tables Module
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Excel Extraction Tables Module
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables" class="md-nav__link">
+    report_generator.excel_extraction.tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables--tables-module" class="md-nav__link">
+    Tables module.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.activity_species_table" class="md-nav__link">
+    activity_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.activity_table" class="md-nav__link">
+    activity_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.admin_user_table" class="md-nav__link">
+    admin_user_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.continent_table" class="md-nav__link">
+    continent_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.country_table" class="md-nav__link">
+    country_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.family_table" class="md-nav__link">
+    family_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.genus_table" class="md-nav__link">
+    genus_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.geo_location_species_table" class="md-nav__link">
+    geo_location_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.geo_location_table" class="md-nav__link">
+    geo_location_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.get_tables_sql" class="md-nav__link">
+    get_tables_sql()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.iucn_table" class="md-nav__link">
+    iucn_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.micro_habitat_species_table" class="md-nav__link">
+    micro_habitat_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.micro_habitat_table" class="md-nav__link">
+    micro_habitat_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.nesting_site_species_table" class="md-nav__link">
+    nesting_site_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.nesting_site_table" class="md-nav__link">
+    nesting_site_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.order_table" class="md-nav__link">
+    order_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.parity_mode_table" class="md-nav__link">
+    parity_mode_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.pop_trend_table" class="md-nav__link">
+    pop_trend_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.site_user_table" class="md-nav__link">
+    site_user_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.species_table" class="md-nav__link">
+    species_table()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_3" type="checkbox" id="__nav_1_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_3">
+          Report Generator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Report Generator" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Report Generator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator/report_generator/" class="md-nav__link">
+        Report Generator Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator/amphibian/" class="md-nav__link">
+        Amphibian
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator/create_report/" class="md-nav__link">
+        Create report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_4" type="checkbox" id="__nav_1_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_4">
+          Report Generator GUI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Report Generator GUI" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Report Generator GUI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator_gui/report_generator_gui/" class="md-nav__link">
+        Report Generator GUI Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator_gui/app/" class="md-nav__link">
+        App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report_generator_gui/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_5" type="checkbox" id="__nav_1_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_5">
+          Project Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project Setup" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/project_setup/" class="md-nav__link">
+        Project setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/locations_data_setup/" class="md-nav__link">
+        Locations data setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/locations_db_setup/" class="md-nav__link">
+        Locations db setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/locations_json_setup/" class="md-nav__link">
+        Locations json setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/new_report_project/" class="md-nav__link">
+        New report project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project_setup/project_directory_setup/" class="md-nav__link">
+        Project directory setup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_6" type="checkbox" id="__nav_1_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4_6">
+          Read from DB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Read from DB" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Read from DB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read_from_db/read_from_db/" class="md-nav__link">
+        Read from db
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read_from_db/query_db/" class="md-nav__link">
+        Query db
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/" class="md-nav__link">
+        Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fonts/" class="md-nav__link">
+        Fonts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables" class="md-nav__link">
+    report_generator.excel_extraction.tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables--tables-module" class="md-nav__link">
+    Tables module.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.activity_species_table" class="md-nav__link">
+    activity_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.activity_table" class="md-nav__link">
+    activity_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.admin_user_table" class="md-nav__link">
+    admin_user_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.continent_table" class="md-nav__link">
+    continent_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.country_table" class="md-nav__link">
+    country_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.family_table" class="md-nav__link">
+    family_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.genus_table" class="md-nav__link">
+    genus_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.geo_location_species_table" class="md-nav__link">
+    geo_location_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.geo_location_table" class="md-nav__link">
+    geo_location_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.get_tables_sql" class="md-nav__link">
+    get_tables_sql()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.iucn_table" class="md-nav__link">
+    iucn_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.micro_habitat_species_table" class="md-nav__link">
+    micro_habitat_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.micro_habitat_table" class="md-nav__link">
+    micro_habitat_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.nesting_site_species_table" class="md-nav__link">
+    nesting_site_species_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.nesting_site_table" class="md-nav__link">
+    nesting_site_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.order_table" class="md-nav__link">
+    order_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.parity_mode_table" class="md-nav__link">
+    parity_mode_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.pop_trend_table" class="md-nav__link">
+    pop_trend_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.site_user_table" class="md-nav__link">
+    site_user_table()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report_generator.excel_extraction.tables.species_table" class="md-nav__link">
+    species_table()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="excel-extraction-tables-module">Excel Extraction Tables Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="report_generator.excel_extraction.tables"></a>
+  <div class="doc doc-contents first">
+  
+      <h2 id="report_generator.excel_extraction.tables--tables-module">Tables module.</h2>
+<p>Functions to create sql table strings and return in loading/creation order.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.activity_species_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">activity_species_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate activity_species sql string.</p>
+<p>Returns table based on activity_species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">activity_species_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate activity_species sql string.</span>
+
+<span class="sd">    Returns table based on activity_species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS activity_species(</span>
+<span class="s2">        activity_species_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        species_id INTEGER NOT NULL,</span>
+<span class="s2">        activity_id INTEGER NOT NULL,</span>
+<span class="s2">        -- PRIMARY KEY (species_id, activity_id),</span>
+<span class="s2">        FOREIGN KEY (species_id)</span>
+<span class="s2">            REFERENCES species (species_id),</span>
+<span class="s2">        FOREIGN KEY (activity_id)</span>
+<span class="s2">            REFERENCES activity (activity_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.activity_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">activity_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate activity sql string.</p>
+<p>Returns table based on activity ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">activity_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate activity sql string.</span>
+
+<span class="sd">    Returns table based on activity ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS activity(</span>
+<span class="s2">        activity_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        activity_kind TEXT</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.admin_user_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">admin_user_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate admin sql string.</p>
+<p>Returns table based on species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">admin_user_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate admin sql string.</span>
+
+<span class="sd">    Returns table based on species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS admin_user (</span>
+<span class="s2">        admin_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        admin_name TEXT NOT NULL,</span>
+<span class="s2">        admin_password TEXT NOT NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.continent_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">continent_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate continent sql string.</p>
+<p>Returns table based on continent ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">continent_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate continent sql string.</span>
+
+<span class="sd">    Returns table based on continent ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS continent(</span>
+<span class="s2">        continent_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        continent_name TEXT NOT NULL</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.country_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">country_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate country sql string.</p>
+<p>Returns table based on country ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">country_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate country sql string.</span>
+
+<span class="sd">    Returns table based on country ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS country (</span>
+<span class="s2">        country_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        country_name TEXT,</span>
+<span class="s2">        continent_id INTEGER,</span>
+<span class="s2">        FOREIGN KEY (continent_id)</span>
+<span class="s2">            REFERENCES continent (continent_id)</span>
+<span class="s2">        UNIQUE(country_name, continent_id)</span>
+<span class="s2">    )</span>
+
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.family_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">family_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate family sql string.</p>
+<p>Returns table based on family ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">family_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate family sql string.</span>
+
+<span class="sd">    Returns table based on family ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS family(</span>
+<span class="s2">        family_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        family_name TEXT NOT NULL,</span>
+<span class="s2">        order_id INTEGER NOT NULL,</span>
+<span class="s2">        FOREIGN KEY (order_id)</span>
+<span class="s2">            REFERENCES order_taxon (order_id)</span>
+
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.genus_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">genus_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate genus sql string.</p>
+<p>Returns table based on genus ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">genus_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate genus sql string.</span>
+
+<span class="sd">    Returns table based on genus ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS genus(</span>
+<span class="s2">        genus_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        genus_name  TEXT NOT NULL,</span>
+<span class="s2">        family_id INTEGER NOT NULL,</span>
+<span class="s2">        FOREIGN KEY (family_id)</span>
+<span class="s2">            REFERENCES family (family_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.geo_location_species_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">geo_location_species_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate geo_location_species sql string.</p>
+<p>Returns table based on geo_location_species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">geo_location_species_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate geo_location_species sql string.</span>
+
+<span class="sd">    Returns table based on geo_location_species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS geo_location_species(</span>
+<span class="s2">        geo_location_species_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        geo_location_id INTEGER,</span>
+<span class="s2">        species_id INTEGER,</span>
+<span class="s2">        -- PRIMARY KEY (species_id, geo_location_id),</span>
+<span class="s2">        FOREIGN KEY (species_id)</span>
+<span class="s2">            REFERENCES species (species_id),</span>
+<span class="s2">        FOREIGN KEY (geo_location_id)</span>
+<span class="s2">            REFERENCES geo_location (geo_location_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.geo_location_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">geo_location_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate geo_location sql string.</p>
+<p>Returns table based on geo_location ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">geo_location_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate geo_location sql string.</span>
+
+<span class="sd">    Returns table based on geo_location ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS geo_location(</span>
+<span class="s2">        geo_location_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        region_name TEXT,</span>
+<span class="s2">        latitude REAL,</span>
+<span class="s2">        longitude REAL,</span>
+<span class="s2">        country_id INTEGER,</span>
+<span class="s2">        FOREIGN KEY (country_id)</span>
+<span class="s2">            REFERENCES country (country_id)</span>
+<span class="s2">        UNIQUE(region_name, country_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.get_tables_sql" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_tables_sql</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate sql string.</p>
+<p>Calls tables functions in order and joins them to create one large sql query string</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_create_tables_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>string to create all tables</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_tables_sql</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate sql string.</span>
+
+<span class="sd">    Calls tables functions in order and joins them to create one large sql query string</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_create_tables_str(str): string to create all tables</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tables_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">order_table</span><span class="p">(),</span>
+        <span class="n">family_table</span><span class="p">(),</span>
+        <span class="n">genus_table</span><span class="p">(),</span>
+        <span class="n">pop_trend_table</span><span class="p">(),</span>
+        <span class="n">iucn_table</span><span class="p">(),</span>
+        <span class="n">parity_mode_table</span><span class="p">(),</span>
+        <span class="n">continent_table</span><span class="p">(),</span>
+        <span class="n">country_table</span><span class="p">(),</span>
+        <span class="n">geo_location_table</span><span class="p">(),</span>
+        <span class="n">micro_habitat_table</span><span class="p">(),</span>
+        <span class="n">activity_table</span><span class="p">(),</span>
+        <span class="n">nesting_site_table</span><span class="p">(),</span>
+        <span class="n">species_table</span><span class="p">(),</span>
+        <span class="n">nesting_site_species_table</span><span class="p">(),</span>
+        <span class="n">activity_species_table</span><span class="p">(),</span>
+        <span class="n">micro_habitat_species_table</span><span class="p">(),</span>
+        <span class="n">geo_location_species_table</span><span class="p">(),</span>
+        <span class="n">site_user_table</span><span class="p">(),</span>
+        <span class="n">admin_user_table</span><span class="p">(),</span>
+    <span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">tables_list</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.iucn_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">iucn_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate iucn sql string.</p>
+<p>Returns table based on iucn ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">iucn_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate iucn sql string.</span>
+
+<span class="sd">    Returns table based on iucn ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS iucn (</span>
+<span class="s2">        iucn_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        iucn_status TEXT NOT NULL</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.micro_habitat_species_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">micro_habitat_species_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate micro_habitat_species sql string.</p>
+<p>Returns table based on micro_habitat_species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">micro_habitat_species_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate micro_habitat_species sql string.</span>
+
+<span class="sd">    Returns table based on micro_habitat_species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS micro_habitat_species(</span>
+<span class="s2">        micro_habitat_species_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        species_id INTEGER,</span>
+<span class="s2">        micro_habitat_id INTEGER,</span>
+<span class="s2">        micro_habitat_pref_rank INTEGER,</span>
+<span class="s2">        -- PRIMARY KEY (species_id, micro_habitat_id),</span>
+<span class="s2">        FOREIGN KEY (species_id)</span>
+<span class="s2">            REFERENCES species (species_id),</span>
+<span class="s2">        FOREIGN KEY (micro_habitat_id)</span>
+<span class="s2">            REFERENCES micro_habitat (micro_habitat_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.micro_habitat_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">micro_habitat_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate micro_habitat sql string.</p>
+<p>Returns table based on micro_habitat ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">micro_habitat_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate micro_habitat sql string.</span>
+
+<span class="sd">    Returns table based on micro_habitat ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS micro_habitat(</span>
+<span class="s2">        micro_habitat_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        micro_habitat_name TEXT</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.nesting_site_species_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nesting_site_species_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate nesting site species sql string.</p>
+<p>Returns table based on nesting site species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nesting_site_species_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate nesting site species sql string.</span>
+
+<span class="sd">    Returns table based on nesting site species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">    CREATE TABLE IF NOT EXISTS nesting_site_species (</span>
+<span class="s2">        nesting_site_species_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        species_id INTEGER NOT NULL,</span>
+<span class="s2">        nesting_site_id INTEGER NOT NULL,</span>
+<span class="s2">        -- PRIMARY KEY (species_id, nesting_site_id),</span>
+<span class="s2">        FOREIGN KEY (species_id)</span>
+<span class="s2">            REFERENCES species (species_id),</span>
+<span class="s2">        FOREIGN KEY (nesting_site_id)</span>
+<span class="s2">            REFERENCES nesting_site (nesting_site_id)</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.nesting_site_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nesting_site_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate nesting_site sql string.</p>
+<p>Returns table based on nesting_site ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">nesting_site_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate nesting_site sql string.</span>
+
+<span class="sd">    Returns table based on nesting_site ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS nesting_site(</span>
+<span class="s2">        nesting_site_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        nesting_site_desc TEXT</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.order_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">order_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate order sql string.</p>
+<p>Returns table based on order ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">order_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate order sql string.</span>
+
+<span class="sd">    Returns table based on order ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS order_taxon(</span>
+<span class="s2">        order_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        order_taxon_name TEXT NOT NULL</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.parity_mode_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parity_mode_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate parity_mode sql string.</p>
+<p>Returns table based on parity_mode ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parity_mode_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate parity_mode sql string.</span>
+
+<span class="sd">    Returns table based on parity_mode ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS parity_mode(</span>
+<span class="s2">        parity_mode_id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        parity_mode_desc TEXT NOT NULL</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.pop_trend_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pop_trend_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate pop_trend sql string.</p>
+<p>Returns table based on pop_trend ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">pop_trend_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate pop_trend sql string.</span>
+
+<span class="sd">    Returns table based on pop_trend ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS pop_trend(</span>
+<span class="s2">        pop_trend_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        pop_trend_status TEXT NOT NULL</span>
+<span class="s2">    )</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.site_user_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">site_user_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate site_user sql string.</p>
+<p>Returns table based on species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">site_user_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate site_user sql string.</span>
+
+<span class="sd">    Returns table based on species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS site_user (</span>
+<span class="s2">      &quot;user_id&quot; integer NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">      &quot;first_name&quot; varchar(200) NOT NULL,</span>
+<span class="s2">      &quot;last_name&quot; varchar(200) NOT NULL,</span>
+<span class="s2">      &quot;educational_inst&quot; varchar(200) NOT NULL,</span>
+<span class="s2">      &quot;user_name&quot; varchar(200) NOT NULL,</span>
+<span class="s2">      &quot;email_address&quot; varchar(254) NOT NULL,</span>
+<span class="s2">      &quot;password&quot; varchar(200) NOT NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="report_generator.excel_extraction.tables.species_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">species_table</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generate species sql string.</p>
+<p>Returns table based on species ERD diagram</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>sql_str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td><p>returns string of sql code</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>report_generator/excel_extraction/tables.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">species_table</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate species sql string.</span>
+
+<span class="sd">    Returns table based on species ERD diagram</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        sql_str: returns string of sql code</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sql_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    CREATE TABLE IF NOT EXISTS species(</span>
+<span class="s2">        species_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,</span>
+<span class="s2">        species_name_common TEXT,</span>
+<span class="s2">        species_name_latin TEXT,</span>
+<span class="s2">        size_max_male REAL,</span>
+<span class="s2">        size_max_female REAL,</span>
+<span class="s2">        size_max_record REAL,</span>
+<span class="s2">        longevity REAL,</span>
+<span class="s2">        clutch_min INTEGER,</span>
+<span class="s2">        clutch_max INTEGER,</span>
+<span class="s2">        clutch_avg REAL,</span>
+<span class="s2">        egg_diameter REAL,</span>
+<span class="s2">        range_size REAL,</span>
+<span class="s2">        elevation_min INTEGER,</span>
+<span class="s2">        elevation_max REAL,</span>
+<span class="s2">        elevation_avg REAL,</span>
+<span class="s2">        img_uri_female TEXT,</span>
+<span class="s2">        img_uri_male TEXT,</span>
+<span class="s2">        verif_status BOOL,</span>
+<span class="s2">        parity_mode_id INTEGER,</span>
+<span class="s2">        pop_trend_id INTEGER,</span>
+<span class="s2">        iucn_id INTEGER,</span>
+<span class="s2">        genus_id INTEGER,</span>
+<span class="s2">        FOREIGN KEY (parity_mode_id)</span>
+<span class="s2">            REFERENCES parity_mode(parity_mode_id),</span>
+<span class="s2">        FOREIGN KEY (pop_trend_id)</span>
+<span class="s2">            REFERENCES pop_trend(pop_trend_id),</span>
+<span class="s2">        FOREIGN KEY (iucn_id)</span>
+<span class="s2">            REFERENCES iucn(iucn_id),</span>
+<span class="s2">        FOREIGN KEY (genus_id)</span>
+<span class="s2">            REFERENCES genus (genus_id)</span>
+<span class="s2">    )</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">sql_str</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../excel_to_sql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Excel To SQL Module" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Excel To SQL Module
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../report_generator/report_generator/" class="md-footer__link md-footer__link--next" aria-label="Next: Report Generator Reference" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Report Generator Reference
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
