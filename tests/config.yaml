@@ -1,0 +1,18 @@
+author_name: qwe
+data_set: ''
+dir_path: /home/cush/testproj
+fonts:
+  default_header_colour: Black
+  default_header_font: Helvetica
+  default_header_size: 48
+  default_paragraph_colour: Black
+  default_paragraph_font: Helvetica
+  default_paragraph_size: 10
+  default_title_colour: Red
+  default_title_font: Helvetica
+  default_title_size: 56
+  default_title_sub: Helvetica
+project_name: qwe
+report_name: qwe
+school_name: qwe
+uni_name: qwe
