@@ -2,6 +2,9 @@
 
 ### Installation from PyPI
 
+Use the following in the command line:
+
+ pip install qub-amphibian-report-generator
 
 ### Installation from Git Repository
 
@@ -21,7 +24,9 @@ We then install the required files:
 
 Then install package:
 
-    pip install --editable report_generator
+        python -m build
+
+        pip install -e .
 
 When this process has been completed it is now possible to use the program.
 
