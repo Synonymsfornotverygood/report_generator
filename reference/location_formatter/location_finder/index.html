@@ -1264,7 +1264,7 @@ to determine what kind of location (continent, country, region) the section is.<
 <span class="normal">126</span>
 <span class="normal">127</span>
 <span class="normal">128</span>
-<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_location</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_location</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Find location.</span>
 
 <span class="sd">    Takes a location string splits it into sections. Attempts</span>
@@ -1285,9 +1285,10 @@ to determine what kind of location (continent, country, region) the section is.<
     <span class="n">process_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">locations_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;something wrong&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Locations data is None&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span>
 
-    <span class="c1"># print(f&quot;Sections: {location_str}&quot;)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sections: </span><span class="si">{</span><span class="n">location_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># Handling nan/null dataset error</span>
     <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">location_str</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;nan&quot;</span><span class="p">:</span>
@@ -1308,7 +1309,7 @@ to determine what kind of location (continent, country, region) the section is.<
     <span class="c1"># Iterate through the sections to try and determine what kind of location they are</span>
 
     <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
-        <span class="c1"># print(f&quot;Section: {section}&quot;)</span>
+        <span class="c1"># logger.debug(f&quot;Section: {section}&quot;)</span>
 
         <span class="c1"># Data Cleaning</span>
         <span class="c1"># section = re.sub(&quot; s$| is$&quot;, &quot;&quot;, section)</span>
@@ -1332,10 +1333,9 @@ to determine what kind of location (continent, country, region) the section is.<
             <span class="n">countries_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">locations_data</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="n">region</span> <span class="o">=</span> <span class="n">locations_data</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">][</span><span class="n">section</span><span class="p">]</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">region</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
             <span class="n">regions_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">locations_data</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">][</span><span class="n">section</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># print(f&quot;Region Found: {section}&quot;)</span>
+            <span class="c1"># logger.debug(f&quot;Region Found: {section}&quot;)</span>
             <span class="n">unknown_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
 
     <span class="c1"># Try to create a location object based on results</span>
@@ -1514,7 +1514,9 @@ to determine what kind of location (continent, country, region) the section is.<
 <span class="normal">191</span>
 <span class="normal">192</span>
 <span class="normal">193</span>
-<span class="normal">194</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_unknown</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">find_unknown</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Find unknown location.</span>
 
 <span class="sd">    Takes a location string splits it into sections. Finds unknown regions.</span>
@@ -1529,6 +1531,8 @@ to determine what kind of location (continent, country, region) the section is.<
 <span class="sd">        location_objs(list): list of Location objects</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">locations_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span>
     <span class="c1"># logger</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;unknown finder func Start&quot;</span><span class="p">)</span>
     <span class="n">process_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1547,7 +1551,7 @@ to determine what kind of location (continent, country, region) the section is.<
     <span class="c1"># Iterate through the sections to try and determine what kind of location they are</span>
 
     <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
-        <span class="c1"># print(&quot;Section: {section}&quot;)</span>
+        <span class="c1"># logger.debug(&quot;Section: {section}&quot;)</span>
 
         <span class="c1"># Data Cleaning</span>
         <span class="c1"># section = re.sub(r&quot;\ss$&quot;, &quot;&quot;, section)</span>

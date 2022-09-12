@@ -449,20 +449,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#report_generator.location_formatter.location_updater.start_update_location_thread" class="md-nav__link">
-    start_update_location_thread()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#report_generator.location_formatter.location_updater.unknown_to_location" class="md-nav__link">
-    unknown_to_location()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#report_generator.location_formatter.location_updater.update_location" class="md-nav__link">
     update_location()
   </a>
@@ -1122,20 +1108,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#report_generator.location_formatter.location_updater.start_update_location_thread" class="md-nav__link">
-    start_update_location_thread()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#report_generator.location_formatter.location_updater.unknown_to_location" class="md-nav__link">
-    unknown_to_location()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#report_generator.location_formatter.location_updater.update_location" class="md-nav__link">
     update_location()
   </a>
@@ -1235,8 +1207,9 @@ update that data to provide better information.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>file_path(str)</code></td>
+          <td><code>file_path</code></td>
           <td>
+                <code>str</code>
           </td>
           <td><p>file path string</p></td>
           <td>
@@ -1266,9 +1239,7 @@ update that data to provide better information.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
 <span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
@@ -1279,16 +1250,18 @@ update that data to provide better information.</p>
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_location_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_location_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Load location json.</span>
 
 <span class="sd">    Opens and returns location object from json file</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        file_path(str): file path string</span>
+<span class="sd">        file_path (str): file path string</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        location_data(object): location data python object</span>
+<span class="sd">        location_data (object): location data python object</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -1326,18 +1299,16 @@ and returns locations object.</p>
     <tbody>
         <tr>
 <td><code>locations_data</code></td>          <td>
-                <code>object</code>
+                <code>dict</code>
           </td>
-          <td><p>Python object containing location info</p></td>
+          <td><p>Python dict containing location info</p></td>
         </tr>
     </tbody>
   </table>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
@@ -1357,14 +1328,16 @@ and returns locations object.</p>
 <span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_locations_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_locations_data</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Load locations data.</span>
 
 <span class="sd">    Opens json file and loads locations data from json</span>
 <span class="sd">    and returns locations object.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        locations_data: Python object containing location info</span>
+<span class="sd">        locations_data (dict): Python dict containing location info</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># load location object</span>
@@ -1404,23 +1377,24 @@ write the data to a json file.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">288</span>
-<span class="normal">289</span>
-<span class="normal">290</span>
-<span class="normal">291</span>
-<span class="normal">292</span>
-<span class="normal">293</span>
-<span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span>
-<span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span>
-<span class="normal">300</span>
-<span class="normal">301</span>
-<span class="normal">302</span>
-<span class="normal">303</span>
-<span class="normal">304</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_locations_data</span><span class="p">(</span><span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_locations_data</span><span class="p">(</span><span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Save locations data.</span>
 
 <span class="sd">    Takes the locations data object and uses json.dumps to</span>
@@ -1430,6 +1404,7 @@ write the data to a json file.</p>
 <span class="sd">        locations_data - object containing locations data</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Saving locations data&quot;</span><span class="p">)</span>
     <span class="n">dumped</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">locations_data</span><span class="p">)</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">report_generator</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">()</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
@@ -1502,7 +1477,22 @@ results matching the unknown location string.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">220</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
 <span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
@@ -1548,26 +1538,7 @@ results matching the unknown location string.</p>
 <span class="normal">263</span>
 <span class="normal">264</span>
 <span class="normal">265</span>
-<span class="normal">266</span>
-<span class="normal">267</span>
-<span class="normal">268</span>
-<span class="normal">269</span>
-<span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
-<span class="normal">276</span>
-<span class="normal">277</span>
-<span class="normal">278</span>
-<span class="normal">279</span>
-<span class="normal">280</span>
-<span class="normal">281</span>
-<span class="normal">282</span>
-<span class="normal">283</span>
-<span class="normal">284</span>
-<span class="normal">285</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">search_for_unknowns</span><span class="p">(</span><span class="n">unknowns</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="normal">266</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">search_for_unknowns</span><span class="p">(</span><span class="n">unknowns</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Search for unknowns.</span>
 
 <span class="sd">    Takes list of unidentified locations and searches locations database for</span>
@@ -1603,15 +1574,13 @@ results matching the unknown location string.</p>
         <span class="c1"># Execute</span>
         <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span>
 
         <span class="c1"># Check if result</span>
         <span class="k">if</span> <span class="n">rows</span> <span class="o">!=</span> <span class="p">[]:</span>
             <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">unknown</span><span class="p">,</span> <span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no match&quot;</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">()</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;no match&quot;</span><span class="p">)</span>
 
         <span class="c1"># End logging time</span>
         <span class="n">process_time_taken</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">process_start_time</span>
@@ -1620,155 +1589,17 @@ results matching the unknown location string.</p>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Search for unknowns Start&quot;</span><span class="p">)</span>
     <span class="n">process_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">unknowns</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">unknown</span> <span class="ow">in</span> <span class="n">unknowns</span><span class="p">:</span>
             <span class="n">unknown_sql_query</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span>
 
     <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="n">process_time_taken</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">process_start_time</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search for unknowns end: </span><span class="si">{</span><span class="n">process_time_taken</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">results</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="report_generator.location_formatter.location_updater.start_update_location_thread" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">start_update_location_thread</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Start update location thread.</p>
-<p>Creates a new thread for updating location.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>x</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>thread name string</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>locations_data</code></td>
-          <td>
-                <code>object</code>
-          </td>
-          <td><p>Python object containing location data</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-<td><code>t</code></td>          <td>
-                <code>object</code>
-          </td>
-          <td><p>started thread</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-      <details class="quote">
-        <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">start_update_location_thread</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Start update location thread.</span>
-
-<span class="sd">    Creates a new thread for updating location.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        x: thread name string</span>
-<span class="sd">        locations_data: Python object containing location data</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        t: started thread</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">update_location_entry</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h2 id="report_generator.location_formatter.location_updater.unknown_to_location" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">unknown_to_location</span><span class="p">(</span><span class="n">search_str</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Uknown to location.</p>
-<p>Currently unimplemented</p>
-
-      <details class="quote">
-        <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">unknown_to_location</span><span class="p">(</span><span class="n">search_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Uknown to location.</span>
-
-<span class="sd">    Currently unimplemented</span>
-<span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1805,8 +1636,9 @@ data frame.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>data_frame(object)</code></td>
+          <td><code>data_frame</code></td>
           <td>
+                <code>pandas.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
           <td><p>Pandas DataFrame object</p></td>
           <td>
@@ -1827,7 +1659,7 @@ data frame.</p>
     <tbody>
         <tr>
 <td><code>updated_data_frame</code></td>          <td>
-                <code>object</code>
+                <code>pandas.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
           <td><p>Pandas DataFrame object</p></td>
         </tr>
@@ -1863,7 +1695,7 @@ data frame.</p>
 <span class="normal">49</span>
 <span class="normal">50</span>
 <span class="normal">51</span>
-<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location</span><span class="p">(</span><span class="n">data_frame</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">52</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location</span><span class="p">(</span><span class="n">data_frame</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Update location.</span>
 
 <span class="sd">    Takes a pandas data frame object and runs the location finder on each cell of the</span>
@@ -1873,10 +1705,10 @@ data frame.</p>
 <span class="sd">    data frame.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        data_frame(object): Pandas DataFrame object</span>
+<span class="sd">        data_frame (pandas.DataFrame): Pandas DataFrame object</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        updated_data_frame(object): Pandas DataFrame object</span>
+<span class="sd">        updated_data_frame (pandas.DataFrame): Pandas DataFrame object</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Load Locations Data</span>
@@ -1925,8 +1757,9 @@ data frame.</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>data_frame(object)</code></td>
+          <td><code>data_frame</code></td>
           <td>
+                <code>pandas.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
           <td><p>Pandas DataFrame object</p></td>
           <td>
@@ -1934,8 +1767,9 @@ data frame.</p>
           </td>
         </tr>
         <tr>
-          <td><code>LOCATIONS_DATA(object)</code></td>
+          <td><code>LOCATIONS_DATA</code></td>
           <td>
+                <code>object) </code>
           </td>
           <td><p>location data</p></td>
           <td>
@@ -1956,7 +1790,7 @@ data frame.</p>
     <tbody>
         <tr>
 <td><code>data_frame</code></td>          <td>
-                <code>object</code>
+                <code>pandas.<span title="pandas.DataFrame">DataFrame</span></code>
           </td>
           <td><p>Pandas DataFrame object</p></td>
         </tr>
@@ -1986,18 +1820,22 @@ data frame.</p>
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
-<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location_entries</span><span class="p">(</span><span class="n">data_frame</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">LOCATIONS_DATA</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location_entries</span><span class="p">(</span>
+    <span class="n">data_frame</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">LOCATIONS_DATA</span><span class="p">:</span> <span class="nb">object</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Update location entries.</span>
 
 <span class="sd">    Takes pandas data frame object and calls lambda function on each entry in</span>
 <span class="sd">    &#39;GeographicRegion&#39; to update the entry. Then returns updated data frame object.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        data_frame(object): Pandas DataFrame object</span>
-<span class="sd">        LOCATIONS_DATA(object) : location data</span>
+<span class="sd">        data_frame (pandas.DataFrame): Pandas DataFrame object</span>
+<span class="sd">        LOCATIONS_DATA (object) : location data</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        data_frame(object): Pandas DataFrame object</span>
+<span class="sd">        data_frame (pandas.DataFrame): Pandas DataFrame object</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">locations</span> <span class="o">=</span> <span class="n">data_frame</span><span class="p">[</span><span class="s2">&quot;GeographicRegion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -2044,8 +1882,9 @@ Attempts to transform into a more robust location value</p>
     </thead>
     <tbody>
         <tr>
-          <td><code>location_str(str)</code></td>
+          <td><code>location_str</code></td>
           <td>
+                <code>str</code>
           </td>
           <td><p>string location value</p></td>
           <td>
@@ -2053,8 +1892,9 @@ Attempts to transform into a more robust location value</p>
           </td>
         </tr>
         <tr>
-          <td><code>LOCATIONS_DATA(object)</code></td>
+          <td><code>LOCATIONS_DATA</code></td>
           <td>
+                <code>object) </code>
           </td>
           <td><p>location data</p></td>
           <td>
@@ -2084,9 +1924,7 @@ Attempts to transform into a more robust location value</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
 <span class="normal"> 82</span>
 <span class="normal"> 83</span>
 <span class="normal"> 84</span>
@@ -2115,7 +1953,9 @@ Attempts to transform into a more robust location value</p>
 <span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
-<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location_entry</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">LOCATIONS_DATA</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_location_entry</span><span class="p">(</span><span class="n">location_str</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">LOCATIONS_DATA</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Update location entry.</span>
 
 <span class="sd">    Takes the &#39;GeographicRegion&#39; cell string value. Splits it into sections.</span>
@@ -2124,12 +1964,12 @@ Attempts to transform into a more robust location value</p>
 <span class="sd">        &#39;continent-country-region/continent-country-region/etc&#39;</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        location_str(str): string location value</span>
-<span class="sd">        LOCATIONS_DATA(object) : location data</span>
+<span class="sd">        location_str (str): string location value</span>
+<span class="sd">        LOCATIONS_DATA (object) : location data</span>
 
 
 <span class="sd">    Returns:</span>
-<span class="sd">        updated_location_str(str): string updated location value</span>
+<span class="sd">        updated_location_str (str): string updated location value</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># location_strs = location_str.split(&quot;/&quot;)</span>
@@ -2204,7 +2044,22 @@ Attempts to transform into a more robust location value</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">193</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
 <span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
@@ -2213,22 +2068,7 @@ Attempts to transform into a more robust location value</p>
 <span class="normal">199</span>
 <span class="normal">200</span>
 <span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_locations_data</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">202</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_locations_data</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Update locations data.</span>
 
 <span class="sd">    Updates the locations data with results of unknown location search.</span>
@@ -2239,7 +2079,7 @@ Attempts to transform into a more robust location value</p>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">region_data</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
             <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
@@ -2331,26 +2171,26 @@ update the location data.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/location_formatter/location_updater.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_locations_unknowns</span><span class="p">(</span><span class="n">locs</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">175</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_locations_unknowns</span><span class="p">(</span><span class="n">locs</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">locations_data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Update unknown locations.</span>
 
 <span class="sd">    Takes list of unknown locations and passes to the find unknown method.</span>

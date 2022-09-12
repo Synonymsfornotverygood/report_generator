@@ -1084,6 +1084,8 @@
 
 <h2 id="installation">Installation</h2>
 <h3 id="installation-from-pypi">Installation from PyPI</h3>
+<p>Use the following in the command line:</p>
+<p>pip install qub-amphibian-report-generator</p>
 <h3 id="installation-from-git-repository">Installation from Git Repository</h3>
 <p>To install the project: first download the project code from the repository.  Extract or pull the code into the directory of your choice. Open a terminal in this directory.</p>
 <p>Next set up the virtual environment. This allows us to install the project's libraries without affecting the broader Python environment on the computer. (In example code Python's venv is used.)</p>
@@ -1096,7 +1098,9 @@
 <pre><code>    pip install requirements.txt
 </code></pre>
 <p>Then install package:</p>
-<pre><code>pip install --editable report_generator
+<pre><code>    python -m build
+
+    pip install -e .
 </code></pre>
 <p>When this process has been completed it is now possible to use the program.</p>
 <h3 id="installation-from-executable-files">Installation from executable files</h3>

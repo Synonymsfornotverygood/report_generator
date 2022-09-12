@@ -2079,7 +2079,7 @@
   <div class="doc doc-contents ">
   
       <p>Generate sql string.</p>
-<p>Calls tables functions in order and joins them to create one large sql query string</p>
+<p>Calls tables functions in order and joins them to create one large sql query string list</p>
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2092,9 +2092,9 @@
     <tbody>
         <tr>
 <td><code>sql_create_tables_str</code></td>          <td>
-                <code>str</code>
+                <code>list</code>
           </td>
-          <td><p>string to create all tables</p></td>
+          <td><p>list of strings to create all tables</p></td>
         </tr>
     </tbody>
   </table>
@@ -2131,13 +2131,13 @@
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_tables_sql</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_tables_sql</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Generate sql string.</span>
 
-<span class="sd">    Calls tables functions in order and joins them to create one large sql query string</span>
+<span class="sd">    Calls tables functions in order and joins them to create one large sql query string list</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        sql_create_tables_str(str): string to create all tables</span>
+<span class="sd">        sql_create_tables_str (list): list of strings to create all tables</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">tables_list</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">order_table</span><span class="p">(),</span>

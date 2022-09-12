@@ -1084,8 +1084,7 @@ and regions.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_json_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 16</span>
-<span class="normal"> 17</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 17</span>
 <span class="normal"> 18</span>
 <span class="normal"> 19</span>
 <span class="normal"> 20</span>
@@ -1279,14 +1278,10 @@ and regions.</p>
 <span class="normal">208</span>
 <span class="normal">209</span>
 <span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">locations_json_setup</span><span class="p">(</span><span class="n">location_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">211</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">locations_json_setup</span><span class="p">(</span><span class="n">location_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Location json setup.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Locations Json Setup&quot;</span><span class="p">)</span>
+
     <span class="c1"># Read Csvs</span>
     <span class="n">continents</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;africa&quot;</span><span class="p">,</span>
@@ -1302,16 +1297,7 @@ and regions.</p>
         <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">,</span>
         <span class="n">na_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="c1"># countries_2 = pandas.read_csv(</span>
-    <span class="c1">#     os.path.join(location_path, &quot;csv_files&quot;, &quot;country_and_area_data.csv&quot;),</span>
-    <span class="c1">#     dtype=object,</span>
-    <span class="c1">#     na_filter=False,</span>
-    <span class="c1"># )</span>
-    <span class="c1"># countries_3 = pandas.read_csv(</span>
-    <span class="c1">#     os.path.join(location_path, &quot;csv_files&quot;, &quot;countrys_lat_long.csv&quot;),</span>
-    <span class="c1">#     dtype=object,</span>
-    <span class="c1">#     na_filter=False,</span>
-    <span class="c1"># )</span>
+
     <span class="n">states</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">location_path</span><span class="p">,</span> <span class="s2">&quot;csv_files&quot;</span><span class="p">,</span> <span class="s2">&quot;states.csv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;iso8859_15&quot;</span>
     <span class="p">)</span>
@@ -1329,13 +1315,13 @@ and regions.</p>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">location_path</span><span class="p">,</span> <span class="s2">&quot;location_database&quot;</span><span class="p">,</span> <span class="s2">&quot;location.db&quot;</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
     <span class="c1"># Iterate through continents:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setting up Location Json:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Searching for continent data:&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Setting up Location Json:&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Searching for continent data:&quot;</span><span class="p">)</span>
 
     <span class="n">progress_continents</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">continents</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Searching Continents&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">continent</span> <span class="ow">in</span> <span class="n">continents</span><span class="p">:</span>
@@ -1359,7 +1345,7 @@ and regions.</p>
 
     <span class="c1"># Iterate through countries</span>
     <span class="n">country_results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Searching for country data:&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Searching for country data:&quot;</span><span class="p">)</span>
     <span class="n">progress_countries</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span>
         <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Searching Countries&quot;</span>
     <span class="p">)</span>
@@ -1419,7 +1405,7 @@ and regions.</p>
         <span class="n">progress_countries</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Iterate through regions</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Searching region data:&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Searching region data:&quot;</span><span class="p">)</span>
     <span class="n">progress_regions</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Searching Regions&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">states</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>

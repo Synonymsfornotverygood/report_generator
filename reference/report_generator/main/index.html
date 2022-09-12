@@ -1094,9 +1094,7 @@ process.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/report_generator_cli/main.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
@@ -1140,7 +1138,9 @@ process.</p>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Command line interface main method.</span>
 
 <span class="sd">    The main method for the command line interface.</span>
@@ -1174,7 +1174,7 @@ process.</p>
     <span class="n">university_name</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;uni_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
     <span class="n">university_school</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;school_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating Report: </span><span class="si">{</span><span class="n">report_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating Report: </span><span class="si">{</span><span class="n">report_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
     <span class="n">create_report</span><span class="o">.</span><span class="n">create_report</span><span class="p">(</span>
         <span class="n">data_source</span><span class="p">,</span>
         <span class="n">arguments</span><span class="p">,</span>
@@ -1183,10 +1183,10 @@ process.</p>
         <span class="n">university_name</span><span class="p">,</span>
         <span class="n">university_school</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Report Complete: </span><span class="si">{</span><span class="n">report_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Report Complete: </span><span class="si">{</span><span class="n">report_name</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 
     <span class="n">executionTime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTime</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Report creation time in seconds: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">executionTime</span><span class="p">))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Report creation time in seconds: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">executionTime</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>

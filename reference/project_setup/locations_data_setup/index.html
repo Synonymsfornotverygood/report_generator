@@ -1176,9 +1176,9 @@ split_location_data_file</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy_files_from_directory</span><span class="p">(</span><span class="n">old_directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">copy_files_from_directory</span><span class="p">(</span><span class="n">old_directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Copy a file.&quot;&quot;&quot;</span>
     <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">old_directory</span><span class="p">,</span> <span class="n">new_directory</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -1204,11 +1204,7 @@ split_location_data_file</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span>
 <span class="normal">86</span>
@@ -1219,12 +1215,16 @@ split_location_data_file</p>
 <span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
-<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">download_location_data_file</span><span class="p">(</span><span class="n">location_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span>
+<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">download_location_data_file</span><span class="p">(</span><span class="n">location_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Download location data files.</span>
 
 <span class="sd">    Download location data file from the geocodes website.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading location data file&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading location data file&quot;</span><span class="p">)</span>
     <span class="n">location_file_url</span> <span class="o">=</span> <span class="s2">&quot;https://download.geonames.org/export/dump/allCountries.zip&quot;</span>
     <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">location_file_url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
 
@@ -1257,11 +1257,7 @@ split_location_data_file</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
@@ -1273,11 +1269,7 @@ split_location_data_file</p>
     <span class="n">new_locations_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">location_data_zip_path</span><span class="p">:</span> <span class="nb">str</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Extract location data.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unzipping Locations Data File:&quot;</span><span class="p">)</span>
-    <span class="c1"># old_zip_path = os.path.join(</span>
-    <span class="c1">#     os.getcwd(), &quot;data&quot;, &quot;location&quot;, &quot;csv_files&quot;, &quot;all_countries.zip&quot;</span>
-    <span class="c1"># )</span>
-    <span class="c1"># shutil.copy(old_zip_path, new_locations_path)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Unzipping Locations Data File&quot;</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">location_data_zip_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipf</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">zipf</span><span class="o">.</span><span class="n">infolist</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Extracting&quot;</span><span class="p">):</span>
@@ -1330,8 +1322,7 @@ from the packages data file.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
-<span class="normal">23</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
@@ -1356,7 +1347,9 @@ from the packages data file.</p>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">insert_default_data</span><span class="p">(</span><span class="n">dir_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">insert_default_data</span><span class="p">(</span><span class="n">dir_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Insert default data.</span>
 
 <span class="sd">    Inserts default data files into the data folder by copying files</span>
@@ -1366,9 +1359,10 @@ from the packages data file.</p>
 <span class="sd">        dir_path (str): String path to the project directory.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Inserting Default Data&quot;</span><span class="p">)</span>
     <span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span>
     <span class="c1"># data_path = pkg_resources.resource_string(__name__, &quot;&quot;)</span>
-    <span class="c1"># print(data_path)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
     <span class="c1"># exit()</span>
     <span class="n">old_image_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;images&quot;</span><span class="p">)</span>
     <span class="n">old_font_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;fonts&quot;</span><span class="p">)</span>
@@ -1405,23 +1399,23 @@ from the packages data file.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">72</span>
 <span class="normal">73</span>
 <span class="normal">74</span>
 <span class="normal">75</span>
-<span class="normal">76</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">location_data_cleanup</span><span class="p">(</span><span class="n">locations_path</span><span class="p">,</span> <span class="n">locations_data_file_path</span><span class="p">):</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">location_data_cleanup</span><span class="p">(</span><span class="n">locations_path</span><span class="p">,</span> <span class="n">locations_data_file_path</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Cleanup unneeded location data.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cleaning up data.&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Cleaning up data.&quot;</span><span class="p">)</span>
     <span class="n">zip_path</span> <span class="o">=</span> <span class="n">locations_data_file_path</span>
     <span class="n">txt_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">locations_path</span><span class="p">,</span> <span class="s2">&quot;allCountries.txt&quot;</span><span class="p">)</span>
 
     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_path</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">txt_path</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clean up complete.&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Clean up complete.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1444,17 +1438,20 @@ from the packages data file.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/project_setup/locations_data_setup.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">location_data_setup</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">location_data_setup</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Location Data Setup.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting Location data setup&quot;</span><span class="p">)</span>
     <span class="n">download_location_data_file</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">)</span>
 
     <span class="n">locations_data_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">,</span> <span class="s2">&quot;all_countries.zip&quot;</span><span class="p">)</span>
@@ -1463,6 +1460,7 @@ from the packages data file.</p>
     <span class="n">extract_location_data_file</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">,</span> <span class="n">locations_data_file_path</span><span class="p">)</span>
     <span class="n">split_location_data_file</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">)</span>
     <span class="n">location_data_cleanup</span><span class="p">(</span><span class="n">new_locations_path</span><span class="p">,</span> <span class="n">locations_data_file_path</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location data setup complete&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1537,7 +1535,7 @@ from the packages data file.</p>
 
     <span class="n">file_location</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">locations_path</span><span class="p">,</span> <span class="s2">&quot;allCountries.txt&quot;</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Splitting csv into chunks:&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Splitting csv into chunks:&quot;</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">locations_path</span><span class="p">,</span> <span class="s2">&quot;csv_files&quot;</span><span class="p">,</span> <span class="s2">&quot;split_csv&quot;</span><span class="p">))</span>
     <span class="n">smallfile</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">big_file</span><span class="p">:</span>
