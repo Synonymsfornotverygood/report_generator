@@ -147,6 +147,8 @@ def create_chapter_space(pdf, chapter_file_loc) -> object:
 
 def insert_chapter_pdf(pdf_file_loc, chapter_file_loc=None) -> object:
     """Insert Chapter into pdf report."""
+    if chapter_file_loc == "":
+        chapter_file_loc = None
     if chapter_file_loc is not None:
         file1 = fitz.open(pdf_file_loc)
         file2 = fitz.open(chapter_file_loc)

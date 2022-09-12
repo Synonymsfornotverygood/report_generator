@@ -38,7 +38,6 @@ setup(
         "PyYAML<=6.0",
         "requests<=2.28.1",
         "tqdm<=4.64.1",
-        "pkg_resources",
     ],
     entry_points={
         "console_scripts": [

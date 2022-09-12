@@ -11,7 +11,10 @@ Or import clean_data function.
         from clean_data import clean_data
 
 This module contains the following functions:
-
+- create_data_frame
+- clean_data
+- remove_duplicates
+- main
 
 """
 
