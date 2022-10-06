@@ -193,6 +193,12 @@ def create_title_page(
         pdf(obj) - pdf object
 
     """
+    BASE_DIR_PATH = config["dir_path"]
+    DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+    os.path.join(DATA_DIR_PATH, "fonts")
+    IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
+    os.path.join(DATA_DIR_PATH, "location")
+    (Path(os.path.dirname(os.path.realpath(__file__)))).parent
     pdf = FPDF()
     pdf.add_page()
     pdf.start_section(name="Title Page", level=0)
@@ -436,6 +442,12 @@ def create_report_section_pages(section, pdf, config):
         pdf - pdf object
 
     """
+    BASE_DIR_PATH = config["dir_path"]
+    DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+    os.path.join(DATA_DIR_PATH, "fonts")
+    IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
+    os.path.join(DATA_DIR_PATH, "location")
+    (Path(os.path.dirname(os.path.realpath(__file__)))).parent
     amp_list = create_amphibian_list(section)
     amp_list = sorted(amp_list, key=lambda a: a.species)
 
@@ -521,6 +533,12 @@ def insert_species_images(amp, pdf, config):
         pdf - pdf object
 
     """
+    BASE_DIR_PATH = config["dir_path"]
+    DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+    os.path.join(DATA_DIR_PATH, "fonts")
+    IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
+    os.path.join(DATA_DIR_PATH, "location")
+    (Path(os.path.dirname(os.path.realpath(__file__)))).parent
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
     paragraph_font = config["fonts"]["default_paragraph_font"]
@@ -743,6 +761,12 @@ def insert_species_images_compact(amp, pdf, image_offset, config):
         pdf - pdf object
 
     """
+    BASE_DIR_PATH = config["dir_path"]
+    DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+    os.path.join(DATA_DIR_PATH, "fonts")
+    IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
+    os.path.join(DATA_DIR_PATH, "location")
+    (Path(os.path.dirname(os.path.realpath(__file__)))).parent
     WIDTH = 210
     header_font = config["fonts"]["default_header_font"]
     header_font_size = config["fonts"]["default_header_size"]
