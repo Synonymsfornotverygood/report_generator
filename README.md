@@ -18,6 +18,8 @@ Use the following in the command line:
 
  pip install qub-amphibian-report-generator
 
+**Curently not working please ignore**
+
 ### Installation from Git Repository
 
 To install the project: first download the project code from the repository.  Extract or pull the code into the directory of your choice. Open a terminal in this directory.
