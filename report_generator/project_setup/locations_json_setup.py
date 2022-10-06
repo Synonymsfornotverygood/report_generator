@@ -203,7 +203,9 @@ def locations_json_setup(location_path: str) -> None:
 
     # write to file
     with open(
-        os.path.join(location_path, "location_json", "location.json"), "w"
+        os.path.join(location_path, "location_json", "location.json"),
+        "w",
+        encoding="utf-8",
     ) as file:
         file.write(location_json)
 
