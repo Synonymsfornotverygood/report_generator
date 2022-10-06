@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: qub-amphibian-report-generator
-Version: 0.0.22
+Version: 0.0.23
 Summary: Generate reports from amphibian info dataset
 Author: Ciaran Cushnahan
 Description-Content-Type: text/markdown
@@ -21,6 +21,11 @@ The rest of the process of the project's setup is outlined in the installation s
 
 ### Installation from PyPI
 
+Use the following in the command line:
+
+ pip install qub-amphibian-report-generator
+
+**Curently not working please ignore**
 
 ### Installation from Git Repository
 
@@ -40,8 +45,9 @@ We then install the required files:
 
 Then install package:
 
-        pip install requirements.txt
+        python -m build
 
+        pip install -e .
 
 When this process has been completed it is now possible to use the program.
 
@@ -74,7 +80,7 @@ If the user wants to set up a new project:
 
 ## Documentation
 
-Project documentation can be found [here](https://synonymsfornotverygood.github.io/report_generator/)
+Project documentation can be found [here](https://ccushnahan.github.io/report_generator/)
 
 
 ## Versions
