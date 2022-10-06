@@ -543,10 +543,14 @@ def insert_species_images(amp, pdf, config):
         pdf.cell(tcell_width, tcell_height, "Female Image", align="C", border=0)
     else:
         pdf.image(
-            f"{DIR_PATH}/images/frogsil1.png", x=10, y=70, w=(WIDTH / 2) - 25, h=50
+            f"{os.path.join(IMAGES_PATH,'frogsil1.png')}",
+            x=10,
+            y=70,
+            w=(WIDTH / 2) - 25,
+            h=50,
         )
         pdf.image(
-            f"{DIR_PATH}/images/frogsil2.png",
+            f"{os.path.join(IMAGES_PATH,'frogsil2.png')}",
             x=WIDTH / 2,
             y=70,
             w=(WIDTH / 2) - 25,
