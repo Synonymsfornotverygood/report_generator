@@ -36,15 +36,6 @@ import report_generator.read_from_db.query_db
 from report_generator.config import load_config
 from report_generator.report_generator_cli.amphibian import AmphibianData
 
-# Create report
-config = load_config()
-BASE_DIR_PATH = config["dir_path"]
-DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
-FONTS_PATH = os.path.join(DATA_DIR_PATH, "fonts")
-IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
-LOCATIONS_PATH = os.path.join(DATA_DIR_PATH, "location")
-DIR_PATH = (Path(os.path.dirname(os.path.realpath(__file__)))).parent
-
 
 def create_report(
     data_source: str,
@@ -71,6 +62,15 @@ def create_report(
         university_school   - Name of the university school
 
     """
+
+    # Create report
+    config = load_config()
+    BASE_DIR_PATH = config["dir_path"]
+    DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
+    os.path.join(DATA_DIR_PATH, "fonts")
+    os.path.join(DATA_DIR_PATH, "images")
+    os.path.join(DATA_DIR_PATH, "location")
+    (Path(os.path.dirname(os.path.realpath(__file__)))).parent
     logger.debug(pdf_chapters)
     startTime = time.time()
     logger.info(f"Create Report Started: {report_name}")
