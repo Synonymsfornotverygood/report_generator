@@ -186,7 +186,7 @@ def split_location_data_file(locations_path: str) -> None:
     logger.info("Splitting csv into chunks:")
     os.makedirs(os.path.join(locations_path, "csv_files", "split_csv"))
     smallfile = None
-    with open(file_location, "r") as big_file:
+    with open(file_location, "r", encoding="utf-8") as big_file:
         progress_bar = tqdm.tqdm(total=os.path.getsize(file_location), desc="Splitting")
         for lineno, line in enumerate(big_file):
             if lineno % lines_per_file == 0:
@@ -196,7 +196,7 @@ def split_location_data_file(locations_path: str) -> None:
                 small_filepath = os.path.join(
                     locations_path, "csv_files", "split_csv", small_filename
                 )
-                smallfile = open(small_filepath, "a")
+                smallfile = open(small_filepath, "a", encoding="utf-8")
                 smallfile.write(file_header)
             smallfile.write(line)
             progress_bar.update(len(line))
