@@ -1281,7 +1281,7 @@ to determine what kind of location (continent, country, region) the section is.<
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># logger</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location finder func Start&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Location finder func Start&quot;</span><span class="p">)</span>
     <span class="n">process_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">locations_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1375,7 +1375,7 @@ to determine what kind of location (continent, country, region) the section is.<
 
     <span class="c1"># Log time taken</span>
     <span class="n">process_time_taken</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">process_start_time</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Location finder func end: </span><span class="si">{</span><span class="n">process_time_taken</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Location finder func end: </span><span class="si">{</span><span class="n">process_time_taken</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">locations</span>
 </code></pre></div></td></tr></table></div>
@@ -1534,7 +1534,7 @@ to determine what kind of location (continent, country, region) the section is.<
     <span class="k">if</span> <span class="n">locations_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span>
     <span class="c1"># logger</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;unknown finder func Start&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;unknown finder func Start&quot;</span><span class="p">)</span>
     <span class="n">process_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
     <span class="c1"># Handling nan/null dataset error</span>
@@ -1578,7 +1578,7 @@ to determine what kind of location (continent, country, region) the section is.<
 
     <span class="c1"># Log time taken</span>
     <span class="n">process_time_taken</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">process_start_time</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Location finder func end: </span><span class="si">{</span><span class="n">process_time_taken</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Location finder func end: </span><span class="si">{</span><span class="n">process_time_taken</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">unknown_list</span>
 </code></pre></div></td></tr></table></div>
