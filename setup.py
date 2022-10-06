@@ -7,7 +7,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="qub-amphibian-report-generator",
-    version="0.0.23",
+    version="0.0.24",
     description="Generate reports from amphibian info dataset",
     long_description=open(
         os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.md")
