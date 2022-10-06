@@ -378,7 +378,7 @@ def structure_micro_habitat(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     """
     logger.debug("Habitat")
 
-    micro = data_frame["MicroHabitat"].dropna().unique()
+    micro = data_frame["Microhabitat"].dropna().unique()
     df = pandas.DataFrame(micro, columns=["micro_habitat_name"])
     return df
 
@@ -534,7 +534,7 @@ def structure_micro_habitat_species(
     """
     logger.debug("hab spec")
 
-    micro_habitat_species = data_frame[["Species", "MicroHabitat"]]
+    micro_habitat_species = data_frame[["Species", "Microhabitat"]]
     micro_habitat_species["species_index"] = micro_habitat_species["Species"].map(
         lambda x: str(species.index[species["species_name_latin"] == x].tolist()[0] + 1)
     )
@@ -551,7 +551,7 @@ def structure_micro_habitat_species(
             a = None
         return a
 
-    micro_habitat_species["habitat_index"] = micro_habitat_species["MicroHabitat"].map(
+    micro_habitat_species["habitat_index"] = micro_habitat_species["Microhabitat"].map(
         lambda x: hab(x)
     )
 

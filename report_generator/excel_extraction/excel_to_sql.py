@@ -158,6 +158,7 @@ def create_data_frame(path_to_dataset: str):
         data_frame(object): Pandas DataFrame object
     """
     logger.info("Created DataFrame")
+    logger.info(path_to_dataset)
     data_frame = None
     try:
         data_frame = pandas.read_excel(path_to_dataset)

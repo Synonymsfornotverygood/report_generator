@@ -31,23 +31,80 @@ def insert_default_data(dir_path: str) -> None:
 
     """
     logger.info("Inserting Default Data")
-    data_path = os.path.join(os.getcwd(), "data")
+    data_path = os.path.join(dir_path, "data")
     # data_path = pkg_resources.resource_string(__name__, "")
     logger.debug(data_path)
     # exit()
-    old_image_path = os.path.join(data_path, "images")
-    old_font_path = os.path.join(data_path, "fonts")
-    old_locations_path = os.path.join(data_path, "location")
+    os.path.join(data_path, "images")
+    os.path.join(data_path, "fonts")
+    os.path.join(data_path, "location")
 
-    new_image_path = os.path.join(dir_path, "data", "images")
-    new_fonts_path = os.path.join(dir_path, "data", "fonts")
+    os.path.join(dir_path, "data", "images")
+    os.path.join(dir_path, "data", "fonts")
     new_locations_path = os.path.join(dir_path, "data", "locations")
 
-    copy_files_from_directory(old_image_path, new_image_path)
-    copy_files_from_directory(old_font_path, new_fonts_path)
-    copy_files_from_directory(old_locations_path, new_locations_path)
+    # copy_files_from_directory(old_image_path, new_image_path)
+    # copy_files_from_directory(old_font_path, new_fonts_path)
+    # copy_files_from_directory(old_locations_path, new_locations_path)
 
+    default_data_setup(dir_path, data_path)
     location_data_setup(new_locations_path)
+
+
+def default_data_setup(dir_path: str, data_path) -> None:
+    """Sets up the projects default data.
+
+    Downloads default data file from git repository and
+    extracts it into the projects data directory.
+
+    Args:
+        dir_path (str):     The path to the project directory
+        data_path (str):    The path to the data directory
+    """
+    logger.debug("Downloading default data files.")
+    download_default_data(dir_path)
+    logger.debug("Extracting default data files")
+    data_zip_path = os.path.join(dir_path, "data.zip")
+    extract_default_data(data_zip_path, data_path)
+
+
+def download_default_data(project_dir: str) -> None:
+    """Download the default project data.
+
+    Downloads the default data zip file from the project
+    git repository.
+
+    Args:
+        project_dir (str): The project directory for the files
+                           to be downloaded into.
+    """
+    logger.info("Downloading location data file")
+    default_data_url = (
+        "https://github.com/ccushnahan/report_generator/raw/main/data.zip"
+    )
+    with requests.get(default_data_url, stream=True) as response:
+        file_path = os.path.join(project_dir, "data.zip")
+        response.raise_for_status()
+        with open(file_path, "wb") as file:
+            progress_bar = tqdm.tqdm(total=int(response.headers["Content-Length"]))
+            for chunk in response.iter_content(chunk_size=8192):
+                file.write(chunk)
+                progress_bar.update(len(chunk))
+
+
+def extract_default_data(data_zip_path: str, data_path: str) -> None:
+    """Unzips default data file.
+
+    Takes the default data zip file and uses zipf to extract it to
+    the projects data directory.
+
+    Args:
+        data_zip_path (str):    Path to the default data zip file.
+        data_path (str):        Path to the projects data directory
+    """
+    with zipfile.ZipFile(data_zip_path) as zipf:
+        for member in tqdm.tqdm(zipf.infolist(), desc="Extracting"):
+            zipf.extract(member, data_path)
 
 
 def copy_files_from_directory(old_directory: str, new_directory: str) -> None:
@@ -88,7 +145,7 @@ def download_location_data_file(location_dir: str) -> None:
     logger.info("Downloading location data file")
     location_file_url = "https://download.geonames.org/export/dump/allCountries.zip"
     with requests.get(location_file_url, stream=True) as response:
-
+        """"""
         file_path = os.path.join(location_dir, "all_countries.zip")
         response.raise_for_status()
         with open(file_path, "wb") as file:
@@ -145,3 +202,14 @@ def split_location_data_file(locations_path: str) -> None:
             progress_bar.update(len(line))
         if smallfile:
             smallfile.close()
+
+
+def main():
+    default_data_setup(
+        "/home/cush/test_loc_project", "/home/cush/test_loc_project/data"
+    )
+    # download_location_data_file("/home/cush/")
+
+
+if __name__ == "__main__":
+    main()
