@@ -85,7 +85,7 @@ def download_default_data(project_dir: str) -> None:
     with requests.get(default_data_url, stream=True) as response:
         file_path = os.path.join(project_dir, "data.zip")
         response.raise_for_status()
-        with open(file_path, "wb") as file:
+        with open(file_path, "wb", encoding="utf-8") as file:
             progress_bar = tqdm.tqdm(total=int(response.headers["Content-Length"]))
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)
@@ -148,7 +148,7 @@ def download_location_data_file(location_dir: str) -> None:
         """"""
         file_path = os.path.join(location_dir, "all_countries.zip")
         response.raise_for_status()
-        with open(file_path, "wb") as file:
+        with open(file_path, "wb", encoding="utf-8") as file:
             progress_bar = tqdm.tqdm(total=int(response.headers["Content-Length"]))
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)

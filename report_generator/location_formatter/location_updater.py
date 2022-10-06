@@ -124,7 +124,7 @@ def load_location_json(file_path: str) -> object:
         location_data (object): location data python object
 
     """
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
@@ -282,5 +282,5 @@ def save_locations_data(locations_data: object) -> None:
     file_path = os.path.join(
         config["dir_path"], "data", "locations", "location_json", "location.json"
     )
-    with open(file_path, "w") as file:
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(dumped)

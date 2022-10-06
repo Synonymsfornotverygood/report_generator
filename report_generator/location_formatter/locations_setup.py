@@ -201,7 +201,7 @@ location_json = json.dumps(location_data, ensure_ascii=False)
 logger.debug("Writing to Json")
 
 # write to file
-with open("location.json", "w") as file:
+with open("location.json", "w", encoding="utf-8") as file:
     file.write(location_json)
 
 cursor.close()

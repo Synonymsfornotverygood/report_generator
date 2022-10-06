@@ -138,7 +138,7 @@ def create_project_config_file(settings: dict) -> None:
         Example of use.
 
     """
-    with open("config.yaml", "w") as file:
+    with open("config.yaml", "w", encoding="utf-8") as file:
         yaml.dump(settings, file)
 
 

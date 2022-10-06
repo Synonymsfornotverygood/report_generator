@@ -18,7 +18,7 @@ def load_config() -> dict:
     """
     config = None
     try:
-        with open("config.yaml", "r") as file:
+        with open("config.yaml", "r", encoding="utf-8") as file:
             config = yaml.load(file, Loader=yaml.loader.SafeLoader)
         return config
     except FileNotFoundError:
@@ -36,5 +36,5 @@ def dump_config(settings: dict) -> None:
                             value pairs.
 
     """
-    with open("config.yaml", "w") as file:
+    with open("config.yaml", "w", encoding="utf-8") as file:
         yaml.dump(settings, file)
