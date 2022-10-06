@@ -37,7 +37,8 @@ from report_generator.config import load_config
 from report_generator.report_generator_cli.amphibian import AmphibianData
 
 # Create report
-BASE_DIR_PATH = (Path(os.path.dirname(os.path.realpath(__file__)))).parent.parent
+config = load_config()
+BASE_DIR_PATH = config["dir_path"]
 DATA_DIR_PATH = os.path.join(BASE_DIR_PATH, "data")
 FONTS_PATH = os.path.join(DATA_DIR_PATH, "fonts")
 IMAGES_PATH = os.path.join(DATA_DIR_PATH, "images")
