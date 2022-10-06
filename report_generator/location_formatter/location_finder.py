@@ -30,7 +30,7 @@ def find_location(location_str: str, locations_data: object) -> list:
 
     """
     # logger
-    logger.info("Location finder func Start")
+    logger.debug("Location finder func Start")
     process_start_time = time.time()
 
     if locations_data is None:
@@ -124,7 +124,7 @@ def find_location(location_str: str, locations_data: object) -> list:
 
     # Log time taken
     process_time_taken = time.time() - process_start_time
-    logger.info(f"Location finder func end: {process_time_taken}s")
+    logger.debug(f"Location finder func end: {process_time_taken}s")
 
     return locations
 
@@ -147,7 +147,7 @@ def find_unknown(location_str: str, locations_data: object) -> object:
     if locations_data is None:
         raise Exception
     # logger
-    logger.info("unknown finder func Start")
+    logger.debug("unknown finder func Start")
     process_start_time = time.time()
 
     # Handling nan/null dataset error
@@ -191,6 +191,6 @@ def find_unknown(location_str: str, locations_data: object) -> object:
 
     # Log time taken
     process_time_taken = time.time() - process_start_time
-    logger.info(f"Location finder func end: {process_time_taken}s")
+    logger.debug(f"Location finder func end: {process_time_taken}s")
 
     return unknown_list
