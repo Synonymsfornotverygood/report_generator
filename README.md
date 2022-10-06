@@ -36,8 +36,9 @@ We then install the required files:
 
 Then install package:
 
-        pip install requirements.txt
+        python -m build
 
+        pip install -e .
 
 When this process has been completed it is now possible to use the program.
 
@@ -70,7 +71,7 @@ If the user wants to set up a new project:
 
 ## Documentation
 
-Project documentation can be found [here](https://synonymsfornotverygood.github.io/report_generator/)
+Project documentation can be found [here](https://ccushnahan.github.io/report_generator/)
 
 
 ## Versions
