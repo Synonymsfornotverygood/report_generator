@@ -63,10 +63,22 @@ If the user wants to use the CLI:
 
         report-generator --cli [options]
 
+#### CLI default report
+
+<img src="docs/images/report_cli_1.gif" alt="CLI Report creation" title="create report" width="75%">
+
+#### CLI filtered report
+
+<img src="docs/images/report_cli_2.gif" alt="CLI Report creation" title="create report" width="75%">
+
+#### CLI options
+
 CLI options can be found with the command:
 
         report-generator -h
         report-generator -help
+
+<img src="docs/images/report_cli_3.gif" alt="CLI Report creation" title="create report" width="75%">
 
 Or can be found in the projects documentation.
 
