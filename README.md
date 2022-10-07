@@ -2,13 +2,9 @@
 
 ## Requirements
 
-Python3 is required to be installed on the computer. Also, the python3 Venv package is required to be installed.
+Python3 installation is required. The Python3 Venv package is recommended.
 
-If Python3 is not available program can be ran by downloading executable files found in zipped in the dist_zip directory.
-
-Further project requirements for external Python libraries can be found in the requirements.txt file. This file is located in the root folder of the project directory.
-
-The rest of the process of the project's setup is outlined in the installation section below.
+If Python3 is not available - the project can be run by downloading the executables folder that matches the OS that your computer uses. The project can be started by opening the report-generator file.
 
 ## Installation
 
@@ -81,6 +77,8 @@ CLI options can be found with the command:
 <img src="docs/images/report_cli_3.gif" alt="CLI Report creation" title="create report 3" width="75%">
 
 Or can be found in the projects documentation.
+
+#### New Project with CLI
 
 If the user wants to set up a new project:
 
