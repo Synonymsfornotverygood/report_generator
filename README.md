@@ -86,6 +86,7 @@ If the user wants to set up a new project:
 
         create-report-generator
 
+<img src="docs/images/create_report_generator.gif" alt="CLI New Report Project" title="CLI new project" width="75%">
 ## Documentation
 
 Project documentation can be found [here](https://ccushnahan.github.io/report_generator/)
