@@ -41,10 +41,15 @@ The user will need to enter some project settings information:
 
 The process will download relevant data files and create and insert data into project databases:
 
-
 <img src="docs/images/project_setup_2.gif" alt="Project Setup 2: Enter project settings" title="project_setup_2" width="75%">
+
 <img src="docs/images/project_setup_3.gif" alt="Project Setup 3: Enter project settings" title="project_setup_3" width="75%">
+
 <img src="docs/images/project_setup_complete.gif" alt="Project Setup 4: Enter project settings" title="project_setup_4" width="75%">
+
+This will then allow the user to run the report generator again and produce the outputted pdf file.
+
+<img src="docs/images/create_report.gif" alt="Create Report: Demo Report creation" title="create report" width="75%">
 
 
 If the user wants to use the CLI:
