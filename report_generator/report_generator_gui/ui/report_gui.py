@@ -1010,9 +1010,10 @@ def main():
     if config is None:
         Widget = QtWidgets.QDialog()
         setup_ui = Ui_Dialog()
-        setup_ui.setupUi(Widget)
+        setup_ui.setupUi(Widget, ui)
         Widget.show()
         ui.load_font_selection_combo()
+        ui.set_config_values()
 
     sys.exit(app.exec_())
 

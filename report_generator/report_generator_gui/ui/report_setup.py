@@ -14,7 +14,7 @@ from report_generator.project_setup.new_report_project import create_new_project
 
 
 class Ui_Dialog(object):
-    def setupUi(self, Dialog):
+    def setupUi(self, Dialog, ui):
         Dialog.setObjectName("Dialog")
         Dialog.resize(433, 300)
         self.dialogwin = Dialog
@@ -99,6 +99,7 @@ class Ui_Dialog(object):
         self.buttonBox.accepted.connect(self.report_setup_ok_button)  # type: ignore
         self.buttonBox.rejected.connect(Dialog.reject)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.ui = ui
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -146,6 +147,8 @@ class Ui_Dialog(object):
 
         create_new_project(settings)
         self.show_popup()
+        self.ui.set_config_values()
+        self.ui.load_font_selection_combo()
         self.dialogwin.close()
 
     def show_popup(self):
