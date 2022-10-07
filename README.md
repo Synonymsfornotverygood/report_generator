@@ -16,16 +16,16 @@ The rest of the process of the project's setup is outlined in the installation s
 
 To install from PyPI and using pip it is recommended to initially set up a virtual environment or use a package manager like poetry.
 
-                python3 -m venv {venv-name}
+        python3 -m venv {venv-name}
 
 Then activate the venv.
 
-                source {venv-name}/bin/activate
+        source {venv-name}/bin/activate
 
 
 Then install the package.
 
-                pip install qub-amphibian-report-generator
+        pip install qub-amphibian-report-generator
 
 ## Use
 
