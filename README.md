@@ -33,7 +33,19 @@ Once the package has been installed and setup the Report Generator program can b
 
         report-generator
 
-This will start the GUI application for the report generator
+This will start the GUI application for the report generator. If the report-generator command has not been run before it will begin the project setup process.
+
+The user will need to enter some project settings information:
+
+<img src="docs/images/project_setup_1.gif" alt="Project Setup 1: Enter project settings" title="project_setup_1" width="75%">
+
+The process will download relevant data files and create and insert data into project databases:
+
+
+<img src="docs/images/project_setup_2.gif" alt="Project Setup 2: Enter project settings" title="project_setup_2" width="75%">
+<img src="docs/images/project_setup_3.gif" alt="Project Setup 3: Enter project settings" title="project_setup_3" width="75%">
+<img src="docs/images/project_setup_complete.gif" alt="Project Setup 4: Enter project settings" title="project_setup_4" width="75%">
+
 
 If the user wants to use the CLI:
 
