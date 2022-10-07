@@ -29,11 +29,15 @@ Then install the package.
 
 ## Use
 
+### GUI
+
 Once the package has been installed and setup the Report Generator program can be used from venv with the command:
 
         report-generator
 
 This will start the GUI application for the report generator. If the report-generator command has not been run before it will begin the project setup process.
+
+#### Project Setup
 
 The user will need to enter some project settings information:
 
@@ -47,10 +51,13 @@ The process will download relevant data files and create and insert data into pr
 
 <img src="docs/images/project_setup_complete.gif" alt="Project Setup 4: Enter project settings" title="project_setup_4" width="75%">
 
+#### Create Report
+
 This will then allow the user to run the report generator again and produce the outputted pdf file.
 
 <img src="docs/images/create_report.gif" alt="Create Report: Demo Report creation" title="create report" width="75%">
 
+### CLI
 
 If the user wants to use the CLI:
 
