@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 qub_amphibian_report_generator.egg-info/PKG-INFO
