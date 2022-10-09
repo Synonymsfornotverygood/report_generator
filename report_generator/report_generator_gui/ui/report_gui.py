@@ -858,9 +858,12 @@ class Ui_MainWindow(object):
 
             fonts = font_dict_loader()
             for font in fonts["font_types"].keys():
-                self.titleFontComboBox.addItem(font)
                 self.headingFontComboBox.addItem(font)
                 self.paragraphFontComboBox.addItem(font)
+                self.titleFontComboBox.addItem(font)
+
+            for font in fonts["custom_font_types"].keys():
+                self.titleFontComboBox.addItem(font)
 
             for font_colour in fonts["font_colours"].keys():
                 self.titleFontColourComboBox.addItem(font_colour)

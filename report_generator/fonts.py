@@ -24,7 +24,7 @@ def font_dict_loader() -> dict:
     config = load_config()
     font_path = os.path.join(config["dir_path"], "data", "fonts")
     font_yaml = os.path.join(font_path, "fonts.yaml")
-
+    print(os.path.isfile(font_yaml))
     with open(font_yaml, "r") as file:
         fonts = yaml.load(file, Loader=yaml.loader.SafeLoader)
 
