@@ -12,16 +12,27 @@ If Python3 is not available - the project can be run by downloading the executab
 
 To install from PyPI and using pip it is recommended to initially set up a virtual environment or use a package manager like poetry.
 
+#### Create Venv
+
         python3 -m venv {venv-name}
+
+<img src="docs/images/create_venv.gif" alt="Project Installation 1: Create Venv" title="project_installation_1" width="75%">
+
+#### Activate Venv
 
 Then activate the venv.
 
         source {venv-name}/bin/activate
 
+<img src="docs/images/activate_venv.gif" alt="Project Installation 2: Activate Venv" title="project_installation_2" width="75%">
+
+#### Install package
 
 Then install the package.
 
         pip install qub-amphibian-report-generator
+
+<img src="docs/images/install_report_generator.gif" alt="Project Installation 3: Install Package" title="project_installation_3" width="75%">
 
 ## Use
 
