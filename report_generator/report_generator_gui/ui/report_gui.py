@@ -832,29 +832,29 @@ class Ui_MainWindow(object):
         """
         config = load_config()
         if config is not None:
-            default_paragraph = config["fonts"]["default_paragraph_font"]
-            default_paragraph_size = config["fonts"]["default_paragraph_size"]
-            default_paragraph_colour = config["fonts"]["default_paragraph_colour"]
+            paragraph = config["fonts"]["paragraph_font"]
+            paragraph_size = config["fonts"]["paragraph_size"]
+            paragraph_colour = config["fonts"]["paragraph_colour"]
 
-            default_header = config["fonts"]["default_header_font"]
-            default_header_size = config["fonts"]["default_header_size"]
-            default_header_colour = config["fonts"]["default_header_colour"]
+            header = config["fonts"]["header_font"]
+            header_size = config["fonts"]["header_size"]
+            header_colour = config["fonts"]["header_colour"]
 
-            default_title = config["fonts"]["default_title_font"]
-            default_title_size = config["fonts"]["default_title_size"]
-            default_title_colour = config["fonts"]["default_title_colour"]
+            title = config["fonts"]["title_font"]
+            title_size = config["fonts"]["title_size"]
+            title_colour = config["fonts"]["title_colour"]
 
-            self.paragraphFontComboBox.addItem(default_paragraph)
-            self.headingFontComboBox.addItem(default_header)
-            self.titleFontComboBox.addItem(default_title)
+            self.paragraphFontComboBox.addItem(paragraph)
+            self.headingFontComboBox.addItem(header)
+            self.titleFontComboBox.addItem(title)
 
-            self.paragraphFontColourComboBox.addItem(default_paragraph_colour)
-            self.headingFontColourComboBox.addItem(default_header_colour)
-            self.titleFontColourComboBox.addItem(default_title_colour)
+            self.paragraphFontColourComboBox.addItem(paragraph_colour)
+            self.headingFontColourComboBox.addItem(header_colour)
+            self.titleFontColourComboBox.addItem(title_colour)
 
-            self.titleFontSizeSpinBox.setValue(default_title_size)
-            self.headingFontSizeSpinBox.setValue(default_header_size)
-            self.paragraphFontSizeSpinBox.setValue(default_paragraph_size)
+            self.titleFontSizeSpinBox.setValue(title_size)
+            self.headingFontSizeSpinBox.setValue(header_size)
+            self.paragraphFontSizeSpinBox.setValue(paragraph_size)
 
             fonts = font_dict_loader()
             for font in fonts["font_types"].keys():
@@ -924,7 +924,7 @@ class Ui_MainWindow(object):
             "paragraph_size": self.paragraphFontSizeSpinBox.value(),
             "paragraph_colour": self.paragraphFontColourComboBox.currentText(),
         }
-
+        print(font_options)
         pdf_chapters = self.lineEdit.text()
 
         if all(args):
