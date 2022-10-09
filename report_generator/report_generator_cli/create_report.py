@@ -955,7 +955,6 @@ def render_toc(pdf, outline):
 
 
 if __name__ == "__main__":
-    logger.debug(DIR_PATH)
     logger.debug(os.getcwd())
     args = sys.argv
 
