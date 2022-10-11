@@ -1269,7 +1269,7 @@ basic settings.</p>
 <span class="sd">        Example of use.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;config.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;config.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
@@ -1412,30 +1412,30 @@ files for the project.</p>
             <span class="s2">&quot;uni_name&quot;</span><span class="p">:</span> <span class="n">uni_name</span><span class="p">,</span>
             <span class="s2">&quot;data_set&quot;</span><span class="p">:</span> <span class="n">data_set</span><span class="p">,</span>
             <span class="s2">&quot;fonts&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;default_header_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_header_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_header_size&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
-                <span class="s2">&quot;default_paragraph_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_paragraph_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_paragraph_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-                <span class="s2">&quot;default_title_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_title_font&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans-Bold&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;default_title_size&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
-                <span class="s2">&quot;default_title_sub&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;header_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;header_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;header_size&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+                <span class="s2">&quot;paragraph_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;paragraph_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;paragraph_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="s2">&quot;title_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;title_font&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans-Bold&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;title_size&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+                <span class="s2">&quot;title_sub&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans&quot;</span><span class="p">,</span>
             <span class="p">},</span>
         <span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">settings</span><span class="p">[</span><span class="s2">&quot;fonts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;default_header_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_header_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_header_size&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
-            <span class="s2">&quot;default_paragraph_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_paragraph_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_paragraph_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-            <span class="s2">&quot;default_title_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_title_font&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans-Bold&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_title_size&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
-            <span class="s2">&quot;default_title_sub&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;header_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;header_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;header_size&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+            <span class="s2">&quot;paragraph_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;paragraph_font&quot;</span><span class="p">:</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;paragraph_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;title_colour&quot;</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title_font&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans-Bold&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title_size&quot;</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+            <span class="s2">&quot;title_sub&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSans&quot;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="k">return</span> <span class="n">settings</span>
 </code></pre></div></td></tr></table></div>

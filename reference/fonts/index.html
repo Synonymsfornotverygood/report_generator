@@ -1135,10 +1135,7 @@ font under its name to the pdf.</p>
 <span class="normal">72</span>
 <span class="normal">73</span>
 <span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_font_choices_to_pdf</span><span class="p">(</span><span class="n">pdf</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">font_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_font_choices_to_pdf</span><span class="p">(</span><span class="n">pdf</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">font_options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Add font to choices to pdf.</span>
 
 <span class="sd">    Takes PDF instance and checks if the selected fonts are</span>
@@ -1153,17 +1150,14 @@ font under its name to the pdf.</p>
 
     <span class="n">config</span><span class="p">[</span><span class="s2">&quot;fonts&quot;</span><span class="p">]</span>
     <span class="n">font_dict</span> <span class="o">=</span> <span class="n">font_dict_loader</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">font_name</span><span class="p">,</span> <span class="n">font_val</span> <span class="ow">in</span> <span class="n">font_dict</span><span class="p">[</span><span class="s2">&quot;font_types&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">font_val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">font_name</span><span class="p">,</span> <span class="n">font_val</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">font_name</span><span class="p">,</span> <span class="n">font_types</span> <span class="ow">in</span> <span class="n">font_dict</span><span class="p">[</span><span class="s2">&quot;custom_font_types&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">font_type</span><span class="p">,</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">font_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">font_name</span><span class="p">,</span> <span class="n">font_type</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
             <span class="n">font_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dir_path&quot;</span><span class="p">],</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;fonts&quot;</span><span class="p">)</span>
-            <span class="n">font_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">font_path</span><span class="p">,</span> <span class="n">font_val</span><span class="p">)</span>
-            <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span><span class="n">font_name</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">font_loc</span><span class="p">)</span>
-
-    <span class="n">font_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dir_path&quot;</span><span class="p">],</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;fonts&quot;</span><span class="p">)</span>
-    <span class="n">font_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">font_path</span><span class="p">,</span> <span class="s2">&quot;OpenSans-Bold.ttf&quot;</span><span class="p">)</span>
-    <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span><span class="s2">&quot;OpenSans&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">font_loc</span><span class="p">)</span>
+            <span class="n">font_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">font_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">font_type</span> <span class="o">==</span> <span class="s2">&quot;Normal&quot;</span><span class="p">:</span>
+                <span class="n">font_type</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span><span class="n">font_name</span><span class="p">,</span> <span class="n">font_type</span><span class="p">,</span> <span class="n">font_loc</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">pdf</span>
 </code></pre></div></td></tr></table></div>
@@ -1210,28 +1204,28 @@ PDF engine.</p>
 
       <details class="quote">
         <summary>Source code in <code>report_generator/fonts.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_if_default_font</span><span class="p">(</span><span class="n">font_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span>
+<span class="normal">98</span>
+<span class="normal">99</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_if_default_font</span><span class="p">(</span><span class="n">font_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Check if choice is a default font.</span>
 
 <span class="sd">    Checks if the font_name passed into method is on</span>
@@ -1331,7 +1325,7 @@ based on yaml file in projects data/fonts directory.</p>
     <span class="n">config</span> <span class="o">=</span> <span class="n">load_config</span><span class="p">()</span>
     <span class="n">font_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dir_path&quot;</span><span class="p">],</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;fonts&quot;</span><span class="p">)</span>
     <span class="n">font_yaml</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">font_path</span><span class="p">,</span> <span class="s2">&quot;fonts.yaml&quot;</span><span class="p">)</span>
-
+    <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">font_yaml</span><span class="p">))</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">font_yaml</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">fonts</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">)</span>
 
