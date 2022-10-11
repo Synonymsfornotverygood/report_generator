@@ -7,12 +7,16 @@ from setuptools import find_packages, setup
 
 setup(
     name="qub-amphibian-report-generator",
-    version="0.0.33",
+    version="0.0.34",
     description="Generate reports from amphibian info dataset",
     long_description=open(
         os.path.join(os.path.abspath(os.path.dirname(__file__)), "README.md")
     ).read(),
     long_description_content_type="text/markdown",
+    readme="README.md",
+    license="LICENSE",
+    repository="https://github.com/ccushnahan/report_generator",
+    documentation="https://ccushnahan.github.io/report_generator/",
     author="Ciaran Cushnahan",
     packages=find_packages(
         exclude=[

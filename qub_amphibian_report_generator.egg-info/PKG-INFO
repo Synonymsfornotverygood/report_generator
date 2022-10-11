@@ -1,8 +1,9 @@
 Metadata-Version: 2.1
 Name: qub-amphibian-report-generator
-Version: 0.0.33
+Version: 0.0.34
 Summary: Generate reports from amphibian info dataset
 Author: Ciaran Cushnahan
+License: LICENSE
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
