@@ -7,7 +7,7 @@ Step by step guide to add a font:
 
 Go to a font repository like google fonts. Find a font that you want to add to the project. Download the fonts zip file.
 
-<img src="docs/images/google-fonts.png" alt="Select font from google fonts" title="font_installation_1" width="75%">
+![Select font from google fonts](https://github.com/ccushnahan/report_generator/raw/main/docs/images/google-fonts.png)
 
 ## Step 2: Unpack the fonts into the project's data directory.
 
@@ -17,17 +17,18 @@ Open the report-generator's project directory or start a new project and then op
 
 Take the fonts zip file and unzip it. The contents should look similar to the image below.
 
-<img src="docs/images/zipped_fonts.png" alt="Zipped fonts" title="font_installation_2" width="75%">
+![font_installation_2](https://github.com/ccushnahan/report_generator/raw/main/docs/images/zipped_fonts.png)
+<img src="images/zipped_fonts.png" alt="Zipped fonts" title="font_installation_2" width="75%">
 
 In the static directory there will be additional 'font.tff' files. Select the fonts that you want and copy the files into the fonts directory. Below is an example of what this might look like.
 
-<img src="docs/images/font-types.png" alt="Fonts" title="font_installation_3" width="75%">
+![font_installation_3](https://github.com/ccushnahan/report_generator/raw/main/docs/images/font-types.png)
 
 ## Step 4: Update the fonts.yaml file.
 
 The 'fonts.yaml' file lists the fonts that can be loaded by the report-generator program.
 
-<img src="docs/images/fonts-yaml.png" alt="Fonts Yaml file" title="font_installation_4" width="75%">
+![font_installation_4](https://github.com/ccushnahan/report_generator/raw/main/docs/images/fonts-yaml.png)
 
 There are two sections relevant to adding additional fonts:
 1. font_types

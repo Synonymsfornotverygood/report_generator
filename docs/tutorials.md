@@ -16,7 +16,7 @@ To install from PyPI and using pip it is recommended to initially set up a virtu
 
         python3 -m venv {venv-name}
 
-<img src="docs/images/create_venv.gif" alt="Project Installation 1: Create Venv" title="project_installation_1" width="75%">
+![Project Installation 1: Create Venv](https://github.com/ccushnahan/report_generator/raw/main/docs/images/create_venv.gif)
 
 #### Activate Venv
 
@@ -24,7 +24,7 @@ Then activate the venv.
 
         source {venv-name}/bin/activate
 
-<img src="docs/images/activate_venv.gif" alt="Project Installation 2: Activate Venv" title="project_installation_2" width="75%">
+![Project Installation 2: Activate Venv](https://github.com/ccushnahan/report_generator/raw/main/docs/images/activate_venv.gif)
 
 #### Install package
 
@@ -32,7 +32,7 @@ Then install the package.
 
         pip install qub-amphibian-report-generator
 
-<img src="docs/images/install_report_generator.gif" alt="Project Installation 3: Install Package" title="project_installation_3" width="75%">
+![Project Installation 3: Install Package](https://github.com/ccushnahan/report_generator/raw/main/docs/images/install_report_generator.gif)
 
 ## Use
 
@@ -48,21 +48,21 @@ This will start the GUI application for the report generator. If the report-gene
 
 The user will need to enter some project settings information:
 
-<img src="docs/images/project_setup_1.gif" alt="Project Setup 1: Enter project settings" title="project_setup_1" width="75%">
+![Project Setup 1: Enter project settings](https://github.com/ccushnahan/report_generator/raw/main/docs/images/project_setup_1.gif)
 
 The process will download relevant data files and create and insert data into project databases:
 
-<img src="docs/images/project_setup_2.gif" alt="Project Setup 2: Enter project settings" title="project_setup_2" width="75%">
+![Project Setup 2: Enter project settings](https://github.com/ccushnahan/report_generator/raw/main/docs/images/project_setup_2.gif)
 
-<img src="docs/images/project_setup_3.gif" alt="Project Setup 3: Enter project settings" title="project_setup_3" width="75%">
+![Project Setup 3: Enter project settings](https://github.com/ccushnahan/report_generator/raw/main/docs/images/project_setup_3.gif)
 
-<img src="docs/images/project_setup_complete.gif" alt="Project Setup 4: Enter project settings" title="project_setup_4" width="75%">
+![Project Setup 4: Enter project settings](https://github.com/ccushnahan/report_generator/raw/main/docs/images/project_setup_4.gif)
 
 #### Create Report
 
 This will then allow the user to run the report generator again and produce the outputted pdf file.
 
-<img src="docs/images/create_report.gif" alt="Create Report: Demo Report creation" title="create report" width="75%">
+![Create Report: Demo Report creation](https://github.com/ccushnahan/report_generator/raw/main/docs/images/create_report.gif)
 
 ### CLI
 
@@ -72,11 +72,11 @@ If the user wants to use the CLI:
 
 #### CLI default report
 
-<img src="docs/images/report_cli_1.gif" alt="CLI Report creation" title="create report 1" width="75%">
+![CLI Create Report](https://github.com/ccushnahan/report_generator/raw/main/docs/images/report_cli_1.gif)
 
 #### CLI filtered report
 
-<img src="docs/images/report_cli_2.gif" alt="CLI Report creation" title="create report 2" width="75%">
+![CLI Filtered Create Report](https://github.com/ccushnahan/report_generator/raw/main/docs/images/report_cli_2.gif)
 
 #### CLI options
 
@@ -85,7 +85,7 @@ CLI options can be found with the command:
         report-generator -h
         report-generator -help
 
-<img src="docs/images/report_cli_3.gif" alt="CLI Report creation" title="create report 3" width="75%">
+![CLI Options](https://github.com/ccushnahan/report_generator/raw/main/docs/images/report_cli_3.gif)
 
 Or can be found in the projects documentation.
 
@@ -95,4 +95,4 @@ If the user wants to set up a new project:
 
         create-report-generator
 
-<img src="docs/images/create_report_generator.gif" alt="CLI New Report Project" title="CLI new project" width="75%">
+![CLI New Report Project](https://github.com/ccushnahan/report_generator/raw/main/docs/images/create_report_generator.gif)
