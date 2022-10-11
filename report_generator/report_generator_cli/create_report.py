@@ -223,7 +223,7 @@ def create_title_page(
             font_options["title_size"]
 
         pdf = fonts.add_font_choices_to_pdf(pdf, None)
-        pdf.set_font(title_font, "", title_font_size)
+        pdf.set_font(title_font, "b", title_font_size)
 
         pdf.set_draw_color(255, 255, 255)
         pdf.ln(30)

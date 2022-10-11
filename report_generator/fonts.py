@@ -63,17 +63,14 @@ def add_font_choices_to_pdf(pdf: object, font_options: dict) -> object:
 
     config["fonts"]
     font_dict = font_dict_loader()
-
-    for font_name, font_val in font_dict["font_types"].items():
-        if font_val is not True:
-            logger.debug(font_name, font_val)
+    for font_name, font_types in font_dict["custom_font_types"].items():
+        for font_type, file_name in font_types.items():
+            logger.debug(font_name, font_type, file_name)
             font_path = os.path.join(config["dir_path"], "data", "fonts")
-            font_loc = os.path.join(font_path, font_val)
-            pdf.add_font(font_name, "", font_loc)
-
-    font_path = os.path.join(config["dir_path"], "data", "fonts")
-    font_loc = os.path.join(font_path, "OpenSans-Bold.ttf")
-    pdf.add_font("OpenSans", "b", font_loc)
+            font_loc = os.path.join(font_path, file_name)
+            if font_type == "Normal":
+                font_type = ""
+            pdf.add_font(font_name, font_type, font_loc)
 
     return pdf
 
