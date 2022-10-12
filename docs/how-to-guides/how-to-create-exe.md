@@ -1,0 +1,1 @@
+pyinstaller report_generator/app.py --name report_generator
