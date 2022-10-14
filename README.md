@@ -52,7 +52,7 @@ We then install the required files:
 
 Then install package:
 
-    pip install requirements.txt
+    pip install -e .
 
 When this process has been completed it is now possible to use the program.
 
