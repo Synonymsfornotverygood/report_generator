@@ -34,6 +34,29 @@ Then install the package.
 
 <img src="docs/images/install_report_generator.gif" alt="Project Installation 3: Install Package" title="project_installation_3" width="75%">
 
+### Installation from Git Repository
+
+To install the project: first download the project code from the repository. Extract or pull the code into the directory of your choice. Open a terminal in this directory.
+
+Next set up the virtual environment. This allows us to install the project's libraries without affecting the broader Python environment on the computer. (In example code Python's venv is used.)
+
+    python3 -m venv {venv-name}
+
+This will create a virtual environment to install the project's required libraries. We then activate it through the following command:
+
+    source {venv-name}/bin/activate
+
+We then install the required files:
+
+    pip install requirements.txt
+
+Then install package:
+
+    pip install requirements.txt
+
+When this process has been completed it is now possible to use the program.
+
+
 ## Use
 
 ### GUI
