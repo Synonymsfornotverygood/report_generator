@@ -42,9 +42,18 @@ Next set up the virtual environment. This allows us to install the project's lib
 
     python3 -m venv {venv-name}
 
-This will create a virtual environment to install the project's required libraries. We then activate it through the following command:
+This will create a virtual environment to install the project's required libraries.
+
+#### Linux/Mac
+We then activate it through the following command:
 
     source {venv-name}/bin/activate
+
+#### Windows
+
+We then activate it through the following command:
+
+        venv\Scripts\activate.bat
 
 We then install the required files:
 
